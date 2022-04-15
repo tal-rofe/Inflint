@@ -1,0 +1,76 @@
+{
+	"name": "inflint",
+	"version": "0.1.0",
+	"description": "Inflint is a tool which scans and verifies file name conventions.",
+	"author": "Vinyl Depository <dev@vinyldepository.com> (https://www.vinyldepository.com)",
+	"keywords": [
+		"linter",
+		"filesystem linter",
+		"filename linter",
+		"javascript",
+		"typescript"
+	],
+	"contributors": [
+		{
+			"name": "tal-rofe",
+			"email": "tal@vinyldepository.com"
+		}
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/Vinyl-Depository/Inflint#readme",
+	"bugs": {
+		"url": "https://github.com/Vinyl-Depository/Inflint/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Vinyl-Depository/Inflint.git"
+	},
+	"main": "dist/index.js",
+	"files": [
+		"dist/**/*.js"
+	],
+	"scripts": {
+		"preinstall": "is-ci || npx only-allow yarn",
+		"husky:install": "husky install",
+		"git:config": "git config --local include.path ../.gitconfig",
+		"setdev": "run-p husky:install git:config",
+		"onboarding": "node ./scripts/on-boarding.js",
+		"prepare": "is-ci || run-s setdev onboarding",
+		"build": "tsc --project ./tsconfig.build.json && tsc-alias --project ./tsconfig.build.json",
+		"lint": "eslint {src,tests}/**/*",
+		"lint:fix": "eslint {src,tests}/**/* --fix",
+		"format": "prettier --write \"**/*.{ts,js,json}\"",
+		"type-check": "tsc --project ./tsconfig.json",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:cov": "jest --coverage",
+		"depcheck": "depcheck"
+	},
+	"dependencies": {
+		"minimist": "1.2.6"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "16.2.3",
+		"@types/minimist": "1.2.2",
+		"@typescript-eslint/eslint-plugin": "5.19.0",
+		"@typescript-eslint/parser": "5.19.0",
+		"chalk": "4.1.2",
+		"commitizen": "4.2.4",
+		"cz-vinyl": "1.2.0",
+		"depcheck": "1.4.3",
+		"eslint": "8.13.0",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-plugin-import": "2.26.0",
+		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-unused-imports": "2.0.0",
+		"figlet": "1.5.2",
+		"husky": "7.0.4",
+		"is-ci": "3.0.1",
+		"jest": "27.5.1",
+		"lint-staged": "12.3.7",
+		"npm-run-all": "4.1.5",
+		"prettier": "2.6.2",
+		"tsc-alias": "1.6.6",
+		"typescript": "4.6.3"
+	}
+}
