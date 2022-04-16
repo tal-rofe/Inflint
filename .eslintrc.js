@@ -44,6 +44,7 @@ module.exports = {
 		'no-eval': 'error',
 		'no-implicit-globals': 'error',
 		'no-useless-call': 'error',
+		'no-useless-escape': 'off',
 		'curly': ['error', 'all'],
 		'padding-line-between-statements': [
 			'error',

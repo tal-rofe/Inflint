@@ -3,23 +3,9 @@ import path from 'path';
 
 import YAML from 'yaml';
 
-import { cleanObject } from '@/utils/object';
+import { withCleanObject } from '@/utils/object';
 
-import type { IFileFormat, IBooleanQuestion, IAliasAnswers } from '../models/init';
-
-/**
- * The function converts an array of aliases to an object from answers
- * @param aliasesAnswers the aliases to convert from answers
- * @returns the converted object
- */
-export const convertAliasesAnswers = (aliasesAnswers: IAliasAnswers) => {
-	return aliasesAnswers.reduce<Record<string, string>>((final, value) => {
-		return {
-			...final,
-			[value.name]: value.regex,
-		};
-	}, {});
-};
+import type { IFileFormat, IBooleanQuestion } from '../interfaces/init';
 
 /**
  * The function receives some configuration from the init process and exports the relevant files to user filesystem
@@ -33,11 +19,9 @@ export const exportFilesFromInit = async (
 	withIgnoreFile: IBooleanQuestion,
 	aliases: Record<string, string>,
 ) => {
-	const contentObject = {
+	const contentObject = withCleanObject({
 		aliases: Object.keys(aliases).length > 0 ? aliases : undefined,
-	};
-
-	cleanObject(contentObject);
+	});
 
 	let contentString: string;
 	let filename: string;

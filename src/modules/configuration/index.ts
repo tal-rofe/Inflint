@@ -1,5 +1,5 @@
 const StartConfiguration = () => {
-	console.log('Configuration');
+	return null;
 };
 
 export default StartConfiguration;

@@ -1,4 +1,5 @@
 import CLILoggerService from '@/services/cli-logger';
+
 import packageJson from '../../../../package.json';
 
 /**

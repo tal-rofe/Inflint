@@ -1,32 +1,18 @@
-type IOptionsKeys =
-	| 'noInflintrc'
-	| 'config'
-	| 'rule'
-	| 'alias'
-	| 'ignorePath'
-	| 'noIgnore'
-	| 'ignorePattern'
-	| 'quiet'
-	| 'maxWarnings'
-	| 'outputFile'
-	| 'format'
-	| 'color'
-	| 'init'
-	| 'debug'
-	| 'help'
-	| 'version'
-	| 'printRule';
+import { IOptionsKeys } from '../interfaces/help';
 
 export const options: Record<IOptionsKeys, [string, string]> = {
-	noInflintrc: [
+	inflintrc: [
 		'--no-inflintrc',
 		'Disable use of configuration from configuration file or package.json. Default: false',
 	],
 	config: ['-c, --config (path::String)', 'Inflint will use the provided configuration file'],
 	rule: ['--rule (String)', 'Specify rules'],
+	ruleColonDivider: ['--rule-colon-divider (String)', 'Specify rule divider (default is ":")'],
+	ruleCommaDivider: ['--rule-comma-divider (String)', 'Specify rule comma divider (default is ",")'],
 	alias: ['--alias (String)', 'Specify custom aliases'],
+	aliasColonDivider: ['--alias-colon-divider (String)', 'Specify rule divider (default is ":")'],
 	ignorePath: ['--ignore-path (path::String)', 'Specify path of ignore file'],
-	noIgnore: ['--no-ignore', 'Disable use of ignore files and patterns. Default: false'],
+	ignore: ['--no-ignore', 'Disable use of ignore files and patterns. Default: false'],
 	ignorePattern: [
 		'--ignore-pattern (String)',
 		'Pattern of files to ignore (in addition to those in .inflintignore)',

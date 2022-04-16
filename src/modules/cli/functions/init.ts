@@ -1,7 +1,8 @@
 import inquirer from 'inquirer';
 
-import { convertAliasesAnswers, exportFilesFromInit } from '../utils/init';
-import type { IAliasAnswer, IInitialAnswers, IAliasAnswers } from '../models/init';
+import { exportFilesFromInit } from '../utils/init';
+import { convertAliasesAnswers } from '../pipes/alias';
+import type { IAliasAnswer, IInitialAnswers, IAliasAnswers } from '../interfaces/init';
 
 /**
  * The function initialize the project with basic Inflint configuration

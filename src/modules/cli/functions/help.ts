@@ -14,18 +14,21 @@ export const printHelp = () => {
 	CLILoggerService.logEmptyBlock();
 
 	CLILoggerService.logDefault('Basic configuration:');
-	CLILoggerService.logSpaced(options.noInflintrc, 2, spaceBias - options.noInflintrc[0].length);
+	CLILoggerService.logSpaced(options.inflintrc, 2, spaceBias - options.inflintrc[0].length);
 	CLILoggerService.logSpaced(options.config, 2, spaceBias - options.config[0].length);
 	CLILoggerService.logEmptyBlock();
 
-	CLILoggerService.logDefault('Specifying rules:');
+	CLILoggerService.logDefault('Specifying rules and aliases:');
 	CLILoggerService.logSpaced(options.rule, 2, spaceBias - options.rule[0].length);
+	CLILoggerService.logSpaced(options.ruleColonDivider, 2, spaceBias - options.ruleColonDivider[0].length);
+	CLILoggerService.logSpaced(options.ruleCommaDivider, 2, spaceBias - options.ruleCommaDivider[0].length);
 	CLILoggerService.logSpaced(options.alias, 2, spaceBias - options.alias[0].length);
+	CLILoggerService.logSpaced(options.aliasColonDivider, 2, spaceBias - options.aliasColonDivider[0].length);
 	CLILoggerService.logEmptyBlock();
 
 	CLILoggerService.logDefault('Ignoring files:');
 	CLILoggerService.logSpaced(options.ignorePath, 2, spaceBias - options.ignorePath[0].length);
-	CLILoggerService.logSpaced(options.noIgnore, 2, spaceBias - options.noIgnore[0].length);
+	CLILoggerService.logSpaced(options.ignore, 2, spaceBias - options.ignore[0].length);
 	CLILoggerService.logSpaced(options.ignorePattern, 2, spaceBias - options.ignorePattern[0].length);
 	CLILoggerService.logEmptyBlock();
 
