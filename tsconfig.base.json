@@ -28,7 +28,8 @@
 		"paths": {
 			"@/utils/*": ["src/utils/*"],
 			"@/models/*": ["src/models/*"],
-			"@/services/*": ["src/services/*"]
+			"@/services/*": ["src/services/*"],
+			"@/modules/*": ["src/modules/*"]
 		},
 		"typeRoots": ["./node_modules/@types", "./@types"]
 	}

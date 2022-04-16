@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 export default class CLILoggerService {
-	public static logEmptyLine() {
+	public static logEmptyBlock() {
 		console.log('\n');
 	}
 

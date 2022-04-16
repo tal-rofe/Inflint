@@ -1,8 +1,13 @@
-import { getCLIArgv } from '@/utils/cli-argv';
-import { startCLIPhase } from '@/utils/cli-phase';
+import { getCLIArgv } from '@/utils/argv';
+import StartCLI from '@/modules/cli';
+import StartConfiguration from '@/modules/configuration';
 
 (() => {
 	const argv = getCLIArgv();
 
-	startCLIPhase(argv);
+	const configFromCLI = StartCLI(argv);
+
+	if (configFromCLI) {
+		StartConfiguration();
+	}
 })();

@@ -1,5 +1,5 @@
 import CLILoggerService from '@/services/cli-logger';
-import packageJson from '../../package.json';
+import packageJson from '../../../../package.json';
 
 /**
  * The function logs the version to the console
