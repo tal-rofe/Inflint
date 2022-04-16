@@ -1,1 +1,1 @@
-🚧 This package is in progres... Use it once released with version 1.x.x :) 🚧
+🚧 This package is in progress... 🚧
