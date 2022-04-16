@@ -21,6 +21,13 @@ export const convertAliasesAnswers = (aliasesAnswers: IAliasAnswers) => {
 	}, {});
 };
 
+/**
+ * The function receives some configuration from the init process and exports the relevant files to user filesystem
+ * @param fileFormat the format of the main configuration file
+ * @param withIgnoreFile whether to create an ignore file
+ * @param aliases the user-created aliases
+ * @returns void
+ */
 export const exportFilesFromInit = async (
 	fileFormat: IFileFormat,
 	withIgnoreFile: IBooleanQuestion,
