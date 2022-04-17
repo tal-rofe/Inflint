@@ -1,6 +1,6 @@
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
 
-import { IRuleValue } from '../interfaces/rule';
+import { IRuleValue } from '@/interfaces/rule';
 import { rulePipe } from '../pipes/rule';
 
 /**

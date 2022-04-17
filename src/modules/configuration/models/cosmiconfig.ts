@@ -1,0 +1,13 @@
+import { CONFIGURATION_MODULE_NAME } from './configuration';
+
+export const DEFAULT_SEARCH_PLACES = [
+	'package.json',
+	`.${CONFIGURATION_MODULE_NAME}rc`,
+	`.${CONFIGURATION_MODULE_NAME}rc.json`,
+	`.${CONFIGURATION_MODULE_NAME}rc.yaml`,
+	`.${CONFIGURATION_MODULE_NAME}rc.yml`,
+	`.${CONFIGURATION_MODULE_NAME}rc.js`,
+	`.${CONFIGURATION_MODULE_NAME}rc.cjs`,
+	`${CONFIGURATION_MODULE_NAME}.config.js`,
+	`${CONFIGURATION_MODULE_NAME}.config.cjs`,
+];

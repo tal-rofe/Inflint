@@ -1,4 +1,4 @@
-import { IRuleValue } from '../interfaces/rule';
+import { IRuleValue } from '@/interfaces/rule';
 
 /**
  * The function pipes a given rule

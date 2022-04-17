@@ -1,6 +1,5 @@
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
-
-import { Format } from '../models/format';
+import { Format } from '@/models/format';
 
 /**
  * The function validates an input is valid format

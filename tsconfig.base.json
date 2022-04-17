@@ -30,7 +30,8 @@
 			"@/models/*": ["src/models/*"],
 			"@/services/*": ["src/services/*"],
 			"@/modules/*": ["src/modules/*"],
-			"@/interfaces/*": ["src/interfaces/*"]
+			"@/interfaces/*": ["src/interfaces/*"],
+			"@/validators/*": ["src/validators/*"]
 		},
 		"typeRoots": ["./node_modules/@types", "./@types"]
 	}

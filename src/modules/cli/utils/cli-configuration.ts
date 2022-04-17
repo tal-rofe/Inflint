@@ -1,12 +1,13 @@
 import type { ParsedArgs } from 'minimist';
 
 import { withCleanObject } from '@/utils/object';
+import { validateBoolean, validateString, validateInteger } from '@/validators/basic';
+import { validateSringsArrayOrString } from '@/validators/complex';
+import { validateFormat } from '@/validators/format';
 
 import type { ICLIConfiguration } from '../interfaces/cli-configuration';
-import { validateRules } from '../validator/rule';
-import { validateAliases } from '../validator/alias';
-import { validateBoolean, validateString, validateSringsArray, validateInteger } from '../validator/basic';
-import { validateFormat } from '../validator/format';
+import { validateRules } from '../validators/rule';
+import { validateAliases } from '../validators/alias';
 
 export const getConfiguration = (argv: ParsedArgs) => {
 	const configuration = withCleanObject<ICLIConfiguration>({
@@ -31,7 +32,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 		),
 		ignoreFilePath: validateString(argv['ignore-path'], 'Must provide string value to "--ignore-path"'),
 		ignore: validateBoolean(argv['ignore'], 'Must provide boolean value to "--no-ignore"'),
-		ignorePatterns: validateSringsArray(
+		ignorePatterns: validateSringsArrayOrString(
 			argv['ignore-pattern'],
 			'Must provide string value to "--ignore-pattern"',
 		),
