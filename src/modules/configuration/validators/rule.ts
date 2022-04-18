@@ -28,7 +28,6 @@ const isRuleValueValid = (input: IConfigurationRuleValue) => {
 /**
  * The function validates the configuration rules
  * @param input the rules to validate
- * @param errorMessage a message to show in case of invalid input
  * @returns "undefined" if no input provided, transformed rules if all are valid
  * @throws error message in case of invalid rule(s)
  */

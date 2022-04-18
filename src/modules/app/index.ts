@@ -1,10 +1,12 @@
+import { IBaseConfiguration } from '@/interfaces/base-configuration';
 import { getCLIArgv } from '@/utils/argv';
 
 import StartCLI from '../cli';
 import StartConfiguration from '../configuration';
 import StartLinting from '../core';
+import { recurseSourceConfiguration, mergeConfigurations } from './utils/merge-configurations';
 
-const Bootstrap = () => {
+const Bootstrap = async () => {
 	const argv = getCLIArgv();
 
 	const configFromCLI = StartCLI(argv);
@@ -13,12 +15,23 @@ const Bootstrap = () => {
 		return;
 	}
 
-	const configFromSource =
-		configFromCLI?.inflintrc === false ? null : StartConfiguration(configFromCLI?.configFilePath);
+	let lintingConfiguration: IBaseConfiguration;
 
-	console.log(configFromSource);
+	if (configFromCLI?.inflintrc === false) {
+		lintingConfiguration = configFromCLI;
+	} else {
+		const sourceResult = await StartConfiguration(configFromCLI?.configFilePath);
 
-	StartLinting();
+		if (sourceResult && sourceResult[1]) {
+			const sourceConfiguration = await recurseSourceConfiguration(sourceResult[0], sourceResult[1]);
+
+			lintingConfiguration = mergeConfigurations(configFromCLI, sourceConfiguration);
+		} else {
+			lintingConfiguration = configFromCLI;
+		}
+	}
+
+	StartLinting(lintingConfiguration);
 };
 
 export default Bootstrap;

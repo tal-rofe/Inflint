@@ -14,3 +14,13 @@ export interface IBaseConfiguration {
 	readonly color?: boolean;
 	readonly debug?: boolean;
 }
+
+export interface ICLIConfiguration extends IBaseConfiguration {
+	readonly inflintrc?: boolean;
+	readonly configFilePath?: string;
+	readonly printRuleFilePath?: string;
+}
+
+export interface ISourceConfiguration extends IBaseConfiguration {
+	readonly extends?: string;
+}

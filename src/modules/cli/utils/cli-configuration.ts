@@ -4,8 +4,8 @@ import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateString, validateInteger } from '@/validators/basic';
 import { validateSringsArrayOrString } from '@/validators/complex';
 import { validateFormat } from '@/validators/format';
+import { ICLIConfiguration } from '@/interfaces/base-configuration';
 
-import type { ICLIConfiguration } from '../interfaces/cli-configuration';
 import { validateRules } from '../validators/rule';
 import { validateAliases } from '../validators/alias';
 
