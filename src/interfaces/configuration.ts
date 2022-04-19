@@ -9,6 +9,7 @@ export interface IBaseConfiguration {
 	readonly ignorePatterns?: ReadonlyArray<string>;
 	readonly quiet?: boolean;
 	readonly maxWarnings?: number;
+	readonly bail?: number;
 	readonly outputFilePath?: string;
 	readonly format?: Format;
 	readonly color?: boolean;

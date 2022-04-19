@@ -3,8 +3,9 @@ import type { ParsedArgs } from 'minimist';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateString, validateInteger } from '@/validators/basic';
 import { validateSringsArrayOrString } from '@/validators/complex';
+import { validateBail } from '@/validators/bail';
 import { validateFormat } from '@/validators/format';
-import { ICLIConfiguration } from '@/interfaces/base-configuration';
+import { ICLIConfiguration } from '@/interfaces/configuration';
 
 import { validateRules } from '../validators/rule';
 import { validateAliases } from '../validators/alias';
@@ -41,6 +42,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 			argv['max-warnings'],
 			'Must provide >= 0 safe integer value to "--max-warnings"',
 		),
+		bail: validateBail(argv['bail'], 'Must provide >=0 safe integer or boolean value to "--bail"'),
 		outputFilePath: validateString(
 			argv['o'] || argv['output-file'],
 			'Must provide string value to "-o, --output-file"',

@@ -1,6 +1,7 @@
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
-
+import { escapeRegex } from '@/utils/regex';
 import { IRuleValue } from '@/interfaces/rule';
+
 import { rulePipe } from '../pipes/rule';
 
 /**
@@ -9,9 +10,9 @@ import { rulePipe } from '../pipes/rule';
  * @returns boolean flag indicates the validity of the string
  */
 const isRuleValid = (input: string, colonDivider: string, commaDivider: string) => {
-	const escapedColonDivider = colonDivider.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-	const escapedCommaDivider = commaDivider.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-	const regexString = `^.*[^\\s]{1,}.*${escapedColonDivider}(\\s)*(1|2|warn|error|\\[(\\s)*(1|2|warn|error)(\\s)*(${escapedCommaDivider}(\\s)*[^\\s]{1,}(\\s)*)?\\])(\\s)*$`;
+	const escapedColonDivider = escapeRegex(colonDivider);
+	const escapedCommaDivider = escapeRegex(commaDivider);
+	const regexString = `^.*[^\\s]+.*${escapedColonDivider}(\\s)*(1|2|warn|error|\\[(\\s)*(1|2|warn|error)(\\s)*(${escapedCommaDivider}(\\s)*[^\\s]+(\\s)*)?\\])(\\s)*$`;
 	const regex = new RegExp(regexString, 'i');
 
 	return regex.test(input);

@@ -1,4 +1,5 @@
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
+import { escapeRegex } from '@/utils/regex';
 
 import { aliasPipe } from '../pipes/alias';
 
@@ -8,8 +9,8 @@ import { aliasPipe } from '../pipes/alias';
  * @returns boolean flag indicates the validity of the string
  */
 const isAliasValid = (input: string, colonDivider: string) => {
-	const escapedDivider = colonDivider.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-	const regexString = `^.{1,}${escapedDivider}.*([^\s]{1,}).*$`;
+	const escapedDivider = escapeRegex(colonDivider);
+	const regexString = `^.+${escapedDivider}.*([^\s]+).*$`;
 	const regex = new RegExp(regexString, 'i');
 
 	return regex.test(input);

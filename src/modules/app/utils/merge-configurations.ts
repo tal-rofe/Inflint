@@ -2,7 +2,7 @@ import path from 'path';
 
 import { cosmiconfig } from 'cosmiconfig';
 
-import { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/base-configuration';
+import { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
 import CLILoggerService from '@/services/cli-logger';
 import { validateConfiguration } from '@/modules/configuration/validators/configuration';

@@ -4,7 +4,7 @@ import { cosmiconfig } from 'cosmiconfig';
 import { CosmiconfigResult } from 'cosmiconfig/dist/types';
 
 import CLILoggerService from '@/services/cli-logger';
-import { ISourceConfiguration } from '@/interfaces/base-configuration';
+import { ISourceConfiguration } from '@/interfaces/configuration';
 
 import { CONFIGURATION_MODULE_NAME } from './models/configuration';
 import { DEFAULT_SEARCH_PLACES } from './models/cosmiconfig';

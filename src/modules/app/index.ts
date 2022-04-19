@@ -1,4 +1,4 @@
-import { IBaseConfiguration } from '@/interfaces/base-configuration';
+import { IBaseConfiguration } from '@/interfaces/configuration';
 import { getCLIArgv } from '@/utils/argv';
 
 import StartCLI from '../cli';

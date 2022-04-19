@@ -2,8 +2,9 @@ import CLILoggerService from '@/services/cli-logger';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateInteger, validateString } from '@/validators/basic';
 import { validateSringsArray, validateStringsObject } from '@/validators/complex';
+import { validateBail } from '@/validators/bail';
 import { validateFormat } from '@/validators/format';
-import { ISourceConfiguration } from '@/interfaces/base-configuration';
+import { ISourceConfiguration } from '@/interfaces/configuration';
 
 import { validateRules } from './rule';
 
@@ -23,6 +24,10 @@ export const validateConfiguration = (configuration: ISourceConfiguration) => {
 			maxWarnings: validateInteger(
 				configuration.maxWarnings,
 				'Must provide a valid number value to "maxWarnings"',
+			),
+			bail: validateBail(
+				configuration.bail,
+				'Must provide >=0 safe integer or boolean value to "--bail"',
 			),
 			outputFilePath: validateString(
 				configuration.outputFilePath,

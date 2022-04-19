@@ -19,6 +19,10 @@ export const options: Record<IOptionsKeys, [string, string]> = {
 	],
 	quiet: ['--quiet', 'Report errors only. Default: false'],
 	maxWarnings: ['--max-warnings (Int)', 'Number of warnings to trigger non-zero exit code. Default: -1'],
+	bail: [
+		'--bail (Int/Boolean)',
+		'Number of failures (errors) to make Inflint to exit. Setting "bail" to true is the same as setting "1". Default: 0',
+	],
 	outputFile: ['-o, --output-file (path::String)', 'Specify file to write report to'],
 	format: ['-f, --format (String)', 'Use a specific output format. Default: "stylish"'],
 	color: ['--color, --no-color', 'Force enabling/disabling of color'],

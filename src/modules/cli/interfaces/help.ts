@@ -11,6 +11,7 @@ export type IOptionsKeys =
 	| 'ignorePattern'
 	| 'quiet'
 	| 'maxWarnings'
+	| 'bail'
 	| 'outputFile'
 	| 'format'
 	| 'color'

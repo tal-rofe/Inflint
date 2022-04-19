@@ -32,9 +32,10 @@ export const printHelp = () => {
 	CLILoggerService.logSpaced(options.ignorePattern, 2, spaceBias - options.ignorePattern[0].length);
 	CLILoggerService.logEmptyBlock();
 
-	CLILoggerService.logDefault('Handling warnings:');
+	CLILoggerService.logDefault('Handling warnings and errors:');
 	CLILoggerService.logSpaced(options.quiet, 2, spaceBias - options.quiet[0].length);
 	CLILoggerService.logSpaced(options.maxWarnings, 2, spaceBias - options.maxWarnings[0].length);
+	CLILoggerService.logSpaced(options.bail, 2, spaceBias - options.bail[0].length);
 	CLILoggerService.logEmptyBlock();
 
 	CLILoggerService.logDefault('Output:');
