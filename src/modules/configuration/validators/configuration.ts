@@ -1,22 +1,20 @@
-import { ISourceConfiguration } from 'src/shared/interfaces/configuration';
-import CLILoggerService from '@/services/cli-logger';
+import { ISourceConfiguration } from '@/interfaces/configuration';
+import CLILoggerModule from '@/shared/modules/cli-logger';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validatePositiveInteger, validateString } from '@/validators/basic';
-import { validateSringsArray, validateStringsObject } from '@/validators/complex';
+import { validateSringsArray } from '@/validators/complex';
 import { validateBail } from '@/validators/bail';
 import { validateFormat } from '@/validators/format';
 
 import { validateRules } from './rule';
+import { validateAliases } from './alias';
 
 export const validateConfiguration = (configuration: Record<string, unknown>) => {
 	try {
 		const finalConfiguration = withCleanObject<ISourceConfiguration>({
 			extends: validateString(configuration['extends'], 'Must provide a string value "extends"'),
 			rules: validateRules(configuration['rules']),
-			aliases: validateStringsObject(
-				configuration['aliases'],
-				'Must provide a valid value to "aliases"',
-			),
+			aliases: validateAliases(configuration['aliases']),
 			ignoreFilePath: validateString(
 				configuration['ignoreFilePath'],
 				'Must provide a string value to "ignoreFilePath"',
@@ -37,13 +35,11 @@ export const validateConfiguration = (configuration: Record<string, unknown>) =>
 				'Must provide a string value to "outputFilePath"',
 			),
 			format: validateFormat(configuration['format'], 'Must provide a valid format value to "format"'),
-			color: validateBoolean(configuration['color'], 'Must provide a boolean value to "color"'),
-			debug: validateBoolean(configuration['debug'], 'Must provide a boolean value to "debug"'),
 		});
 
 		return finalConfiguration;
 	} catch (e) {
-		CLILoggerService.logDefault(`${(e as Error).message}`);
+		CLILoggerModule.service.error((e as Error).message);
 
 		process.exit(1);
 	}

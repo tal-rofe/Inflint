@@ -1,3 +1,5 @@
+import { IAliasValue } from '@/interfaces/alias';
+
 import { ITransformedAliases } from '../interfaces/aliases';
 
 /**
@@ -5,17 +7,28 @@ import { ITransformedAliases } from '../interfaces/aliases';
  * @param input the aliases to transform
  * @returns the transformed aliases
  */
-export const transformAliases = (input: Record<string, string>) => {
+export const transformAliases = (input: Record<string, IAliasValue>) => {
 	if (Object.keys(input).length === 0) {
 		return {};
 	}
 
 	return Object.keys(input).reduce<ITransformedAliases>((final, key) => {
-		const regex = new RegExp(input[key]!);
+		const aliasValue = input[key]!;
+
+		if (Array.isArray(aliasValue)) {
+			const regex = new RegExp(aliasValue[0], aliasValue[1]);
+
+			return {
+				...final,
+				[key]: (input: string) => regex.test(input),
+			};
+		}
+
+		const regex = new RegExp(aliasValue);
 
 		return {
 			...final,
-			[key]: (input: string) => regex.test(input),
+			[key]: (uInput: string) => regex.test(uInput),
 		};
 	}, {});
 };

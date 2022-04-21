@@ -1,4 +1,4 @@
-import { IRuleValue } from 'src/shared/interfaces/rule';
+import { IRuleValue } from '@/interfaces/rule';
 import { isRuleArrayValid, isRuleEnforcementValid } from '@/validators/rule';
 
 /**

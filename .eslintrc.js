@@ -40,7 +40,7 @@ module.exports = {
 		'no-labels': 'error',
 		'no-inline-comments': 'error',
 		'eqeqeq': 'error',
-		'no-console': 'warn',
+		'no-console': 'error',
 		'no-eval': 'error',
 		'no-implicit-globals': 'error',
 		'no-useless-call': 'error',

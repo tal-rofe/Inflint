@@ -1,4 +1,4 @@
-import { IRuleValue } from 'src/shared/interfaces/rule';
+import { IRuleValue } from '@/interfaces/rule';
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
 import { isRuleEnforcementValid, isRuleArrayValid } from '@/validators/rule';
 

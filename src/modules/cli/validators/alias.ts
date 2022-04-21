@@ -1,4 +1,6 @@
+import { IAliasValue } from '@/interfaces/alias';
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
+import { isAliasValueValid } from '@/validators/alias';
 
 /**
  * The function returns whether an alias string is valid
@@ -20,7 +22,7 @@ const isAliasValid = (input: string) => {
 
 	const [aliasValue] = Object.values(parsedAlias);
 
-	return typeof aliasValue === 'string';
+	return isAliasValueValid(aliasValue);
 };
 
 /**
@@ -33,7 +35,7 @@ const isAliasValid = (input: string) => {
 export const validateAliases = (
 	input?: unknown,
 	errorMessage?: string,
-): Record<string, string> | undefined => {
+): Record<string, IAliasValue> | undefined => {
 	if (input === undefined) {
 		return;
 	}
@@ -43,7 +45,7 @@ export const validateAliases = (
 	}
 
 	if (Array.isArray(input) && input.every((item) => typeof item === 'string' && isAliasValid(item))) {
-		return input.reduce<Record<string, string>>((final, value) => {
+		return input.reduce<Record<string, IAliasValue>>((final, value) => {
 			return {
 				...final,
 				...JSON.parse(value),

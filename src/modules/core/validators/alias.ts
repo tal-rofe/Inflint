@@ -10,7 +10,12 @@ import {
  * @param input the input to validate
  * @returns a boolean flag indicates whether the input is valid
  */
-const validateSnakeAndKebebAndPointCase = (input: string, separator: string, isScreaming?: boolean) => {
+const validateSnakeAndKebebAndPointCase = (
+	input: string,
+	separator: string,
+	isScreaming: boolean,
+	withPoint: boolean,
+) => {
 	const inputArray = input.split('');
 	const firstChar = inputArray.shift()!;
 
@@ -25,7 +30,12 @@ const validateSnakeAndKebebAndPointCase = (input: string, separator: string, isS
 		const isValidAlphabeticChar =
 			(!isScreaming && validateLowerCaseChar(value)) || (isScreaming && validateUpperCaseChar(value));
 
-		if (!isValidAlphabeticChar || !validateNumericChar(value) || value !== separator) {
+		if (
+			!isValidAlphabeticChar &&
+			!validateNumericChar(value) &&
+			value !== separator &&
+			(withPoint !== true || value !== '.')
+		) {
 			return false;
 		}
 
@@ -39,7 +49,7 @@ const validateSnakeAndKebebAndPointCase = (input: string, separator: string, isS
 			(!isScreaming && validateLowerCaseChar(nextChar)) ||
 			(isScreaming && validateUpperCaseChar(nextChar));
 
-		if (value === '_' && !isValidAlphabeticNextChar) {
+		if ((value === separator || (withPoint === true && value === '.')) && !isValidAlphabeticNextChar) {
 			return false;
 		}
 	}
@@ -106,7 +116,16 @@ export const validatePascalCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateSnakeCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '_', false);
+	return validateSnakeAndKebebAndPointCase(input, '_', false, false);
+};
+
+/**
+ * The function validates a given input is in "snake_case.point" format
+ * @param input the input to validate
+ * @returns a boolean flag indicates whether the input is valid
+ */
+export const validateSnakeCasePoint = (input: string) => {
+	return validateSnakeAndKebebAndPointCase(input, '_', false, true);
 };
 
 /**
@@ -115,7 +134,16 @@ export const validateSnakeCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateScreamingSnakeCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '_', true);
+	return validateSnakeAndKebebAndPointCase(input, '_', true, false);
+};
+
+/**
+ * The function validates a given input is in "SCREAMING_SNAKE_CASE.point" format
+ * @param input the input to validate
+ * @returns a boolean flag indicates whether the input is valid
+ */
+export const validateScreamingSnakeCasePoint = (input: string) => {
+	return validateSnakeAndKebebAndPointCase(input, '_', true, true);
 };
 
 /**
@@ -124,7 +152,16 @@ export const validateScreamingSnakeCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateKebabCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '-');
+	return validateSnakeAndKebebAndPointCase(input, '-', false, false);
+};
+
+/**
+ * The function validates a given input is in "kebab-case.point" format
+ * @param input the input to validate
+ * @returns a boolean flag indicates whether the input is valid
+ */
+export const validateKebabCasePoint = (input: string) => {
+	return validateSnakeAndKebebAndPointCase(input, '-', false, true);
 };
 
 /**
@@ -133,5 +170,5 @@ export const validateKebabCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validatePointCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '.');
+	return validateSnakeAndKebebAndPointCase(input, '.', false, false);
 };

@@ -1,6 +1,6 @@
 import { ParsedArgs } from 'minimist';
 
-import CLILoggerService from '@/services/cli-logger';
+import CLILoggerModule from '@/shared/modules/cli-logger';
 
 import { printHelp } from './functions/help';
 import { printVersion } from './functions/version';
@@ -36,7 +36,7 @@ const StartCLI = (argv: ParsedArgs) => {
 
 		return configuration;
 	} catch (e) {
-		CLILoggerService.logDefault(`An error occured: ${(e as Error).message}`);
+		CLILoggerModule.service.error((e as Error).message);
 
 		process.exit(1);
 	}

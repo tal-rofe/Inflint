@@ -1,10 +1,12 @@
-import { IBaseConfiguration } from 'src/shared/interfaces/configuration';
+import { IBaseConfiguration } from '@/interfaces/configuration';
+import CLILoggerModule from '@/shared/modules/cli-logger';
 import { getCLIArgv } from '@/utils/argv';
 
 import StartCLI from '../cli';
 import StartConfiguration from '../configuration';
 import StartLinting from '../core';
 import { recurseSourceConfiguration, mergeConfigurations } from './utils/merge-configurations';
+import { readIgnoreFile } from './utils/read-ignore-file';
 
 const Bootstrap = async () => {
 	const argv = getCLIArgv();
@@ -31,7 +33,19 @@ const Bootstrap = async () => {
 		}
 	}
 
-	StartLinting(lintingConfiguration);
+	if (lintingConfiguration.ignore === false) {
+		delete lintingConfiguration['ignorePatterns'];
+	} else {
+		const ignorePatternsFromFile = await readIgnoreFile(lintingConfiguration.ignoreFilePath);
+
+		lintingConfiguration = mergeConfigurations(lintingConfiguration, {
+			ignorePatterns: ignorePatternsFromFile,
+		});
+	}
+
+	CLILoggerModule.service.info('Inflint is running..\n');
+
+	await StartLinting(lintingConfiguration);
 };
 
 export default Bootstrap;

@@ -1,6 +1,6 @@
 import type { ParsedArgs } from 'minimist';
 
-import { ICLIConfiguration } from 'src/shared/interfaces/configuration';
+import { ICLIConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateString, validatePositiveInteger } from '@/validators/basic';
 import { validateSringsArrayOrString } from '@/validators/complex';
@@ -37,7 +37,6 @@ export const getConfiguration = (argv: ParsedArgs) => {
 		),
 		format: validateFormat(argv['f'] || argv['format'], 'Must provide valid format to "-f, --format"'),
 		color: validateBoolean(argv['color'], 'Must provide boolean value to "--color"'),
-		debug: validateBoolean(argv['debug'], 'Must provide boolean value to "--debug"'),
 		printRuleFilePath: validateString(argv['print-rule'], 'Must provide string value to "--print-rule"'),
 	});
 

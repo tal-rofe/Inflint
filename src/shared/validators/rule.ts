@@ -6,10 +6,14 @@
 const areRuleOptionsValid = (input: Record<string, unknown>) => {
 	const onlyDirectories = input['onlyDirectories'];
 	const onlyFiles = input['onlyFiles'];
+	const dot = input['dot'];
+	const caseSensitiveMatch = input['caseSensitiveMatch'];
 
 	if (
 		(onlyDirectories && typeof onlyDirectories !== 'boolean') ||
-		(onlyFiles && typeof onlyFiles !== 'boolean')
+		(onlyFiles && typeof onlyFiles !== 'boolean') ||
+		(dot && typeof dot !== 'boolean') ||
+		(caseSensitiveMatch && typeof caseSensitiveMatch !== 'boolean')
 	) {
 		return false;
 	}

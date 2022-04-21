@@ -3,8 +3,8 @@ import path from 'path';
 import { cosmiconfig } from 'cosmiconfig';
 import { CosmiconfigResult } from 'cosmiconfig/dist/types';
 
-import { ISourceConfiguration } from 'src/shared/interfaces/configuration';
-import CLILoggerService from '@/services/cli-logger';
+import { ISourceConfiguration } from '@/interfaces/configuration';
+import CLILoggerModule from '@/shared/modules/cli-logger';
 
 import { CONFIGURATION_MODULE_NAME } from './models/configuration';
 import { DEFAULT_SEARCH_PLACES } from './models/cosmiconfig';
@@ -28,7 +28,7 @@ const StartConfiguration = async (
 	}
 
 	if (configFilePath && result === null) {
-		CLILoggerService.logDefault(`Error: Could not find given configuration file: ${configFilePath}`);
+		CLILoggerModule.service.error(`Could not find given configuration file: '${configFilePath}'`);
 
 		process.exit(1);
 	}

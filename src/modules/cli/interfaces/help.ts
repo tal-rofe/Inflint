@@ -13,7 +13,6 @@ export type IOptionsKeys =
 	| 'format'
 	| 'color'
 	| 'init'
-	| 'debug'
 	| 'help'
 	| 'version'
 	| 'printRule';

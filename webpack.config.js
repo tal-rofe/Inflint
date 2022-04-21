@@ -1,7 +1,10 @@
 const path = require('path');
 
+const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
+const { version } = require('./package.json');
 
 module.exports = {
 	mode: 'production',
@@ -28,6 +31,11 @@ module.exports = {
 			},
 		],
 	},
+	plugins: [
+		new webpack.DefinePlugin({
+			__PACKAGE_VERSION__: `'v${version}'`,
+		}),
+	],
 	resolve: {
 		extensions: ['.ts'],
 		plugins: [

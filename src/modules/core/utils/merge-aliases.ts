@@ -1,3 +1,5 @@
+import { IAliasValue } from '@/interfaces/alias';
+
 import { IMappedFunction } from '../interfaces/aliases';
 import { DEFAULT_ALIASES } from '../models/alias';
 import { transformAliases } from '../pipes/transform-aliases';
@@ -8,7 +10,7 @@ import { transformAliases } from '../pipes/transform-aliases';
  * @returns the merged result
  */
 export const mergeAliases = (
-	aliases?: Record<string, string>,
+	aliases?: Record<string, IAliasValue>,
 ): Record<keyof typeof DEFAULT_ALIASES | string, IMappedFunction> => {
 	if (!aliases || Object.keys(aliases).length === 0) {
 		return DEFAULT_ALIASES;

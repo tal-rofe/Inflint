@@ -2,9 +2,9 @@ import path from 'path';
 
 import { cosmiconfig } from 'cosmiconfig';
 
-import { IBaseConfiguration, ISourceConfiguration } from 'src/shared/interfaces/configuration';
+import { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
-import CLILoggerService from '@/services/cli-logger';
+import CLILoggerModule from '@/shared/modules/cli-logger';
 import { validateConfiguration } from '@/modules/configuration/validators/configuration';
 
 /**
@@ -57,7 +57,7 @@ export const recurseSourceConfiguration = async (
 	const result = await explorer.load(extendsFilePath).catch(() => null);
 
 	if (!result) {
-		CLILoggerService.logDefault(`Error: Could not find given extends file: ${extendsFilePath}`);
+		CLILoggerModule.service.error(`Could not find given extends file: '${extendsFilePath}'`);
 
 		process.exit(1);
 	}

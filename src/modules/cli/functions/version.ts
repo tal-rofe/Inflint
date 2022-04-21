@@ -1,10 +1,9 @@
-import CLILoggerService from '@/services/cli-logger';
-import { version } from '@/libs/version';
+import CLILoggerModule from '@/shared/modules/cli-logger';
 
 /**
  * The function logs the version to the console
  * @returns void
  */
 export const printVersion = () => {
-	CLILoggerService.logDefault(`v${version}`);
+	CLILoggerModule.service.default(__PACKAGE_VERSION__);
 };

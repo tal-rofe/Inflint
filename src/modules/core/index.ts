@@ -1,12 +1,12 @@
 import { IBaseConfiguration } from '@/interfaces/configuration';
 
+import { lint } from './functions/lint';
 import { mergeAliases } from './utils/merge-aliases';
 
-const StartLinting = (configuration: IBaseConfiguration) => {
+const StartLinting = async (configuration: IBaseConfiguration) => {
 	const aliases = mergeAliases(configuration.aliases);
 
-	console.log(aliases);
-	console.log(configuration);
+	await lint(configuration, aliases);
 };
 
 export default StartLinting;

@@ -24,7 +24,6 @@ export const options: Record<IOptionsKeys, [string, string]> = {
 	format: ['-f, --format (String)', 'Use a specific output format. Default: "stylish"'],
 	color: ['--color, --no-color', 'Force enabling/disabling of color'],
 	init: ['--init', 'Run configuration initialization wizard. Default: false'],
-	debug: ['--debug', 'Output debugging information'],
 	help: ['-h, --help', 'Show help'],
 	version: ['-v, --version', 'Output the version number'],
 	printRule: ['--print-rule (path::String)', 'Print the expected rule to be enforced on a given file'],
