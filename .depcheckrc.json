@@ -1,4 +1,4 @@
 {
-	"ignores": ["@commitlint/cli", "commitizen", "lint-staged", "cz-vinyl"],
+	"ignores": ["@commitlint/cli", "commitizen", "lint-staged", "cz-vinyl", "webpack-cli"],
 	"skipMissing": true
 }

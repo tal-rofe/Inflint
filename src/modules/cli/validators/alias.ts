@@ -1,19 +1,26 @@
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
-import { escapeRegex } from '@/utils/regex';
-
-import { aliasPipe } from '../pipes/alias';
 
 /**
  * The function returns whether an alias string is valid
  * @param input the string to validate
  * @returns boolean flag indicates the validity of the string
  */
-const isAliasValid = (input: string, colonDivider: string) => {
-	const escapedDivider = escapeRegex(colonDivider);
-	const regexString = `^.+${escapedDivider}.*([^\s]+).*$`;
-	const regex = new RegExp(regexString, 'i');
+const isAliasValid = (input: string) => {
+	let parsedAlias: Record<string, unknown>;
 
-	return regex.test(input);
+	try {
+		parsedAlias = JSON.parse(input);
+	} catch {
+		return false;
+	}
+
+	if (typeof parsedAlias !== 'object') {
+		return false;
+	}
+
+	const [aliasValue] = Object.values(parsedAlias);
+
+	return typeof aliasValue === 'string';
 };
 
 /**
@@ -24,26 +31,22 @@ const isAliasValid = (input: string, colonDivider: string) => {
  * @throws error message in case of invalid alias(es)
  */
 export const validateAliases = (
-	input?: string | ReadonlyArray<string>,
+	input?: unknown,
 	errorMessage?: string,
-	colonDivider?: string,
-) => {
+): Record<string, string> | undefined => {
 	if (input === undefined) {
 		return;
 	}
 
-	if (typeof input === 'string' && isAliasValid(input, colonDivider ?? ':')) {
-		return aliasPipe(input, colonDivider ?? ':');
+	if (typeof input === 'string' && isAliasValid(input)) {
+		return JSON.parse(input);
 	}
 
-	if (
-		Array.isArray(input) &&
-		input.every((item) => typeof item === 'string' && isAliasValid(item, colonDivider ?? ':'))
-	) {
-		return (input as ReadonlyArray<string>).reduce<Record<string, string>>((final, value) => {
+	if (Array.isArray(input) && input.every((item) => typeof item === 'string' && isAliasValid(item))) {
+		return input.reduce<Record<string, string>>((final, value) => {
 			return {
 				...final,
-				...aliasPipe(value, colonDivider ?? ':'),
+				...JSON.parse(value),
 			};
 		}, {});
 	}

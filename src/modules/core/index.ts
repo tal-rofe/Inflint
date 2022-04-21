@@ -3,9 +3,10 @@ import { IBaseConfiguration } from '@/interfaces/configuration';
 import { mergeAliases } from './utils/merge-aliases';
 
 const StartLinting = (configuration: IBaseConfiguration) => {
-	const allRules = mergeAliases(configuration.aliases);
+	const aliases = mergeAliases(configuration.aliases);
 
-	console.log(allRules);
+	console.log(aliases);
+	console.log(configuration);
 };
 
 export default StartLinting;

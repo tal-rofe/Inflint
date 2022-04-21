@@ -8,9 +8,9 @@ import { DEFAULT_ERROR_MESSAGE } from '../models/error';
  * @throws error message in case of invalid input
  */
 export const validateSringsArrayOrString = (
-	input?: string | ReadonlyArray<string>,
+	input?: unknown,
 	errorMessage?: string,
-) => {
+): ReadonlyArray<string> | undefined => {
 	if (input === undefined) {
 		return;
 	}
@@ -19,10 +19,7 @@ export const validateSringsArrayOrString = (
 		return [input];
 	}
 
-	if (
-		typeof input === 'string' ||
-		(Array.isArray(input) && input.every((item) => typeof item === 'string'))
-	) {
+	if (Array.isArray(input) && input.every((item) => typeof item === 'string')) {
 		return input;
 	}
 
@@ -36,16 +33,13 @@ export const validateSringsArrayOrString = (
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateSringsArray = (input?: ReadonlyArray<string>, errorMessage?: string) => {
+export const validateSringsArray = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
 	}
 
-	if (
-		typeof input === 'string' ||
-		(Array.isArray(input) && input.every((item) => typeof item === 'string'))
-	) {
-		return input;
+	if (Array.isArray(input) && input.every((item) => typeof item === 'string')) {
+		return input as ReadonlyArray<string>;
 	}
 
 	throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
@@ -58,20 +52,28 @@ export const validateSringsArray = (input?: ReadonlyArray<string>, errorMessage?
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateStringsObject = (input?: Record<string, string>, errorMessage?: string) => {
+export const validateStringsObject = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
 	}
 
+	if (!input || typeof input !== 'object') {
+		throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
+	}
+
 	if (Object.keys(input).length === 0) {
-		return input;
+		return input as Record<string, string>;
 	}
 
 	for (const key of Object.keys(input)) {
-		if (typeof key !== 'string' || !input[key] || typeof input[key] !== 'string') {
+		if (
+			typeof key !== 'string' ||
+			!(input as Record<string, unknown>)[key] ||
+			typeof (input as Record<string, unknown>)[key] !== 'string'
+		) {
 			throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
 		}
 	}
 
-	return input;
+	return input as Record<string, string>;
 };

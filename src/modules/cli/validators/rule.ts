@@ -1,21 +1,28 @@
+import { IRuleValue } from 'src/shared/interfaces/rule';
 import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
-import { escapeRegex } from '@/utils/regex';
-import { IRuleValue } from '@/interfaces/rule';
-
-import { rulePipe } from '../pipes/rule';
+import { isRuleEnforcementValid, isRuleArrayValid } from '@/validators/rule';
 
 /**
  * The function returns whether a rule string is valid
  * @param input the string to validate
  * @returns boolean flag indicates the validity of the string
  */
-const isRuleValid = (input: string, colonDivider: string, commaDivider: string) => {
-	const escapedColonDivider = escapeRegex(colonDivider);
-	const escapedCommaDivider = escapeRegex(commaDivider);
-	const regexString = `^.*[^\\s]+.*${escapedColonDivider}(\\s)*(1|2|warn|error|\\[(\\s)*(1|2|warn|error)(\\s)*(${escapedCommaDivider}(\\s)*[^\\s]+(\\s)*)?\\])(\\s)*$`;
-	const regex = new RegExp(regexString, 'i');
+const isRuleValid = (input: string) => {
+	let parsedRule: Record<string, unknown>;
 
-	return regex.test(input);
+	try {
+		parsedRule = JSON.parse(input);
+	} catch {
+		return false;
+	}
+
+	if (typeof parsedRule !== 'object') {
+		return false;
+	}
+
+	const [ruleValue] = Object.values(parsedRule);
+
+	return isRuleEnforcementValid(ruleValue) || (Array.isArray(ruleValue) && isRuleArrayValid(ruleValue));
 };
 
 /**
@@ -26,29 +33,22 @@ const isRuleValid = (input: string, colonDivider: string, commaDivider: string) 
  * @throws error message in case of invalid rule(s)
  */
 export const validateRules = (
-	input?: string | ReadonlyArray<string>,
+	input?: unknown,
 	errorMessage?: string,
-	colonDivider?: string,
-	commaDivider?: string,
-) => {
+): Record<string, IRuleValue> | undefined => {
 	if (input === undefined) {
 		return;
 	}
 
-	if (typeof input === 'string' && isRuleValid(input, colonDivider ?? ':', commaDivider ?? ',')) {
-		return rulePipe(input, colonDivider ?? ':', commaDivider ?? ',');
+	if (typeof input === 'string' && isRuleValid(input)) {
+		return JSON.parse(input);
 	}
 
-	if (
-		Array.isArray(input) &&
-		input.every(
-			(item) => typeof item === 'string' && isRuleValid(item, colonDivider ?? ':', commaDivider ?? ','),
-		)
-	) {
-		return (input as ReadonlyArray<string>).reduce<Record<string, IRuleValue>>((final, value) => {
+	if (Array.isArray(input) && input.every((item) => typeof item === 'string' && isRuleValid(item))) {
+		return input.reduce<Record<string, IRuleValue>>((final, value) => {
 			return {
 				...final,
-				...rulePipe(value, colonDivider ?? ':', commaDivider ?? ','),
+				...JSON.parse(value),
 			};
 		}, {});
 	}

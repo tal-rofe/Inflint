@@ -7,17 +7,9 @@ import { DEFAULT_ERROR_MESSAGE } from '../models/error';
  * @returns "undefined" if no input provided, the transformed input if is valid
  * @throws error message in case of invalid input
  */
-export const validateBail = (input?: number | boolean, errorMessage?: string) => {
+export const validateBail = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
-	}
-
-	if (typeof input !== 'number' && typeof input !== 'boolean') {
-		throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
-	}
-
-	if (typeof input === 'number' && (input < 0 || !Number.isSafeInteger(input))) {
-		throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
 	}
 
 	if (input === true) {
@@ -26,6 +18,10 @@ export const validateBail = (input?: number | boolean, errorMessage?: string) =>
 
 	if (input === false) {
 		return 0;
+	}
+
+	if (typeof input !== 'number' || input < 0 || !Number.isSafeInteger(input)) {
+		throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
 	}
 
 	return Math.round(input);

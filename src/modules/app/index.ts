@@ -1,4 +1,4 @@
-import { IBaseConfiguration } from '@/interfaces/configuration';
+import { IBaseConfiguration } from 'src/shared/interfaces/configuration';
 import { getCLIArgv } from '@/utils/argv';
 
 import StartCLI from '../cli';
@@ -17,7 +17,7 @@ const Bootstrap = async () => {
 
 	let lintingConfiguration: IBaseConfiguration;
 
-	if (configFromCLI?.inflintrc === false) {
+	if (configFromCLI.inflintrc === false) {
 		lintingConfiguration = configFromCLI;
 	} else {
 		const sourceResult = await StartConfiguration(configFromCLI?.configFilePath);

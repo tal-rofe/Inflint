@@ -20,10 +20,7 @@ export const printHelp = () => {
 
 	CLILoggerService.logDefault('Specifying rules and aliases:');
 	CLILoggerService.logSpaced(options.rule, 2, spaceBias - options.rule[0].length);
-	CLILoggerService.logSpaced(options.ruleColonDivider, 2, spaceBias - options.ruleColonDivider[0].length);
-	CLILoggerService.logSpaced(options.ruleCommaDivider, 2, spaceBias - options.ruleCommaDivider[0].length);
 	CLILoggerService.logSpaced(options.alias, 2, spaceBias - options.alias[0].length);
-	CLILoggerService.logSpaced(options.aliasColonDivider, 2, spaceBias - options.aliasColonDivider[0].length);
 	CLILoggerService.logEmptyBlock();
 
 	CLILoggerService.logDefault('Ignoring files:');

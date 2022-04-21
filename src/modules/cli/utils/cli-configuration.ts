@@ -1,11 +1,11 @@
 import type { ParsedArgs } from 'minimist';
 
+import { ICLIConfiguration } from 'src/shared/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
-import { validateBoolean, validateString, validateInteger } from '@/validators/basic';
+import { validateBoolean, validateString, validatePositiveInteger } from '@/validators/basic';
 import { validateSringsArrayOrString } from '@/validators/complex';
 import { validateBail } from '@/validators/bail';
 import { validateFormat } from '@/validators/format';
-import { ICLIConfiguration } from '@/interfaces/configuration';
 
 import { validateRules } from '../validators/rule';
 import { validateAliases } from '../validators/alias';
@@ -17,20 +17,8 @@ export const getConfiguration = (argv: ParsedArgs) => {
 			argv['c'] || argv['config'],
 			'Must provide string value to "-c, --config"',
 		),
-		rules: validateRules(
-			argv['rule'],
-			'Must provide valid syntax to "--rule"',
-			validateString(argv['rule-colon-divider'], 'Must provide string value to "--rule-colon-divider"'),
-			validateString(argv['rule-comma-divider'], 'Must provide string value to "--rule-comma-divider"'),
-		),
-		aliases: validateAliases(
-			argv['alias'],
-			'Must provide valid syntax to "--alias"',
-			validateString(
-				argv['alias-colon-divider'],
-				'Must provide string value to "--alias-colon-divider"',
-			),
-		),
+		rules: validateRules(argv['rule'], 'Must provide valid JSON syntax to "--rule"'),
+		aliases: validateAliases(argv['alias'], 'Must provide valid JSON syntax to "--alias"'),
 		ignoreFilePath: validateString(argv['ignore-path'], 'Must provide string value to "--ignore-path"'),
 		ignore: validateBoolean(argv['ignore'], 'Must provide boolean value to "--no-ignore"'),
 		ignorePatterns: validateSringsArrayOrString(
@@ -38,7 +26,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 			'Must provide string value to "--ignore-pattern"',
 		),
 		quiet: validateBoolean(argv['quiet'], 'Must provide boolean value to "--quiet"'),
-		maxWarnings: validateInteger(
+		maxWarnings: validatePositiveInteger(
 			argv['max-warnings'],
 			'Must provide >= 0 safe integer value to "--max-warnings"',
 		),

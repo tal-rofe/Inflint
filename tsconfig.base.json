@@ -26,12 +26,13 @@
 		"noUnusedParameters": true,
 		"baseUrl": "./",
 		"paths": {
-			"@/utils/*": ["src/utils/*"],
-			"@/models/*": ["src/models/*"],
-			"@/services/*": ["src/services/*"],
+			"@/utils/*": ["src/shared/utils/*"],
+			"@/models/*": ["src/shared/models/*"],
+			"@/services/*": ["src/shared/services/*"],
 			"@/modules/*": ["src/modules/*"],
-			"@/interfaces/*": ["src/interfaces/*"],
-			"@/validators/*": ["src/validators/*"]
+			"@/interfaces/*": ["src/shared/interfaces/*"],
+			"@/validators/*": ["src/shared/validators/*"],
+			"@/libs/*": ["src/libs/*"]
 		},
 		"typeRoots": ["./node_modules/@types", "./@types"]
 	}

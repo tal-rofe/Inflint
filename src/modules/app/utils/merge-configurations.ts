@@ -2,7 +2,7 @@ import path from 'path';
 
 import { cosmiconfig } from 'cosmiconfig';
 
-import { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/configuration';
+import { IBaseConfiguration, ISourceConfiguration } from 'src/shared/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
 import CLILoggerService from '@/services/cli-logger';
 import { validateConfiguration } from '@/modules/configuration/validators/configuration';
@@ -38,6 +38,12 @@ export const mergeConfigurations = (
 	});
 };
 
+/**
+ * The function merges configurations with respect to "extends" value
+ * @param config the first configuration
+ * @param configPath the path to second configuration
+ * @returns merged configurations
+ */
 export const recurseSourceConfiguration = async (
 	config: ISourceConfiguration,
 	configPath: string,

@@ -7,7 +7,7 @@ import { DEFAULT_ERROR_MESSAGE } from '@/models/error';
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateBoolean = (input?: boolean, errorMessage?: string) => {
+export const validateBoolean = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
 	}
@@ -26,7 +26,7 @@ export const validateBoolean = (input?: boolean, errorMessage?: string) => {
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateString = (input?: string, errorMessage?: string) => {
+export const validateString = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
 	}
@@ -45,7 +45,7 @@ export const validateString = (input?: string, errorMessage?: string) => {
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateInteger = (input?: number, errorMessage?: string) => {
+export const validatePositiveInteger = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
 	}
