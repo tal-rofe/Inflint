@@ -13,7 +13,7 @@ export const isDirectory = async (directoryPath: string) => {
 
 		return stats.isDirectory();
 	} catch {
-		CLILoggerModule.service.error(`Failed not find path "${directoryPath}"`);
+		CLILoggerModule.service.error(`Path not found "${directoryPath}"`);
 
 		process.exit(1);
 	}
