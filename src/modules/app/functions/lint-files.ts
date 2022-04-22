@@ -51,10 +51,13 @@ export const lintFiles = async (
 	const ignorePatterns = configuration.ignorePatterns;
 
 	for (const file of files as string[]) {
-		const fileAbsolutePath = path.join(process.cwd(), file);
+		const fileAbsolutePath = path.resolve(file);
+		const filePathToCheck = path.relative(process.cwd(), file).split(path.sep).join('/');
+
+		CLILoggerModule.service.bold(filePathToCheck);
 
 		if (ignorePatterns && ignorePatterns.length !== 0) {
-			const isMatchedByIgnore = micromatch.isMatch(file, ignorePatterns);
+			const isMatchedByIgnore = micromatch.isMatch(filePathToCheck, ignorePatterns);
 
 			if (isMatchedByIgnore) {
 				continue;
@@ -75,13 +78,13 @@ export const lintFiles = async (
 				break;
 			}
 
-			const isMatchedByRuleKey = micromatch.isMatch(file, ruleKey, {
+			const isMatchedByRuleKey = micromatch.isMatch(filePathToCheck, ruleKey, {
 				nocase: ruleOptions.caseSensitiveMatch === false,
 				dot: ruleOptions.dot ?? true,
 			});
 
 			if (!isMatchedByRuleKey) {
-				break;
+				continue;
 			}
 
 			const isExistenceError = checkExistenceError(ruleValue);
@@ -91,7 +94,7 @@ export const lintFiles = async (
 
 			if (isExistenceError) {
 				const details = {
-					filePath: fileAbsolutePath,
+					filePath: filePathToCheck,
 					key: ruleKey,
 					isFolder: isPathDirectory,
 				};
@@ -111,7 +114,7 @@ export const lintFiles = async (
 				}
 			} else if (configuration.quiet !== true && isExistenceWarning) {
 				const details = {
-					filePath: fileAbsolutePath,
+					filePath: filePathToCheck,
 					key: ruleKey,
 					isFolder: isPathDirectory,
 				};
@@ -136,9 +139,9 @@ export const lintFiles = async (
 				let validationInput: string;
 
 				if (isPathDirectory) {
-					validationInput = path.parse(file).base;
+					validationInput = path.parse(filePathToCheck).base;
 				} else {
-					validationInput = path.parse(file).name;
+					validationInput = path.parse(filePathToCheck).name;
 				}
 
 				const isValid = ruleAliasFunction(validationInput);
@@ -148,7 +151,7 @@ export const lintFiles = async (
 				}
 
 				const details = {
-					filePath: fileAbsolutePath,
+					filePath: filePathToCheck,
 					key: ruleKey,
 					isFolder: isPathDirectory,
 					alias: ruleAlias,
@@ -174,9 +177,9 @@ export const lintFiles = async (
 				let validationInput: string;
 
 				if (isPathDirectory) {
-					validationInput = path.parse(file).base;
+					validationInput = path.parse(filePathToCheck).base;
 				} else {
-					validationInput = path.parse(file).name;
+					validationInput = path.parse(filePathToCheck).name;
 				}
 
 				const isValid = ruleAliasFunction(validationInput);
@@ -186,7 +189,7 @@ export const lintFiles = async (
 				}
 
 				const details = {
-					filePath: fileAbsolutePath,
+					filePath: filePathToCheck,
 					key: ruleKey,
 					isFolder: isPathDirectory,
 					alias: ruleAlias,
