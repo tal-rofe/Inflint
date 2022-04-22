@@ -54,8 +54,6 @@ export const lintFiles = async (
 		const fileAbsolutePath = path.resolve(file);
 		const filePathToCheck = path.relative(process.cwd(), file).split(path.sep).join('/');
 
-		CLILoggerModule.service.bold(filePathToCheck);
-
 		if (ignorePatterns && ignorePatterns.length !== 0) {
 			const isMatchedByIgnore = micromatch.isMatch(filePathToCheck, ignorePatterns);
 

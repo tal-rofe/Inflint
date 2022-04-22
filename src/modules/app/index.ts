@@ -1,5 +1,4 @@
 import { IBaseConfiguration } from '@/interfaces/configuration';
-import CLILoggerModule from '@/shared/modules/cli-logger';
 import { getCLIArgv } from '@/utils/argv';
 
 import StartCLI from '../cli';
@@ -54,8 +53,6 @@ const Bootstrap = async () => {
 
 		process.exit(exitCode);
 	}
-
-	CLILoggerModule.service.default('$ inflint\n');
 
 	await StartLinting(lintingConfiguration, aliases);
 };
