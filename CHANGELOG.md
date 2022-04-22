@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.2...v1.1.3) (2022-04-22)
+
+
+### Bug Fixes
+
+* 🐞 fix log flaw ([bc37c00](https://github.com/Vinyl-Depository/Inflint/commit/bc37c00b6ee167c8cea3498c79f510039367c427))
+
 ## [1.1.2](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.1...v1.1.2) (2022-04-22)
 
 
