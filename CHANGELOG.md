@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.0...v1.1.1) (2022-04-22)
+
+
+### Bug Fixes
+
+* 🐞 added binary ([04934a1](https://github.com/Vinyl-Depository/Inflint/commit/04934a1161d7d2a52076cd8aab6a8211b8cf8adb))
+
 # [1.1.0](https://github.com/Vinyl-Depository/Inflint/compare/v1.0.0...v1.1.0) (2022-04-22)
 
 
