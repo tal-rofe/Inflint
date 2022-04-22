@@ -8,3 +8,4 @@ czvinyl.config.js
 webpack.config.js
 dist
 scripts
+bin
