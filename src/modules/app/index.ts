@@ -38,7 +38,7 @@ const Bootstrap = async () => {
 	if (lintingConfiguration.ignore === false) {
 		delete lintingConfiguration['ignorePatterns'];
 	} else {
-		const ignorePatternsFromFile = await readIgnoreFile(lintingConfiguration.ignoreFilePath);
+		const ignorePatternsFromFile = await readIgnoreFile(lintingConfiguration.ignorePath);
 
 		lintingConfiguration = mergeConfigurations(lintingConfiguration, {
 			ignorePatterns: ignorePatternsFromFile,

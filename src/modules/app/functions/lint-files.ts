@@ -38,8 +38,8 @@ export const lintFiles = async (
 	if (!rules) {
 		CLILoggerModule.service.lintSummary(0, 0);
 
-		if (configuration.outputFilePath) {
-			await outputFile(configuration.outputFilePath, [], []);
+		if (configuration.outputFile) {
+			await outputFile(configuration.outputFile, [], []);
 		}
 
 		return 0;
@@ -106,8 +106,8 @@ export const lintFiles = async (
 				if (errors.length === configuration.bail) {
 					CLILoggerModule.service.lintSummary(errors.length, warnings.length);
 
-					if (configuration.outputFilePath) {
-						await outputFile(configuration.outputFilePath, errors, warnings);
+					if (configuration.outputFile) {
+						await outputFile(configuration.outputFile, errors, warnings);
 					}
 
 					return 1;
@@ -126,8 +126,8 @@ export const lintFiles = async (
 				if (warnings.length === configuration.maxWarnings) {
 					CLILoggerModule.service.lintSummary(errors.length, warnings.length);
 
-					if (configuration.outputFilePath) {
-						await outputFile(configuration.outputFilePath, errors, warnings);
+					if (configuration.outputFile) {
+						await outputFile(configuration.outputFile, errors, warnings);
 					}
 
 					return 1;
@@ -164,8 +164,8 @@ export const lintFiles = async (
 				if (errors.length === configuration.bail) {
 					CLILoggerModule.service.lintSummary(errors.length, warnings.length);
 
-					if (configuration.outputFilePath) {
-						await outputFile(configuration.outputFilePath, errors, warnings);
+					if (configuration.outputFile) {
+						await outputFile(configuration.outputFile, errors, warnings);
 					}
 
 					return 1;
@@ -202,8 +202,8 @@ export const lintFiles = async (
 				if (warnings.length === configuration.maxWarnings) {
 					CLILoggerModule.service.lintSummary(errors.length, warnings.length);
 
-					if (configuration.outputFilePath) {
-						await outputFile(configuration.outputFilePath, errors, warnings);
+					if (configuration.outputFile) {
+						await outputFile(configuration.outputFile, errors, warnings);
 					}
 
 					return 1;
@@ -214,8 +214,8 @@ export const lintFiles = async (
 
 	CLILoggerModule.service.lintSummary(errors.length, warnings.length);
 
-	if (configuration.outputFilePath) {
-		await outputFile(configuration.outputFilePath, errors, warnings);
+	if (configuration.outputFile) {
+		await outputFile(configuration.outputFile, errors, warnings);
 	}
 
 	return 0;

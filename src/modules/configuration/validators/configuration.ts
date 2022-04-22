@@ -14,9 +14,9 @@ export const validateConfiguration = (configuration: Record<string, unknown>) =>
 			extends: validateString(configuration['extends'], 'Must provide a string value "extends"'),
 			rules: validateRules(configuration['rules']),
 			aliases: validateAliases(configuration['aliases']),
-			ignoreFilePath: validateString(
-				configuration['ignoreFilePath'],
-				'Must provide a string value to "ignoreFilePath"',
+			ignorePath: validateString(
+				configuration['ignorePath'],
+				'Must provide a string value to "ignorePath"',
 			),
 			ignore: validateBoolean(configuration['ignore'], 'Must provide a boolean value to "ignore"'),
 			ignorePatterns: validateSringsArray(configuration['ignorePatterns']),
@@ -29,7 +29,7 @@ export const validateConfiguration = (configuration: Record<string, unknown>) =>
 				configuration['bail'],
 				'Must provide >=0 safe integer or boolean value to "--bail"',
 			),
-			outputFilePath: validateString(
+			outputFile: validateString(
 				configuration['outputFile'],
 				'Must provide a string value to "outputFile"',
 			),

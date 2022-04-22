@@ -18,7 +18,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 		),
 		rules: validateRules(argv['rule'], 'Must provide valid JSON syntax to "--rule"'),
 		aliases: validateAliases(argv['alias'], 'Must provide valid JSON syntax to "--alias"'),
-		ignoreFilePath: validateString(argv['ignore-path'], 'Must provide string value to "--ignore-path"'),
+		ignorePath: validateString(argv['ignore-path'], 'Must provide string value to "--ignore-path"'),
 		ignore: validateBoolean(argv['ignore'], 'Must provide boolean value to "--no-ignore"'),
 		ignorePatterns: validateSringsArrayOrString(
 			argv['ignore-pattern'],
@@ -30,7 +30,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 			'Must provide >= 0 safe integer value to "--max-warnings"',
 		),
 		bail: validateBail(argv['bail'], 'Must provide >=0 safe integer or boolean value to "--bail"'),
-		outputFilePath: validateString(
+		outputFile: validateString(
 			argv['o'] || argv['output-file'],
 			'Must provide string value to "-o, --output-file"',
 		),

@@ -4,13 +4,13 @@ import { IRuleValue } from './rule';
 export interface IBaseConfiguration {
 	readonly rules?: Record<string, IRuleValue>;
 	readonly aliases?: Record<string, IAliasValue>;
-	readonly ignoreFilePath?: string;
+	readonly ignorePath?: string;
 	readonly ignore?: boolean;
 	ignorePatterns?: string[];
 	readonly quiet?: boolean;
 	readonly maxWarnings?: number;
 	readonly bail?: number;
-	readonly outputFilePath?: string;
+	readonly outputFile?: string;
 }
 
 export interface ICLIConfiguration extends IBaseConfiguration {

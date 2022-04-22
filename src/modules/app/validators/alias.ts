@@ -39,7 +39,7 @@ export const validatePascalCase = (input: string) => {
 };
 
 /**
- * The function validates a given input is in "PascalCase.point" format
+ * The function validates a given input is in "PascalCase.Point" format
  * @param input the input to validate
  * @returns a boolean flag indicates whether the input is valid
  */
@@ -75,7 +75,7 @@ export const validateScreamingSnakeCase = (input: string) => {
 };
 
 /**
- * The function validates a given input is in "SCREAMING_SNAKE_CASE.point" format
+ * The function validates a given input is in "SCREAMING_SNAKE_CASE.POINT" format
  * @param input the input to validate
  * @returns a boolean flag indicates whether the input is valid
  */
