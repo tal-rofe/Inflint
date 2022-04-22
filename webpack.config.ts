@@ -1,12 +1,12 @@
-const path = require('path');
+import path from 'path';
 
-const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+import webpack from 'webpack';
+import nodeExternals from 'webpack-node-externals';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
-const { version } = require('./package.json');
+import { version } from './package.json';
 
-module.exports = {
+const configuration: webpack.Configuration = {
 	mode: 'production',
 	target: 'node',
 	entry: './src/index.ts',
@@ -50,3 +50,5 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 	},
 };
+
+export default configuration;
