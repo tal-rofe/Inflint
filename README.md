@@ -28,8 +28,6 @@ npm install --global inflint
 npm install --save-dev inflint
 ```
 
-Add this to your `package.json`:
-
 ## Usage
 
 ```sh
@@ -85,7 +83,7 @@ You can set options for any rule, in order to get some customization.
 - `caseSensitiveMatch`: Boolean (default: `true`)
 
   Enables a case-sensitive mode for matching files.
-  
+
 ### File names conventions
 You can set file names conventions rules using known ones. Inflint allows you to set the following:
 | Convention                 | Alias                        | Description                                                                                       | 
