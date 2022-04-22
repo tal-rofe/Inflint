@@ -12,7 +12,7 @@ Inflint allows you to easily set file names convention in your repository.
 
 ## Demo
 
-![inflint](assets/basic-demo.gif)
+![Inflint](assets/basic-demo.gif)
 
 ## Installation
 
