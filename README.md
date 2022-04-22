@@ -2,7 +2,7 @@
 
 # Inflint
 
-> Inflint is a tool which scans and verifies file name conventions.
+> Inflint is a tool which scans and verifies files and folders name conventions.
 
 Inflint allows you to easily set file names convention in your repository.
 
