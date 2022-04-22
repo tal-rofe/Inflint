@@ -156,7 +156,7 @@ The JSON should follow the aliases format described above.
 ## Examples
 
 -   [landing-page](https://github.com/Vinyl-Depository/landing-page)
--   [landing-page](https://github.com/Vinyl-Depository/inflint)
+-   [inflint](https://github.com/Vinyl-Depository/inflint)
 -   [cz-vinyl](https://github.com/Vinyl-Depository/cz-vinyl)
 
 ## Support
