@@ -17,7 +17,7 @@ module.exports = {
 	},
 	plugins: ['@typescript-eslint', 'unused-imports', 'node', 'import'],
 	rules: {
-		'max-lines': ['error', { max: 100, skipBlankLines: true, skipComments: true }],
+		'max-lines': ['error', { max: 200, skipBlankLines: true, skipComments: true }],
 		'indent': ['error', 'tab'],
 		'quotes': ['error', 'single', { avoidEscape: true }],
 		'semi': ['error', 'always'],

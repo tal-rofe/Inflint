@@ -1,5 +1,3 @@
-/* eslint-disable max-lines */
-
 import path from 'path';
 
 import fg from 'fast-glob';
