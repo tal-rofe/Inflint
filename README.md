@@ -65,6 +65,27 @@ Rules enforcement format:
   **Example1**: `{ 'src/**/*': [1, { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files inside `src` folder (and ignores folders if there are)<br />
   **Example2**: `{ 'src/**/*': [1, 'point.case', { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files with "point-case" convention name inside `src` folder (and ignores folders if there are)
 
+
+> If you provide unknown convention which isn't a readymade one or a configured alias, Inflint will consider the "convention" as regex.
+
+### Rule option
+You can set options for any rule, in order to get some customization.
+- `onlyDirectories`: Boolean (default: `false`)
+  
+  Inflint will check the rule with directories only. Will skip files.
+
+- `onlyFiles`: Boolean (default: `false`)
+
+  Inflint will check the rule with files only. Will skip directories.
+
+- `dot`: Boolean (default: `true`)
+
+  Allow Inflint to match files and directories that begin with a period (.)
+
+- `caseSensitiveMatch`: Boolean (default: `true`)
+
+  Enables a case-sensitive mode for matching files.
+  
 ### File names conventions
 You can set file names conventions rules using known ones. Inflint allows you to set the following:
 | Convention                 | Alias                        | Description                                                                                       | 
