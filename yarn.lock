@@ -2241,10 +2241,10 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inflint@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/inflint/-/inflint-1.1.1.tgz#69b908fafd48a142a8e9ce73310b419230f542ea"
-  integrity sha512-4R1Ia0EwSsT2CTu8q/2/4TAM9IoVlWGVYPRdPILlE8B1AzUWX2SVSfis01tAUPr5GezWwsgcVkMZh6gkJe7+9w==
+inflint@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/inflint/-/inflint-1.1.4.tgz#1c3b42320a9f2788a34f9e837ece7ffaed85f04f"
+  integrity sha512-S4DIa9JRYOqIqNfNmHeYXjcsG4uilq8ZsIGxZPmwMmWDrA4MlUPKF7zYHjkaP3njPI4YlMxZVj+sNPxfBgjC4g==
   dependencies:
     "@expo/spawn-async" "1.6.0"
     cosmiconfig "7.0.1"
