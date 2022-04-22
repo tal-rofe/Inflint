@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.3...v1.1.4) (2022-04-22)
+
+
+### Bug Fixes
+
+* 🐞 fix missing exit code when having errors ([e8bec1d](https://github.com/Vinyl-Depository/Inflint/commit/e8bec1d09295049329e9c24c15101f2f893a134c))
+
 ## [1.1.3](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.2...v1.1.3) (2022-04-22)
 
 
