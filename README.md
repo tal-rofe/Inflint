@@ -55,12 +55,16 @@ When applying rules either via the CLI or other conifguration, you must follow t
 Each rule has key and value. The key represents the glob pattern. When a file matches the pattern, it will be enfocred by the rule.
 They rule value represents the rule enforcement.
 Rules enforcement format:
-- Set rules of files-existence: `1 | 2 | 'warn' | 'error' | [1] | [2] | ['warn'] | ['error']`<br />
+- Set rules of files-existence: `1 | 2 | 'warn' | 'error' | [1] | [2] | ['warn'] | ['error']`
+
   **Example**: `{ 'src/**/*': 2 }` &rarr; Inflint will emit error if there are any files/folders inside `src` folder
-- Set rules to match file names conventions: `[1, <convention>] | [2, <convention>] | ['warn', <convention>]| ['error', <convention>]`<br />
+- Set rules to match file names conventions: `[1, <convention>] | [2, <convention>] | ['warn', <convention>]| ['error', <convention>]`
+
   **Example**: `{ 'src/**/*': [1, 'kebab-case'] }` &rarr; Inflint will emit error if there are any files/folder with "kebab-case" convention name inside `src` folder
-- Set rules options: `[1, <convention>(optional), <options>] | [2, <convention>(optional), <options>] | ['warn', <convention>(optional), <options>] | ['error', <convention>(optional), <options>]`<br />
-  **Example1**: `{ 'src/**/*': [1, { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files inside `src` folder (and ignores folders if there are)<br />
+- Set rules options: `[1, <convention>(optional), <options>] | [2, <convention>(optional), <options>] | ['warn', <convention>(optional), <options>] | ['error', <convention>(optional), <options>]`
+
+  **Example1**: `{ 'src/**/*': [1, { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files inside `src` folder (and ignores folders if there are)
+  
   **Example2**: `{ 'src/**/*': [1, 'point.case', { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files with "point-case" convention name inside `src` folder (and ignores folders if there are)
 
 
@@ -103,21 +107,25 @@ You can set file names conventions rules using known ones. Inflint allows you to
 
 ### CLI Rules
 When adding rules via the CLI, you need to provide a valid JSON for the `--rule` argument. You can provide multiple rules.
-The JSON should follow the rules format described above.<br />
+The JSON should follow the rules format described above.
+
 **Example**: `inflint --rule "{ \"src/**/*\": [1] }"`
 
 ### Aliases
 You can use the readymade conventions, or you can add your own by applying aliases, via the CLI or other configuration.
 To use the aliases, simply use the alias name as you would use readymade convention.
 Aliases should be applied with the following format:
-- `<alias_name>: <regex>` Inflint will apply the alias name to match the provided regex.<br />
+- `<alias_name>: <regex>` Inflint will apply the alias name to match the provided regex.
+
   **Example**: Applying the alias `{ myAlias: '^.*$' }` and the rule `{ 'src/**/*': [2, 'myAlias'] }` &rarr; Inflint will match any file/folder in `src` directory and validates the provided regex matches it.
-- `<alias_name>: [<regex>, <regex_flags>]` Inflint will apply the alias name to match the provided regex with given flags.<br />
+- `<alias_name>: [<regex>, <regex_flags>]` Inflint will apply the alias name to match the provided regex with given flags.
+
   **Example**: `{ myAlias: ['^.*$', 'i'] }` &rarr; Any rule applied with `myAlias` alias will try to match file names by the provided regex and the `i` regex flag.
 
 ### CLI Aliases
 When adding aliases via the CLI, you need to provide a valid JSON for the `--alias` argument. You can provide multiple aliases.
-The JSON should follow the aliases format described above.<br />
+The JSON should follow the aliases format described above.
+
 **Example**: `inflint --alias "{ \"myAlias\": \"^\\.\" }"`
 
 > You can escape aliases regex with in the CLI if you prefix character with `\\`.
