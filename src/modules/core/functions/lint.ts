@@ -199,4 +199,8 @@ export const lint = async (
 	if (configuration.outputFile) {
 		await outputFile(configuration.outputFile, errors, warnings);
 	}
+
+	if (errors.length > 0) {
+		process.exit(1);
+	}
 };

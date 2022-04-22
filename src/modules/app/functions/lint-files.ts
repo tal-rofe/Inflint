@@ -216,5 +216,9 @@ export const lintFiles = async (
 		await outputFile(configuration.outputFile, errors, warnings);
 	}
 
+	if (errors.length > 0) {
+		return 1;
+	}
+
 	return 0;
 };
