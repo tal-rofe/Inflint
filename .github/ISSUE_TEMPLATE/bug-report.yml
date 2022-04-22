@@ -1,52 +1,58 @@
-name: Bug Report
-description: Report a bug
-
+name: "\U0001F41E Report a problem"
+description: 'Report an issue with Inflint'
+title: 'Bug: (fill in)'
+labels:
+    - bug
 body:
-    - type: dropdown
-      id: is-regression
+    - type: textarea
       attributes:
-          label: Is this a regression?
+          label: Environment
+          description: |
+              Please tell us about how you're running Inflint (Run `npx inflint --env-info`.)
+          value: |
+              Node version:
+              npm version:
+              Local Inflint version:
+              Global Inflint version:
+              Operating System:
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: What did you do?
+          description: |
+              Please include a *minimal* reproduction case. Otherwise, include source code, configuration file(s), and any other information about how you're using Inflint. You can use Markdown in this field.
+          value: |
+              <details>
+              <summary>Configuration</summary>
+
+              ```
+              <!-- Paste your configuration here -->
+              ```
+              </details>
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: What did you expect to happen?
+          description: |
+              You can use Markdown in this field.
+      validations:
+          required: true
+    - type: textarea
+      attributes:
+          label: What actually happened?
+          description: |
+              Please copy-paste the actual Inflint output. You can use Markdown in this field.
+      validations:
+          required: true
+    - type: checkboxes
+      attributes:
+          label: Participation
           options:
-              - 'Yes'
-              - 'No'
-      validations:
-          required: true
-
+              - label: I am willing to submit a pull request for this issue.
+                required: false
     - type: textarea
-      id: description
       attributes:
-          label: Description
-      validations:
-          required: true
-
-    - type: input
-      id: reproduction
-      attributes:
-          label: Please provide a link to a minimal reproduction of the bug
-
-    - type: textarea
-      id: exception-or-error
-      attributes:
-          label: Please provide the exception or error you saw
-          render: true
-
-    - type: textarea
-      id: environment
-      attributes:
-          label: Please provide the environment you discovered this bug in
-          render: true
-
-    - type: textarea
-      id: other
-      attributes:
-          label: Anything else?
-
-    - type: dropdown
-      id: contribute
-      attributes:
-          label: Do you want to create a pull request?
-          options:
-              - 'Yes'
-              - 'No'
-      validations:
-          required: true
+          label: Additional comments
+          description: Is there anything else that's important for the team to know?

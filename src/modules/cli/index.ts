@@ -6,6 +6,7 @@ import { printHelp } from './functions/help';
 import { printVersion } from './functions/version';
 import { initConfiguration } from './functions/init';
 import { getConfiguration } from './utils/cli-configuration';
+import { printEnvironmentInfo } from './functions/env-info';
 
 /**
  * The function begins the CLI process
@@ -27,6 +28,12 @@ const StartCLI = (argv: ParsedArgs) => {
 
 	if (argv['init'] === true) {
 		initConfiguration();
+
+		return null;
+	}
+
+	if (argv['env-info'] === true) {
+		printEnvironmentInfo();
 
 		return null;
 	}

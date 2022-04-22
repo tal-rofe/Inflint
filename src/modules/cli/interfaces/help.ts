@@ -13,4 +13,5 @@ export type IOptionsKeys =
 	| 'color'
 	| 'init'
 	| 'help'
-	| 'version';
+	| 'version'
+	| 'envVersions';

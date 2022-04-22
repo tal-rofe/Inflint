@@ -25,4 +25,5 @@ export const options: Record<IOptionsKeys, [string, string]> = {
 	init: ['--init', 'Run configuration initialization wizard. Default: false'],
 	help: ['-h, --help', 'Show help'],
 	version: ['-v, --version', 'Output the version number'],
+	envVersions: ['--env-info', 'Output the environment version'],
 };
