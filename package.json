@@ -49,12 +49,14 @@
 		"cosmiconfig": "7.0.1",
 		"fast-glob": "3.2.11",
 		"inquirer": "8.2.2",
+		"micromatch": "4.0.5",
 		"minimist": "1.2.6",
 		"yaml": "2.0.1"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "16.2.3",
 		"@types/inquirer": "8.2.1",
+		"@types/micromatch": "4.0.2",
 		"@types/minimist": "1.2.2",
 		"@typescript-eslint/eslint-plugin": "5.20.0",
 		"@typescript-eslint/parser": "5.20.0",

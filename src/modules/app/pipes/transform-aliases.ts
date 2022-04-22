@@ -1,6 +1,6 @@
 import { IAliasValue } from '@/interfaces/alias';
 
-import { ITransformedAliases } from '../interfaces/aliases';
+import { ITransformedAliases } from '@/interfaces/alias-function';
 
 /**
  * The function recieves aliases and transforms each value to regex function

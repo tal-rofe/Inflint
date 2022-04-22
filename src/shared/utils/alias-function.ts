@@ -1,4 +1,4 @@
-import { IMappedFunction } from '../interfaces/aliases';
+import { IMappedFunction } from '../interfaces/alias-function';
 
 export const getAliasFunction = (ruleAlias: string, functions: Record<string, IMappedFunction>) => {
 	const func = functions[ruleAlias];

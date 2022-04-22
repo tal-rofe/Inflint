@@ -21,10 +21,8 @@ export const options: Record<IOptionsKeys, [string, string]> = {
 		'Number of failures (errors) to make Inflint to exit. Setting "bail" to true is the same as setting "1". Default: 0',
 	],
 	outputFile: ['-o, --output-file (path::String)', 'Specify file to write report to'],
-	format: ['-f, --format (String)', 'Use a specific output format. Default: "stylish"'],
 	color: ['--color, --no-color', 'Force enabling/disabling of color'],
 	init: ['--init', 'Run configuration initialization wizard. Default: false'],
 	help: ['-h, --help', 'Show help'],
 	version: ['-v, --version', 'Output the version number'],
-	printRule: ['--print-rule (path::String)', 'Print the expected rule to be enforced on a given file'],
 };

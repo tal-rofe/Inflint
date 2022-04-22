@@ -32,7 +32,7 @@
 			"@/modules/*": ["src/modules/*"],
 			"@/interfaces/*": ["src/shared/interfaces/*"],
 			"@/validators/*": ["src/shared/validators/*"],
-			"@/libs/*": ["src/libs/*"],
+			"@/functions/*": ["src/shared/functions/*"],
 			"@/shared/*": ["src/shared/*"]
 		},
 		"typeRoots": ["./node_modules/@types", "./@types"]

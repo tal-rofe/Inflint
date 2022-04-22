@@ -1,5 +1,5 @@
-import { IRuleOptions, IRuleValue } from '@/interfaces/rule';
-import { withCleanObject } from '@/utils/object';
+import { IRuleOptions, IRuleValue } from '../interfaces/rule';
+import { withCleanObject } from './object';
 
 /**
  * The function returns the rule options, empty object is there are no options

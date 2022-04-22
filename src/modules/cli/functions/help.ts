@@ -40,7 +40,6 @@ export const printHelp = () => {
 
 	CLILoggerModule.service.bold('Output:');
 	CLILoggerModule.service.spaced(options.outputFile, 2, spaceBias - options.outputFile[0].length);
-	CLILoggerModule.service.spaced(options.format, 2, spaceBias - options.format[0].length);
 	CLILoggerModule.service.spaced(options.color, 2, spaceBias - options.color[0].length);
 	CLILoggerModule.service.emptyBlock();
 
@@ -48,7 +47,6 @@ export const printHelp = () => {
 	CLILoggerModule.service.spaced(options.init, 2, spaceBias - options.init[0].length);
 	CLILoggerModule.service.spaced(options.help, 2, spaceBias - options.help[0].length);
 	CLILoggerModule.service.spaced(options.version, 2, spaceBias - options.version[0].length);
-	CLILoggerModule.service.spaced(options.printRule, 2, spaceBias - options.printRule[0].length);
 	CLILoggerModule.service.emptyBlock();
 
 	CLILoggerModule.service.bold('Inflint documentation:');

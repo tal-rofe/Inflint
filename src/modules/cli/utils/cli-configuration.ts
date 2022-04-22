@@ -5,7 +5,6 @@ import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateString, validatePositiveInteger } from '@/validators/basic';
 import { validateSringsArrayOrString } from '@/validators/complex';
 import { validateBail } from '@/validators/bail';
-import { validateFormat } from '@/validators/format';
 
 import { validateRules } from '../validators/rule';
 import { validateAliases } from '../validators/alias';
@@ -35,9 +34,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 			argv['o'] || argv['output-file'],
 			'Must provide string value to "-o, --output-file"',
 		),
-		format: validateFormat(argv['f'] || argv['format'], 'Must provide valid format to "-f, --format"'),
 		color: validateBoolean(argv['color'], 'Must provide boolean value to "--color"'),
-		printRuleFilePath: validateString(argv['print-rule'], 'Must provide string value to "--print-rule"'),
 	});
 
 	return configuration;

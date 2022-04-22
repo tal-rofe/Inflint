@@ -4,7 +4,6 @@ import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validatePositiveInteger, validateString } from '@/validators/basic';
 import { validateSringsArray } from '@/validators/complex';
 import { validateBail } from '@/validators/bail';
-import { validateFormat } from '@/validators/format';
 
 import { validateRules } from './rule';
 import { validateAliases } from './alias';
@@ -31,10 +30,9 @@ export const validateConfiguration = (configuration: Record<string, unknown>) =>
 				'Must provide >=0 safe integer or boolean value to "--bail"',
 			),
 			outputFilePath: validateString(
-				configuration['outputFilePath'],
-				'Must provide a string value to "outputFilePath"',
+				configuration['outputFile'],
+				'Must provide a string value to "outputFile"',
 			),
-			format: validateFormat(configuration['format'], 'Must provide a valid format value to "format"'),
 		});
 
 		return finalConfiguration;

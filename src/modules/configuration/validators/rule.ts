@@ -25,6 +25,10 @@ export const validateRules = (input?: unknown) => {
 			throw new Error(`All rules keys must be valid. Found invalid: ${key}`);
 		}
 
+		if (!key) {
+			throw new Error('All rules keys must be valid. Found empty rule key');
+		}
+
 		const ruleValue = (input as Record<string, unknown>)[key];
 
 		const isValidValue =

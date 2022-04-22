@@ -10,9 +10,7 @@ export type IOptionsKeys =
 	| 'maxWarnings'
 	| 'bail'
 	| 'outputFile'
-	| 'format'
 	| 'color'
 	| 'init'
 	| 'help'
-	| 'version'
-	| 'printRule';
+	| 'version';

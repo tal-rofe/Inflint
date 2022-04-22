@@ -5,6 +5,8 @@ import { getCLIArgv } from '@/utils/argv';
 import StartCLI from '../cli';
 import StartConfiguration from '../configuration';
 import StartLinting from '../core';
+import { lintFiles } from './functions/lint-files';
+import { mergeAliases } from './utils/merge-aliases';
 import { recurseSourceConfiguration, mergeConfigurations } from './utils/merge-configurations';
 import { readIgnoreFile } from './utils/read-ignore-file';
 
@@ -43,9 +45,19 @@ const Bootstrap = async () => {
 		});
 	}
 
-	CLILoggerModule.service.info('Inflint is running..\n');
+	const argvFiles = argv['_'];
 
-	await StartLinting(lintingConfiguration);
+	const aliases = mergeAliases(lintingConfiguration.aliases);
+
+	if (argvFiles.length !== 0) {
+		const exitCode = await lintFiles(argvFiles, lintingConfiguration, aliases);
+
+		process.exit(exitCode);
+	}
+
+	CLILoggerModule.service.default('$ inflint\n');
+
+	await StartLinting(lintingConfiguration, aliases);
 };
 
 export default Bootstrap;

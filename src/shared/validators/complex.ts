@@ -35,7 +35,7 @@ export const validateSringsArray = (input?: unknown, errorMessage?: string) => {
 		return;
 	}
 
-	if (Array.isArray(input) && input.every((item) => typeof item === 'string')) {
+	if (Array.isArray(input) && input.every((item) => item && typeof item === 'string')) {
 		return input as string[];
 	}
 

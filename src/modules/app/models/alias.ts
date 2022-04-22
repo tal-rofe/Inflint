@@ -1,9 +1,11 @@
 import {
 	validateCamelCase,
+	validateCamelCasePoint,
 	validateKebabCase,
 	validateKebabCasePoint,
 	validateLowerCase,
 	validatePascalCase,
+	validatePascalCasePoint,
 	validatePointCase,
 	validateScreamingSnakeCase,
 	validateScreamingSnakeCasePoint,
@@ -14,9 +16,9 @@ import {
 export const DEFAULT_ALIASES = {
 	'lowercase': validateLowerCase,
 	'camelCase': validateCamelCase,
-	'camelCase.point': validateLowerCase,
+	'camelCase.point': validateCamelCasePoint,
 	'PascalCase': validatePascalCase,
-	'PascalCase.point': validateLowerCase,
+	'PascalCase.point': validatePascalCasePoint,
 	'snake_case': validateSnakeCase,
 	'snake_case.point': validateSnakeCasePoint,
 	'SCREAMING_SNAKE_CASE': validateScreamingSnakeCase,

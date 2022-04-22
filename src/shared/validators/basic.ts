@@ -31,7 +31,7 @@ export const validateString = (input?: unknown, errorMessage?: string) => {
 		return;
 	}
 
-	if (typeof input !== 'string') {
+	if (!input || typeof input !== 'string') {
 		throw new Error(errorMessage || DEFAULT_ERROR_MESSAGE);
 	}
 

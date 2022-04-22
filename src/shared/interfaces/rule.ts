@@ -18,5 +18,6 @@ export type IRuleValue =
 export interface IRuleConsoleDetails {
 	readonly filePath: string;
 	readonly key: string;
+	readonly isFolder: boolean;
 	readonly alias?: string;
 }

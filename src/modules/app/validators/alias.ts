@@ -1,61 +1,8 @@
 import {
-	validateLowerCaseChar,
-	validateUpperCaseChar,
-	validateGenericChar,
-	validateNumericChar,
-} from './char';
-
-/**
- * The function validates a given input is in "snake_case" or "SCREAMING_SNAKE_CASE" or "kebab-case" format
- * @param input the input to validate
- * @returns a boolean flag indicates whether the input is valid
- */
-const validateSnakeAndKebebAndPointCase = (
-	input: string,
-	separator: string,
-	isScreaming: boolean,
-	withPoint: boolean,
-) => {
-	const inputArray = input.split('');
-	const firstChar = inputArray.shift()!;
-
-	if (
-		(!isScreaming && !validateLowerCaseChar(firstChar)) ||
-		(isScreaming && !validateUpperCaseChar(firstChar))
-	) {
-		return false;
-	}
-
-	for (const [index, value] of inputArray.entries()) {
-		const isValidAlphabeticChar =
-			(!isScreaming && validateLowerCaseChar(value)) || (isScreaming && validateUpperCaseChar(value));
-
-		if (
-			!isValidAlphabeticChar &&
-			!validateNumericChar(value) &&
-			value !== separator &&
-			(withPoint !== true || value !== '.')
-		) {
-			return false;
-		}
-
-		if (index === inputArray.length - 1) {
-			return isValidAlphabeticChar || validateNumericChar(value);
-		}
-
-		const nextChar = inputArray[index + 1]!;
-
-		const isValidAlphabeticNextChar =
-			(!isScreaming && validateLowerCaseChar(nextChar)) ||
-			(isScreaming && validateUpperCaseChar(nextChar));
-
-		if ((value === separator || (withPoint === true && value === '.')) && !isValidAlphabeticNextChar) {
-			return false;
-		}
-	}
-
-	return true;
-};
+	validateCamelCaseBase,
+	validatePascalCaseBase,
+	validateSnakeAndKebebAndPointCase,
+} from './alias-base';
 
 /**
  * The function validates a given input is in "lowercase" format
@@ -70,29 +17,16 @@ export const validateLowerCase = (input: string) => input === input.toLowerCase(
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateCamelCase = (input: string) => {
-	const inputArray = input.split('');
+	return validateCamelCaseBase(input, false);
+};
 
-	if (!validateLowerCaseChar(inputArray.shift()!)) {
-		return false;
-	}
-
-	for (const [index, value] of inputArray.entries()) {
-		if (!validateGenericChar(inputArray[index]!)) {
-			return false;
-		}
-
-		if (index === inputArray.length - 1) {
-			return true;
-		}
-
-		const nextChar = inputArray[index + 1]!;
-
-		if (validateUpperCaseChar(value) && !validateLowerCaseChar(nextChar)) {
-			return false;
-		}
-	}
-
-	return true;
+/**
+ * The function validates a given input is in "camelCase" format
+ * @param input the input to validate
+ * @returns a boolean flag indicates whether the input is valid
+ */
+export const validateCamelCasePoint = (input: string) => {
+	return validateCamelCaseBase(input, true);
 };
 
 /**
@@ -101,13 +35,16 @@ export const validateCamelCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validatePascalCase = (input: string) => {
-	const inputArray = input.split('');
+	return validatePascalCaseBase(input, false);
+};
 
-	if (!validateUpperCaseChar(inputArray.shift()!)) {
-		return false;
-	}
-
-	return validateCamelCase(inputArray.join(''));
+/**
+ * The function validates a given input is in "PascalCase.point" format
+ * @param input the input to validate
+ * @returns a boolean flag indicates whether the input is valid
+ */
+export const validatePascalCasePoint = (input: string) => {
+	return validatePascalCaseBase(input, true);
 };
 
 /**

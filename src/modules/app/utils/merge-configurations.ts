@@ -27,7 +27,10 @@ export const mergeConfigurations = (
 		...(config1.aliases ?? {}),
 	};
 
-	const mergedIgnorePatterns = [...(config2.ignorePatterns ?? []), ...(config1.ignorePatterns ?? [])];
+	const mergedIgnorePatterns = [
+		...(config2.ignorePatterns ?? []),
+		...(config1.ignorePatterns ?? []),
+	].filter((pattern) => Boolean(pattern));
 
 	return withCleanObject({
 		...config2,

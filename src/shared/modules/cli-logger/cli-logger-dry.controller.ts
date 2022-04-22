@@ -20,19 +20,31 @@ export default class CLILoggerDryController extends CLILoggerService {
 	}
 
 	protected ruleExistenceErrorImpl(details: IRuleConsoleDetails) {
-		this.default(`error This file/folder is unexpected (Rule key: "${details.key}")\n`);
+		const linkString = details.isFolder ? 'folder' : 'file';
+
+		this.default(`  error This ${linkString} is unexpected (Rule key: "${details.key}")\n`);
 	}
 
 	protected ruleExistenceWarnImpl(details: IRuleConsoleDetails) {
-		this.default(`warning This file/folder is unexpected (Rule key: "${details.key}")\n`);
+		const linkString = details.isFolder ? 'folder' : 'file';
+
+		this.default(`  warning This ${linkString} is unexpected (Rule key: "${details.key}")\n`);
 	}
 
 	protected ruleAliasErrorImpl(details: IRuleConsoleDetails) {
-		this.default(`error Expected file name to match "${details.alias}" (Rule key: "${details.key}")\n`);
+		const linkString = details.isFolder ? 'folder' : 'file';
+
+		this.default(
+			`  error Expected ${linkString} name to match "${details.alias}" (Rule key: "${details.key}")\n`,
+		);
 	}
 
 	protected ruleAliasWarnImpl(details: IRuleConsoleDetails) {
-		this.default(`warning Expected file name to match "${details.alias}" (Rule key: "${details.key}")\n`);
+		const linkString = details.isFolder ? 'folder' : 'file';
+
+		this.default(
+			`  warning Expected ${linkString} name to match "${details.alias}" (Rule key: "${details.key}")\n`,
+		);
 	}
 
 	protected lintSummaryImpl(errorsCount: number, warningsCount: number) {

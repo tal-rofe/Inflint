@@ -25,6 +25,10 @@ export const validateAliases = (input?: unknown) => {
 			throw new Error(`All aliases keys must be valid. Found invalid: ${key}`);
 		}
 
+		if (!key) {
+			throw new Error('All aliases keys must be valid. Found empty alias key');
+		}
+
 		const aliasValue = (input as Record<string, unknown>)[key];
 
 		const isValidValue = isAliasValueValid(aliasValue);

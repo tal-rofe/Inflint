@@ -2,11 +2,13 @@
 
 import path from 'path';
 
-import fg from 'fast-glob';
+import micromatch from 'micromatch';
 
 import { IBaseConfiguration } from '@/interfaces/configuration';
-import CLILoggerModule from '@/shared/modules/cli-logger';
 import { IRuleConsoleDetails } from '@/interfaces/rule';
+import { outputFile } from '@/functions/output-file';
+import CLILoggerModule from '@/shared/modules/cli-logger';
+import { validateSringsArray } from '@/validators/complex';
 import { getRuleOptions } from '@/utils/rule-options';
 import {
 	checkAliasError,
@@ -17,12 +19,22 @@ import {
 import { getRuleAlias } from '@/utils/rule-alias';
 import { IMappedFunction } from '@/interfaces/alias-function';
 import { getAliasFunction } from '@/utils/alias-function';
-import { outputFile } from '@/functions/output-file';
 
-export const lint = async (
+import { isDirectory } from '../utils/is-file';
+
+export const lintFiles = async (
+	files: unknown[],
 	configuration: IBaseConfiguration,
 	aliasesFunctions: Record<string, IMappedFunction>,
 ) => {
+	try {
+		validateSringsArray(files);
+	} catch {
+		CLILoggerModule.service.error('Invalid files');
+
+		return 1;
+	}
+
 	const rules = configuration.rules;
 
 	if (!rules) {
@@ -32,43 +44,58 @@ export const lint = async (
 			await outputFile(configuration.outputFilePath, [], []);
 		}
 
-		process.exit(0);
+		return 0;
 	}
 
 	const errors: IRuleConsoleDetails[] = [];
 	const warnings: IRuleConsoleDetails[] = [];
-	const ignorePatterns = configuration.ignorePatterns ?? [];
-	const rulesKeys = Object.keys(rules);
 
-	for (const ruleKey of rulesKeys) {
-		const ruleValue = rules[ruleKey]!;
-		const ruleOptions = getRuleOptions(ruleValue);
+	const ignorePatterns = configuration.ignorePatterns;
 
-		const matchingFiles = await fg([ruleKey], {
-			onlyFiles: false,
-			dot: true,
-			...ruleOptions,
-			ignore: ignorePatterns,
-			markDirectories: true,
-		});
+	for (const file of files as string[]) {
+		const fileAbsolutePath = path.join(process.cwd(), file);
 
-		if (matchingFiles.length === 0) {
-			continue;
+		if (ignorePatterns && ignorePatterns.length !== 0) {
+			const isMatchedByIgnore = micromatch.isMatch(file, ignorePatterns);
+
+			if (isMatchedByIgnore) {
+				continue;
+			}
 		}
 
-		const isExistenceError = checkExistenceError(ruleValue);
-		const isExistenceWarning = checkExistenceWarning(ruleValue);
-		const isAliasError = checkAliasError(ruleValue);
-		const isAliasWarning = checkAliasWarning(ruleValue);
+		const rulesKeys = Object.keys(rules);
 
-		if (isExistenceError) {
-			for (const matchingFile of matchingFiles) {
-				const isFolder = matchingFile[matchingFile.length - 1] === '/';
+		for (const ruleKey of rulesKeys) {
+			const isPathDirectory = await isDirectory(fileAbsolutePath);
+			const ruleValue = rules[ruleKey]!;
+			const ruleOptions = getRuleOptions(ruleValue);
 
+			if (
+				(isPathDirectory && ruleOptions.onlyFiles === true) ||
+				(!isPathDirectory && ruleOptions.onlyDirectories === true)
+			) {
+				break;
+			}
+
+			const isMatchedByRuleKey = micromatch.isMatch(file, ruleKey, {
+				nocase: ruleOptions.caseSensitiveMatch === false,
+				dot: ruleOptions.dot ?? true,
+			});
+
+			if (!isMatchedByRuleKey) {
+				break;
+			}
+
+			const isExistenceError = checkExistenceError(ruleValue);
+			const isExistenceWarning = checkExistenceWarning(ruleValue);
+			const isAliasError = checkAliasError(ruleValue);
+			const isAliasWarning = checkAliasWarning(ruleValue);
+
+			if (isExistenceError) {
 				const details = {
-					filePath: matchingFile,
+					filePath: fileAbsolutePath,
 					key: ruleKey,
-					isFolder,
+					isFolder: isPathDirectory,
 				};
 
 				CLILoggerModule.service.ruleExistenceError(details);
@@ -82,17 +109,13 @@ export const lint = async (
 						await outputFile(configuration.outputFilePath, errors, warnings);
 					}
 
-					process.exit(1);
+					return 1;
 				}
-			}
-		} else if (configuration.quiet !== true && isExistenceWarning) {
-			for (const matchingFile of matchingFiles) {
-				const isFolder = matchingFile[matchingFile.length - 1] === '/';
-
+			} else if (configuration.quiet !== true && isExistenceWarning) {
 				const details = {
-					filePath: matchingFile,
+					filePath: fileAbsolutePath,
 					key: ruleKey,
-					isFolder,
+					isFolder: isPathDirectory,
 				};
 
 				CLILoggerModule.service.ruleExistenceWarn(details);
@@ -106,22 +129,18 @@ export const lint = async (
 						await outputFile(configuration.outputFilePath, errors, warnings);
 					}
 
-					process.exit(1);
+					return 1;
 				}
-			}
-		} else if (isAliasError) {
-			const ruleAlias = getRuleAlias(ruleValue);
-			const ruleAliasFunction = getAliasFunction(ruleAlias, aliasesFunctions);
-
-			for (const matchingFile of matchingFiles) {
-				const isFolder = matchingFile[matchingFile.length - 1] === '/';
+			} else if (isAliasError) {
+				const ruleAlias = getRuleAlias(ruleValue);
+				const ruleAliasFunction = getAliasFunction(ruleAlias, aliasesFunctions);
 
 				let validationInput: string;
 
-				if (isFolder) {
-					validationInput = path.parse(matchingFile).base;
+				if (isPathDirectory) {
+					validationInput = path.parse(file).base;
 				} else {
-					validationInput = path.parse(matchingFile).name;
+					validationInput = path.parse(file).name;
 				}
 
 				const isValid = ruleAliasFunction(validationInput);
@@ -131,9 +150,9 @@ export const lint = async (
 				}
 
 				const details = {
-					filePath: matchingFile,
+					filePath: fileAbsolutePath,
 					key: ruleKey,
-					isFolder,
+					isFolder: isPathDirectory,
 					alias: ruleAlias,
 				};
 
@@ -148,22 +167,18 @@ export const lint = async (
 						await outputFile(configuration.outputFilePath, errors, warnings);
 					}
 
-					process.exit(1);
+					return 1;
 				}
-			}
-		} else if (configuration.quiet !== true && isAliasWarning) {
-			const ruleAlias = getRuleAlias(ruleValue);
-			const ruleAliasFunction = getAliasFunction(ruleAlias, aliasesFunctions);
-
-			for (const matchingFile of matchingFiles) {
-				const isFolder = matchingFile[matchingFile.length - 1] === '/';
+			} else if (configuration.quiet !== true && isAliasWarning) {
+				const ruleAlias = getRuleAlias(ruleValue);
+				const ruleAliasFunction = getAliasFunction(ruleAlias, aliasesFunctions);
 
 				let validationInput: string;
 
-				if (isFolder) {
-					validationInput = path.parse(matchingFile).base;
+				if (isPathDirectory) {
+					validationInput = path.parse(file).base;
 				} else {
-					validationInput = path.parse(matchingFile).name;
+					validationInput = path.parse(file).name;
 				}
 
 				const isValid = ruleAliasFunction(validationInput);
@@ -173,9 +188,9 @@ export const lint = async (
 				}
 
 				const details = {
-					filePath: matchingFile,
+					filePath: fileAbsolutePath,
 					key: ruleKey,
-					isFolder,
+					isFolder: isPathDirectory,
 					alias: ruleAlias,
 				};
 
@@ -190,7 +205,7 @@ export const lint = async (
 						await outputFile(configuration.outputFilePath, errors, warnings);
 					}
 
-					process.exit(1);
+					return 1;
 				}
 			}
 		}
@@ -201,4 +216,6 @@ export const lint = async (
 	if (configuration.outputFilePath) {
 		await outputFile(configuration.outputFilePath, errors, warnings);
 	}
+
+	return 0;
 };

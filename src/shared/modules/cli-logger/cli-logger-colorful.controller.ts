@@ -22,28 +22,36 @@ export default class CLILoggerColorfulController extends CLILoggerService {
 	}
 
 	protected ruleExistenceErrorImpl(details: IRuleConsoleDetails) {
-		this.default(`  ${chalk.red('error')} This file/folder is unexpected (Rule key: "${details.key}")`);
+		const linkString = details.isFolder ? 'folder' : 'file';
+
+		this.default(`  ${chalk.red('error')} This ${linkString} is unexpected (Rule key: "${details.key}")`);
 	}
 
 	protected ruleExistenceWarnImpl(details: IRuleConsoleDetails) {
+		const linkString = details.isFolder ? 'folder' : 'file';
+
 		this.default(
-			`  ${chalk.yellow('warning')} This file/folder is unexpected (Rule key: "${details.key}")`,
+			`  ${chalk.yellow('warning')} This ${linkString} is unexpected (Rule key: "${details.key}")`,
 		);
 	}
 
 	protected ruleAliasErrorImpl(details: IRuleConsoleDetails) {
+		const linkString = details.isFolder ? 'folder' : 'file';
+
 		this.default(
-			`  ${chalk.red('error')} Expected file name to match "${details.alias}" (Rule key: "${
+			`  ${chalk.red('error')} Expected ${linkString} name to match "${details.alias}" (Rule key: "${
 				details.key
 			}")`,
 		);
 	}
 
 	protected ruleAliasWarnImpl(details: IRuleConsoleDetails) {
+		const linkString = details.isFolder ? 'folder' : 'file';
+
 		this.default(
-			`  ${chalk.yellow('warning')} Expected file name to match "${details.alias}" (Rule key: "${
-				details.key
-			}")`,
+			`  ${chalk.yellow('warning')} Expected ${linkString} name to match "${
+				details.alias
+			}" (Rule key: "${details.key}")`,
 		);
 	}
 

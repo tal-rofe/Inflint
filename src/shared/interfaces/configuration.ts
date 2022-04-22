@@ -1,4 +1,3 @@
-import { Format } from '../models/format';
 import { IAliasValue } from './alias';
 import { IRuleValue } from './rule';
 
@@ -12,14 +11,12 @@ export interface IBaseConfiguration {
 	readonly maxWarnings?: number;
 	readonly bail?: number;
 	readonly outputFilePath?: string;
-	readonly format?: Format;
 }
 
 export interface ICLIConfiguration extends IBaseConfiguration {
 	readonly inflintrc?: boolean;
 	readonly configFilePath?: string;
 	readonly color?: boolean;
-	readonly printRuleFilePath?: string;
 }
 
 export interface ISourceConfiguration extends IBaseConfiguration {
