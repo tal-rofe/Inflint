@@ -22,20 +22,20 @@ export default class CLILoggerDryController extends CLILoggerService {
 	protected ruleExistenceErrorImpl(details: IRuleConsoleDetails) {
 		const linkString = details.isFolder ? 'folder' : 'file';
 
-		this.default(`  error This ${linkString} is unexpected (Rule key: "${details.key}")\n`);
+		this.default(`  error This ${linkString} is unexpected (Rule key: "${details.key}")`);
 	}
 
 	protected ruleExistenceWarnImpl(details: IRuleConsoleDetails) {
 		const linkString = details.isFolder ? 'folder' : 'file';
 
-		this.default(`  warning This ${linkString} is unexpected (Rule key: "${details.key}")\n`);
+		this.default(`  warning This ${linkString} is unexpected (Rule key: "${details.key}")`);
 	}
 
 	protected ruleAliasErrorImpl(details: IRuleConsoleDetails) {
 		const linkString = details.isFolder ? 'folder' : 'file';
 
 		this.default(
-			`  error Expected ${linkString} name to match "${details.alias}" (Rule key: "${details.key}")\n`,
+			`  error Expected ${linkString} name to match "${details.alias}" (Rule key: "${details.key}")`,
 		);
 	}
 
@@ -43,7 +43,7 @@ export default class CLILoggerDryController extends CLILoggerService {
 		const linkString = details.isFolder ? 'folder' : 'file';
 
 		this.default(
-			`  warning Expected ${linkString} name to match "${details.alias}" (Rule key: "${details.key}")\n`,
+			`  warning Expected ${linkString} name to match "${details.alias}" (Rule key: "${details.key}")`,
 		);
 	}
 
