@@ -302,18 +302,6 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@kwsites/file-exists@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@kwsites/file-exists/-/file-exists-1.1.1.tgz#ad1efcac13e1987d8dbaf235ef3be5b0d96faa99"
-  integrity sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==
-  dependencies:
-    debug "^4.1.1"
-
-"@kwsites/promise-deferred@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
-  integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1242,7 +1230,7 @@ conventional-commits-parser@^3.2.2:
     split2 "^3.0.0"
     through2 "^4.0.0"
 
-cosmiconfig-typescript-loader@^1.0.0:
+cosmiconfig-typescript-loader@1.0.9, cosmiconfig-typescript-loader@^1.0.0:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-1.0.9.tgz#69c523f7e8c3d9f27f563d02bbeadaf2f27212d3"
   integrity sha512-tRuMRhxN4m1Y8hP9SNYfz7jRwt8lZdWxdjg/ohg5esKmsndJIn4yT96oJVcf5x0eA11taXl+sIp+ielu529k6g==
@@ -1300,17 +1288,17 @@ cz-conventional-changelog@3.2.0:
   optionalDependencies:
     "@commitlint/load" ">6.1.1"
 
-cz-vinyl@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/cz-vinyl/-/cz-vinyl-1.2.0.tgz#344b7bad773f773771e7ba47cece8a18ba6fbef6"
-  integrity sha512-mO6W85O3Gmp2z9LFquRD7yU7pQAukWvmrLkhVVgwHpLgFKmdeBCUobTOUJL123jRcae91rd97RBERvEeZweDWQ==
+cz-vinyl@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/cz-vinyl/-/cz-vinyl-1.3.1.tgz#6a52881000b19c5060f3d5bd4cd663f583e3ffb1"
+  integrity sha512-TREhhK/YadSPJndqm0WLwSZ5RdR+KW2NB/EibutjicHnn+3sWzchVxHbc1RBLT6h08w4AdY5EAwo3bgPpXSfHg==
   dependencies:
     cosmiconfig "7.0.1"
+    cosmiconfig-typescript-loader "1.0.9"
     fuse.js "6.5.3"
     inquirer "8.2.2"
     inquirer-autocomplete-prompt "2.0.0"
     inquirer-maxlength-input-prompt "1.0.2"
-    simple-git "3.6.0"
     string-template "1.0.0"
     word-wrap "1.2.3"
 
@@ -3648,15 +3636,6 @@ signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
-
-simple-git@3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-3.6.0.tgz#28a9ebb7ca55495bb4e6cc5d367b4543e2d857a4"
-  integrity sha512-2e+4QhOVO59GeLsHgwSMKNrSKCnuACeA/gMNrLCYR8ID9qwm4hViVt4WsODcUGjx//KDv6GMLC6Hs/MeosgXxg==
-  dependencies:
-    "@kwsites/file-exists" "^1.1.1"
-    "@kwsites/promise-deferred" "^1.1.1"
-    debug "^4.3.3"
 
 slash@^3.0.0:
   version "3.0.0"
