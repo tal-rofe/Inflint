@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.4...v1.2.0) (2022-04-25)
+
+
+### Features
+
+* 🔥 support typescript configuration file ([a3e5b1f](https://github.com/Vinyl-Depository/Inflint/commit/a3e5b1fb18f233d1533b6ea55bbd9354de2ef1b6))
+
 ## [1.1.4](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.3...v1.1.4) (2022-04-22)
 
 
