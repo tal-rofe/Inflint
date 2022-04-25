@@ -4,9 +4,9 @@ commitlint.config.js
 lint-staged.config.js
 release.config.js
 jest.config.js
-czvinyl.config.js
+czvinyl.config.ts
 webpack.config.ts
-inflint.config.js
+inflint.config.ts
 dist
 scripts
 bin
