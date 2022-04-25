@@ -26,9 +26,11 @@
 		"url": "git+https://github.com/Vinyl-Depository/Inflint.git"
 	},
 	"main": "dist/index.js",
+	"types": "dist/config.d.ts",
 	"files": [
 		"dist/index.js",
-		"bin"
+		"bin",
+		"dist/config.d.ts"
 	],
 	"bin": {
 		"inflint": "./bin/inflint.js"
@@ -53,6 +55,7 @@
 	"dependencies": {
 		"@expo/spawn-async": "1.6.0",
 		"cosmiconfig": "7.0.1",
+		"cosmiconfig-typescript-loader": "1.0.9",
 		"fast-glob": "3.2.11",
 		"inquirer": "8.2.2",
 		"micromatch": "4.0.5",

@@ -15,7 +15,7 @@ export const initConfiguration = async () => {
 			name: 'file_format',
 			message: 'Please choose the configuration file format:',
 			default: 'Javascript',
-			choices: ['Javascript', 'JSON', 'YAML'],
+			choices: ['Javascript', 'Typescript', 'JSON', 'YAML'],
 		},
 		{
 			type: 'list',

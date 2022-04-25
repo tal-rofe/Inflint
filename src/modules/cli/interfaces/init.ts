@@ -1,6 +1,6 @@
 export type IBooleanQuestion = 'Yes' | 'No';
 
-export type IFileFormat = 'Javascript' | 'JSON' | 'YAML';
+export type IFileFormat = 'Javascript' | 'Typescript' | 'JSON' | 'YAML';
 
 export interface IAliasAnswer {
 	readonly name: string;

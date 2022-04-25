@@ -10,6 +10,10 @@ const configuration: webpack.Configuration = {
 	mode: 'production',
 	target: 'node',
 	entry: './src/index.ts',
+	// * https://stackoverflow.com/questions/48673408/should-javascript-npm-packages-be-minified
+	optimization: {
+		minimize: false,
+	},
 	externals: [
 		nodeExternals({
 			modulesDir: path.resolve(__dirname, 'node_modules'),

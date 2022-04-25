@@ -41,8 +41,17 @@ Configuration can be set in the following files:
 
 -   a `package.json` property: `"inflint": {...}`
 -   a `.inflintrc` file in JSON or YAML format
--   a `.inflintrc.json`, `.inflintrc.yaml`, `.inflintrc.yml`, `.inflintrc.js`, or `.inflintrc.cjs` file
--   a `inflint.config.js` or `inflint.config.cjs` CommonJS module exporting an object
+-   a `.inflintrc.json`, `.inflintrc.yaml`, `.inflintrc.yml`, `.inflintrc.js`, `.inflintrc.ts`, or `.inflintrc.cjs` file
+-   a `inflint.config.js`, `inflint.config.ts` or `inflint.config.cjs` CommonJS module exporting an object
+
+If you set a TypeScript configuration file, you can use the configuration interface:
+```ts
+import { Config } from 'inflint';
+const inflintConfig: Config = {
+	...
+}
+export default inflintConfig;
+```
 
 You can set a configuration file using our wizard:
 ```bash

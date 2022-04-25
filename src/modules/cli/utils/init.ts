@@ -32,6 +32,15 @@ export const exportFilesFromInit = async (
 	} else if (fileFormat === 'Javascript') {
 		contentString = `module.exports = ${JSON.stringify(contentObject, null, 2)};`;
 		filename = '.inflintrc.js';
+	} else if (fileFormat === 'Typescript') {
+		contentString = [
+			"import { Config } from 'inflint'",
+			'',
+			`const inflintConfig = ${JSON.stringify(contentObject, null, 2)};`,
+			'',
+			'export default inflintConfig;',
+		].join('\n');
+		filename = '.inflintrc.ts';
 	} else {
 		contentString = JSON.stringify(contentObject, null, 2);
 		filename = '.inflintrc.json';
