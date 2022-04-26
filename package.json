@@ -57,7 +57,7 @@
 		"cosmiconfig": "7.0.1",
 		"cosmiconfig-typescript-loader": "1.0.9",
 		"fast-glob": "3.2.11",
-		"inquirer": "8.2.2",
+		"inquirer": "8.2.3",
 		"micromatch": "4.0.5",
 		"minimist": "1.2.6",
 		"v8-compile-cache": "2.3.0",
