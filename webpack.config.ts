@@ -3,10 +3,13 @@ import path from 'path';
 import webpack from 'webpack';
 import nodeExternals from 'webpack-node-externals';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import WebpackShellPluginNext from 'webpack-shell-plugin-next';
 
 import { version } from './package.json';
 
 const configuration: webpack.Configuration = {
+	context: __dirname,
 	mode: 'production',
 	target: 'node',
 	entry: './src/index.ts',
@@ -36,8 +39,18 @@ const configuration: webpack.Configuration = {
 		],
 	},
 	plugins: [
+		new WebpackShellPluginNext({
+			onBuildStart: {
+				scripts: ['rimraf dist'],
+				blocking: true,
+			},
+			safe: true,
+		}),
 		new webpack.DefinePlugin({
 			__PACKAGE_VERSION__: `'v${version}'`,
+		}),
+		new ForkTsCheckerWebpackPlugin({
+			typescript: { configFile: 'tsconfig.build.json', context: __dirname },
 		}),
 	],
 	resolve: {

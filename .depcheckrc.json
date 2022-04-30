@@ -1,4 +1,12 @@
 {
-	"ignores": ["@commitlint/cli", "commitizen", "lint-staged", "cz-vinyl", "webpack-cli", "ts-loader"],
+	"ignores": [
+		"@commitlint/cli",
+		"commitizen",
+		"lint-staged",
+		"cz-vinyl",
+		"webpack-cli",
+		"ts-loader",
+		"rimraf"
+	],
 	"skipMissing": true
 }
