@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Vinyl-Depository/Inflint/compare/v1.2.0...v1.2.1) (2022-05-05)
+
+
+### Bug Fixes
+
+* 🐞 remove enforcement of yarn usage ([4d95781](https://github.com/Vinyl-Depository/Inflint/commit/4d9578161cc14ca4cc09388cdf3129a2aaa3de75))
+
 # [1.2.0](https://github.com/Vinyl-Depository/Inflint/compare/v1.1.4...v1.2.0) (2022-04-25)
 
 
