@@ -62,7 +62,7 @@
 		"yaml": "2.1.1"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "17.0.1",
+		"@commitlint/cli": "17.0.2",
 		"@types/inquirer": "8.2.1",
 		"@types/micromatch": "4.0.2",
 		"@types/minimist": "1.2.2",
