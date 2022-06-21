@@ -1,3 +1,11 @@
+## [1.2.7](https://github.com/Exlint/Inflint/compare/v1.2.6...v1.2.7) (2022-06-21)
+
+
+### Bug Fixes
+
+* 🐞 fix package name ([c94a6b2](https://github.com/Exlint/Inflint/commit/c94a6b2f1ac655ed475c9969e7c9aec46c20495a))
+* 🐞 fix package name ([ee13d5a](https://github.com/Exlint/Inflint/commit/ee13d5a886dc860ce40154005513d67cc9db001e))
+
 ## [1.2.6](https://github.com/Exlint/Inflint/compare/v1.2.5...v1.2.6) (2022-06-21)
 
 
