@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/Exlint/Inflint/compare/v1.2.2...v1.2.3) (2022-06-21)
+
+
+### Bug Fixes
+
+* 🐞 new package name ([e8cc30d](https://github.com/Exlint/Inflint/commit/e8cc30dd77533568df5431f37d2d72dc61668441))
+
 ## [1.2.2](https://github.com/Vinyl-Depository/Inflint/compare/v1.2.1...v1.2.2) (2022-05-05)
 
 
