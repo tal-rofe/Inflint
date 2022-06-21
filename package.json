@@ -35,6 +35,9 @@
 	"bin": {
 		"inflint": "./bin/inflint.js"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"husky:install": "husky install",
 		"git:config": "git config --local include.path ../.gitconfig",
