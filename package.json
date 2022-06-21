@@ -1,6 +1,6 @@
 {
 	"name": "@exlint/inflint",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"description": "Inflint is a tool which scans and verifies file name conventions.",
 	"author": "Exlint <dev@exlint.com> (https://www.exlint.io)",
 	"keywords": [
