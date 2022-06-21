@@ -289,10 +289,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@exlint.io/inflint@1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@exlint.io/inflint/-/inflint-1.2.4.tgz#bdd3d4084d542e01ed4b42168da2fc7e70befa35"
-  integrity sha512-Y/kFRUZPbcfFBQOB54XJGbYKKYw3RcEpdYsvlm1ZiMEkCNIptJ5omdq8oSIg4r6/HhsqRwuUJovC9yFTQM22Sw==
+"@exlint.io/inflint@1.2.7":
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/@exlint.io/inflint/-/inflint-1.2.7.tgz#803604bc27676a7df8a3b2b10ab297cc4a39bb74"
+  integrity sha512-unCLE8cB9AoxWYRhPqqY5/uR7AGBxAbGYZT1gxENDYY36xLkh8WmqlvNGonxRTbSpcxwea5DM2NWM36UcP3s+A==
   dependencies:
     "@expo/spawn-async" "1.6.0"
     cosmiconfig "7.0.1"
