@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/Exlint/Inflint/compare/v1.2.5...v1.2.6) (2022-06-21)
+
+
+### Bug Fixes
+
+* 🐞 change package name ([95d3e53](https://github.com/Exlint/Inflint/commit/95d3e53114b62cf03760a43e33b7299cae19455f))
+
 ## [1.2.5](https://github.com/Exlint/Inflint/compare/v1.2.4...v1.2.5) (2022-06-21)
 
 
