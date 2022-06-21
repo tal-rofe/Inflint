@@ -1,8 +1,8 @@
 {
-	"name": "inflint",
+	"name": "@exlint/inflint",
 	"version": "1.2.2",
 	"description": "Inflint is a tool which scans and verifies file name conventions.",
-	"author": "Vinyl Depository <dev@vinyldepository.com> (https://www.vinyldepository.com)",
+	"author": "Exlint <dev@exlint.com> (https://www.exlint.io)",
 	"keywords": [
 		"linter",
 		"filesystem linter",
@@ -13,17 +13,17 @@
 	"contributors": [
 		{
 			"name": "tal-rofe",
-			"email": "tal@vinyldepository.com"
+			"email": "tal@exlint.io"
 		}
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/Vinyl-Depository/Inflint#readme",
+	"homepage": "https://github.com/Exlint/Inflint#readme",
 	"bugs": {
-		"url": "https://github.com/Vinyl-Depository/Inflint/issues"
+		"url": "https://github.com/Exlint/Inflint/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Vinyl-Depository/Inflint.git"
+		"url": "git+https://github.com/Exlint/Inflint.git"
 	},
 	"main": "dist/index.js",
 	"types": "dist/config.d.ts",

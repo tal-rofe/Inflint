@@ -164,13 +164,13 @@ The JSON should follow the aliases format described above.
 
 ## Examples
 
--   [landing-page](https://github.com/Vinyl-Depository/landing-page)
--   [inflint](https://github.com/Vinyl-Depository/inflint)
--   [cz-vinyl](https://github.com/Vinyl-Depository/cz-vinyl)
+-   [landing-page](https://github.com/Exlint/landing-page)
+-   [inflint](https://github.com/Exlint/inflint)
+-   [cz-vinyl](https://github.com/Exlint/cz-vinyl)
 
 ## Support
 
-For support, email dev@vinyldepository.com or open an issue at [inflint issues](https://github.com/Vinyl-Depository/inflint/issues).
+For support, email dev@exlint.io or open an issue at [inflint issues](https://github.com/Exlint/inflint/issues).
 
 ## Contributing
 
