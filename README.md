@@ -6,9 +6,9 @@
 
 Inflint allows you to easily set file names convention in your repository.
 
-[![npm version](https://img.shields.io/npm/v/inflint.svg?style=flat-square)](https://www.npmjs.org/package/inflint)
+[![npm version](https://img.shields.io/npm/v/@exlint.io/inflint.svg?style=flat-square)](https://www.npmjs.org/package/@exlint.io/inflint)
 
-[![npm downloads](https://img.shields.io/npm/dm/inflint.svg?style=flat-square)](http://npm-stat.com/charts.html?package=inflint)
+[![npm downloads](https://img.shields.io/npm/dm/@exlint.io/inflint.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@exlint.io/inflint)
 
 ## Demo
 
