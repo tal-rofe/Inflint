@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/Exlint/Inflint/compare/v1.2.3...v1.2.4) (2022-06-21)
+
+
+### Bug Fixes
+
+* 🐞 add publish config ([ef7c8b1](https://github.com/Exlint/Inflint/commit/ef7c8b14994b246670305fde6d0d7dac3b19fc6a))
+
 ## [1.2.3](https://github.com/Exlint/Inflint/compare/v1.2.2...v1.2.3) (2022-06-21)
 
 
