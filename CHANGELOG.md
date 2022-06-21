@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/Exlint/Inflint/compare/v1.2.4...v1.2.5) (2022-06-21)
+
+
+### Bug Fixes
+
+* 🐞 remove deprecated inflint ([50d10ed](https://github.com/Exlint/Inflint/commit/50d10edceff82b160879a195987af6cdabb6b05d))
+
 ## [1.2.4](https://github.com/Exlint/Inflint/compare/v1.2.3...v1.2.4) (2022-06-21)
 
 
