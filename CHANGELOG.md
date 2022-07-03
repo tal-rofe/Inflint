@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/Exlint/Inflint/compare/v1.2.7...v1.2.8) (2022-07-03)
+
+
+### Bug Fixes
+
+* 🐞 support absolute config file path ([699bdce](https://github.com/Exlint/Inflint/commit/699bdce3285c6f2566dd6ce9bc8642ba814f30e1))
+
 ## [1.2.7](https://github.com/Exlint/Inflint/compare/v1.2.6...v1.2.7) (2022-06-21)
 
 
