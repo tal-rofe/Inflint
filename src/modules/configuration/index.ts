@@ -25,7 +25,8 @@ const StartConfiguration = async (
 	let result: CosmiconfigResult | null;
 
 	if (configFilePath) {
-		const configAbsolutePath = path.join(process.cwd(), configFilePath);
+		const isPathAbsolute = path.isAbsolute(configFilePath);
+		const configAbsolutePath = isPathAbsolute ? configFilePath : path.join(process.cwd(), configFilePath);
 
 		result = await explorer.load(configAbsolutePath).catch(() => null);
 	} else {
