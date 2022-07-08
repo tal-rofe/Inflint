@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/Exlint/Inflint/compare/v1.2.8...v1.2.9) (2022-07-08)
+
+
+### Bug Fixes
+
+* 🐞 using relative and absolute paths in read ignore file ([cb36a7a](https://github.com/Exlint/Inflint/commit/cb36a7a91c8b5080315bf9d9ffcc28757a13e486))
+
 ## [1.2.8](https://github.com/Exlint/Inflint/compare/v1.2.7...v1.2.8) (2022-07-03)
 
 
