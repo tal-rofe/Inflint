@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/Exlint/Inflint/compare/v1.2.9...v1.2.10) (2023-02-04)
+
+
+### Bug Fixes
+
+* 🐞 fix configurations ([40170e6](https://github.com/Exlint/Inflint/commit/40170e63113ba7c8dbe1e3b3c8791d52e13f66cb))
+
 ## [1.2.9](https://github.com/Exlint/Inflint/compare/v1.2.8...v1.2.9) (2022-07-08)
 
 
