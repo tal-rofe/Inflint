@@ -16,6 +16,7 @@ jobs:
                   node-version: 18.13.0
                   package-manager: pnpm
                   package-manager-version: 7.26.3
+                  should-cache: false
 
             - name: Build dist folder
               run: pnpm dist
