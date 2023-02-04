@@ -66,7 +66,7 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "17.0.2",
-		"@exlint.io/inflint": "1.2.7",
+		"@exlint.io/inflint": "1.2.9",
 		"@types/inquirer": "8.2.1",
 		"@types/micromatch": "4.0.2",
 		"@types/minimist": "1.2.2",

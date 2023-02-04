@@ -1,14 +1,27 @@
-![Logo](assets/logo.png)
+<p align="center">
+	<a href="https://github.com/Exlint/inflint">
+    	<img src="https://img.shields.io/github/actions/workflow/status/Exlint/inflint/integrate.yaml?label=CI&logo=GitHub" alt="CI status">
+  	</a>
+	<a href="https://www.npmjs.com/package/@exlint.io/inflint">
+    	<img src="https://img.shields.io/npm/dm/@exlint.io/inflint?logo=NPM" alt="npm downloads">
+  	</a>
+	<a href="https://github.com/Exlint/inflint">
+    	<img src="https://img.shields.io/npm/l/@exlint.io/inflint" alt="npm license">
+  	</a>
+	<a href="https://github.com/Exlint/inflint">
+    	<img src="https://img.shields.io/npm/v/@exlint.io/inflint?label=version" alt="version">
+  	</a>
+</p>
 
-# Inflint
+<p>&nbsp;</p>
+
+<p align="center"><img src="./assets/logo.png" width="60%"/></p>
+
+<h2 align="center">Inflint</h2>
 
 > Inflint is a tool which scans and verifies files and folders name conventions.
 
 Inflint allows you to easily set file names convention in your repository.
-
-[![npm version](https://img.shields.io/npm/v/@exlint.io/inflint.svg?style=flat-square)](https://www.npmjs.org/package/@exlint.io/inflint)
-
-[![npm downloads](https://img.shields.io/npm/dm/@exlint.io/inflint.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@exlint.io/inflint)
 
 ## Demo
 
@@ -19,13 +32,13 @@ Inflint allows you to easily set file names convention in your repository.
 **Globally**
 
 ```bash
-npm install --global inflint
+npm install --global @exlint.io/inflint
 ```
 
 **Locally**
 
 ```bash
-npm install --save-dev inflint
+npm install --save-dev @exlint.io/inflint
 ```
 
 ## Usage
@@ -46,16 +59,18 @@ Configuration can be set in the following files:
 
 If you set a TypeScript configuration file, you can use the configuration interface:
 ```ts
-import { Config } from 'inflint';
+import type { Config } from '@exlint.io/inflint';
+
 const inflintConfig: Config = {
 	...
 }
+
 export default inflintConfig;
 ```
 
 You can set a configuration file using our wizard:
 ```bash
-npx inflint --init
+npx @exlint.io/inflint --init
 ```
 
 ### Rules format
@@ -164,8 +179,9 @@ The JSON should follow the aliases format described above.
 
 ## Examples
 
--   [landing-page](https://github.com/Exlint/landing-page)
--   [inflint](https://github.com/Exlint/inflint)
+-   [@exlint.io/cli](https://github.com/Exlint/cli)
+-   [@exlint.io/inflint](https://github.com/Exlint/inflint)
+-   [@exlint.io/actions](https://github.com/Exlint/actions)
 -   [cz-vinyl](https://github.com/Exlint/cz-vinyl)
 
 ## Support
