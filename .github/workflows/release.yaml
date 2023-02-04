@@ -8,6 +8,8 @@ jobs:
     release:
         name: Release version
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
 
         steps:
             - name: Setup Node environment
