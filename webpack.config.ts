@@ -29,7 +29,7 @@ const configuration: webpack.Configuration = {
 					{
 						loader: 'ts-loader',
 						options: {
-							configFile: './tsconfig.build.json',
+							configFile: 'tsconfig.build.json',
 						},
 					},
 				],
