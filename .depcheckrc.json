@@ -6,6 +6,7 @@
 		"cz-vinyl",
 		"webpack-cli",
 		"ts-loader",
+		"ts-node",
 		"rimraf"
 	],
 	"skipMissing": true

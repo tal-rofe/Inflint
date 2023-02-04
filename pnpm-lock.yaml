@@ -33,6 +33,7 @@ specifiers:
   prettier: 2.6.2
   rimraf: 3.0.2
   ts-loader: 9.3.0
+  ts-node: 10.9.1
   tsconfig-paths-webpack-plugin: 3.5.2
   typescript: 4.7.3
   v8-compile-cache: 2.3.0
@@ -79,6 +80,7 @@ devDependencies:
   prettier: 2.6.2
   rimraf: 3.0.2
   ts-loader: 9.3.0_jy5w4alwxi2du2dgjfsq7k3iza
+  ts-node: 10.9.1_typescript@4.7.3
   tsconfig-paths-webpack-plugin: 3.5.2
   typescript: 4.7.3
   webpack: 5.73.0_webpack-cli@4.9.2
