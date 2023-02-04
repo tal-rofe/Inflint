@@ -46,12 +46,12 @@
 		"prepare": "is-ci || run-s setdev onboarding",
 		"dist:create": "webpack -c webpack.config.ts",
 		"dist": "webpack -c webpack.config.ts",
-		"lint": "eslint src/**/*",
-		"lint:fix": "eslint src/**/* --fix",
+		"lint": "eslint -c ./.eslintrc.js ./src/**/*",
 		"format": "prettier --write \"**/*.{ts,js,json}\"",
 		"type-check": "tsc --project ./tsconfig.json",
-		"depcheck": "depcheck",
-		"inflint": "inflint"
+		"depcheck": "depcheck --config ./.depcheckrc.json",
+		"inflint": "inflint -c ./inflint.config.ts",
+		"prettier": "prettier --check **/*.{ts,js,cjs,json,yaml}"
 	},
 	"dependencies": {
 		"@expo/spawn-async": "1.6.0",

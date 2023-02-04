@@ -4,34 +4,96 @@ on:
     pull_request:
         branches: [main]
 
+permissions:
+    contents: read
+
 jobs:
-    test_pull_request:
-        name: Testing & Checking the code
-        runs-on: ubuntu-latest
+    depcheck:
+        name: Testing Depcheck
 
+        runs-on: [self-hosted, Linux, X64, integration]
         steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v3
+            - name: Setup Node environment
+              uses: Exlint/node-environment@v1.2.4
               with:
-                  node-version: 16
+                  node-version: 18.13.0
+                  package-manager: pnpm
+                  package-manager-version: 7.26.3
 
-            - name: Installing dependencies
-              run: yarn install --immutable --immutable-cache --check-cache
+            - name: Test Depcheck
+              run: pnpm depcheck
 
-            - name: Check unused dependencies
-              run: yarn run depcheck
+    inflint:
+        name: Testing Inflint
 
-            - name: Check Typescript
-              run: yarn run type-check
+        runs-on: [self-hosted, Linux, X64, integration]
+        steps:
+            - name: Setup Node environment
+              uses: Exlint/node-environment@v1.2.4
+              with:
+                  node-version: 18.13.0
+                  package-manager: pnpm
+                  package-manager-version: 7.26.3
 
-            - name: Check ESLint
-              run: yarn run lint
+            - name: Test Inflint
+              run: pnpm inflint
 
-            - name: Check Inflint
-              run: yarn run inflint
+    typescript:
+        name: Testing TypeScript
 
-            - name: Check dist command
-              run: yarn run dist
+        runs-on: [self-hosted, Linux, X64, integration]
+        steps:
+            - name: Setup Node environment
+              uses: Exlint/node-environment@v1.2.4
+              with:
+                  node-version: 18.13.0
+                  package-manager: pnpm
+                  package-manager-version: 7.26.3
+
+            - name: Test TypeScript
+              run: pnpm type-check
+
+    prettier:
+        name: Testing Prettier
+
+        runs-on: [self-hosted, Linux, X64, integration]
+        steps:
+            - name: Setup Node environment
+              uses: Exlint/node-environment@v1.2.4
+              with:
+                  node-version: 18.13.0
+                  package-manager: pnpm
+                  package-manager-version: 7.26.3
+
+            - name: Test Prettier
+              run: pnpm prettier
+
+    eslint:
+        name: Testing ESLint
+
+        runs-on: [self-hosted, Linux, X64, integration]
+        steps:
+            - name: Setup Node environment
+              uses: Exlint/node-environment@v1.2.4
+              with:
+                  node-version: 18.13.0
+                  package-manager: pnpm
+                  package-manager-version: 7.26.3
+
+            - name: Test ESLint
+              run: pnpm lint
+
+    dist:
+        name: Testing dist
+
+        runs-on: [self-hosted, Linux, X64, integration]
+        steps:
+            - name: Setup Node environment
+              uses: Exlint/node-environment@v1.2.4
+              with:
+                  node-version: 18.13.0
+                  package-manager: pnpm
+                  package-manager-version: 7.26.3
+
+            - name: Test dist
+              run: pnpm dist

@@ -6,5 +6,8 @@
 	},
 	"files.associations": {
 		"commit-msg": "shellscript"
+	},
+	"[properties]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
 	}
 }
