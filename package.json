@@ -56,7 +56,7 @@
 	"dependencies": {
 		"@expo/spawn-async": "1.6.0",
 		"cosmiconfig": "7.0.1",
-		"cosmiconfig-typescript-loader": "2.0.1",
+		"cosmiconfig-typescript-loader": "2.0.2",
 		"fast-glob": "3.2.11",
 		"inquirer": "8.2.4",
 		"micromatch": "4.0.5",
