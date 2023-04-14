@@ -1,3 +1,5 @@
+# [2.0.0](https://github.com/Exlint/Inflint/compare/v1.2.11...v2.0.0) (2023-04-14)
+
 ## [1.2.11](https://github.com/Exlint/Inflint/compare/v1.2.10...v1.2.11) (2023-04-14)
 
 
