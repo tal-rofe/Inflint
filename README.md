@@ -49,7 +49,7 @@ $ inflint [options] [files]
 
 ## ESM support
 
-Inflint now supports **only** ESM modules. For any issue regarding this, please visit this link https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+Inflint now supports **only** ESM modules, from version `>1.2.10`. For any issue regarding this, please visit this link https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 
 ## Configuration
 
