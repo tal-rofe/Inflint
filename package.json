@@ -63,7 +63,7 @@
 	"dependencies": {
 		"@expo/spawn-async": "1.7.2",
 		"chalk": "5.2.0",
-		"cosmiconfig": "7.0.1",
+		"cosmiconfig": "7.1.0",
 		"fast-glob": "3.2.12",
 		"micromatch": "4.0.5",
 		"minimist": "1.2.8",
