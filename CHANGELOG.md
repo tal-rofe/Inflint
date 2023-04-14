@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/Exlint/Inflint/compare/v1.2.10...v1.2.11) (2023-04-14)
+
+
+### Performance Improvements
+
+* ⚡ use ESM only ([45a06ea](https://github.com/Exlint/Inflint/commit/45a06ea456e3a7bffb71249ecf3cb1aa8d2b81c7))
+
 ## [1.2.10](https://github.com/Exlint/Inflint/compare/v1.2.9...v1.2.10) (2023-02-04)
 
 
