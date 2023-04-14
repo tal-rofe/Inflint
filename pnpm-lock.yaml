@@ -28,8 +28,8 @@ devDependencies:
     specifier: 17.0.2
     version: 17.0.2
   '@exlint.io/inflint':
-    specifier: 1.2.9
-    version: 1.2.9(@types/node@17.0.33)(typescript@5.0.4)
+    specifier: 2.0.0
+    version: 2.0.0
   '@types/micromatch':
     specifier: 4.0.2
     version: 4.0.2
@@ -453,24 +453,18 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@exlint.io/inflint@1.2.9(@types/node@17.0.33)(typescript@5.0.4):
-    resolution: {integrity: sha512-jvRQ/sJhNZHK+Ir+7zFWiQieWoSgS79zOmPZidCrS9o8NajjkTQ9+fAxIIQF5rUTNZOSzjTYr0Q12Q/qpzJTTQ==}
+  /@exlint.io/inflint@2.0.0:
+    resolution: {integrity: sha512-awRS7jJbCzmeyxRlPyhAvAqlacfFpcaaZXtWazWbyKRsNWOro93oeeF8XukWuINa6rYKCRyQmC9VmXImf4w8VQ==}
+    engines: {node: '>=14.16'}
     hasBin: true
     dependencies:
       '@expo/spawn-async': 1.6.0
+      chalk: 5.2.0
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.1(@types/node@17.0.33)(cosmiconfig@7.0.1)(typescript@5.0.4)
       fast-glob: 3.2.11
-      inquirer: 8.2.4
       micromatch: 4.0.5
       minimist: 1.2.6
       v8-compile-cache: 2.3.0
-      yaml: 2.1.1
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - typescript
     dev: true
 
   /@expo/spawn-async@1.6.0:
@@ -1310,7 +1304,6 @@ packages:
   /chalk@5.2.0:
     resolution: {integrity: sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
-    dev: false
 
   /chardet@0.4.2:
     resolution: {integrity: sha512-j/Toj7f1z98Hh2cYo2BVr85EpIRWqUi7rtRSGxh/cqUjqrnJe9l9UE7IUGd2vQ2p+kSHLkSzObQPZPLUC6TQwg==}
@@ -5149,11 +5142,6 @@ packages:
   /yaml@1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
-
-  /yaml@2.1.1:
-    resolution: {integrity: sha512-o96x3OPo8GjWeSLF+wOAbrPfhFOGY0W00GNaxCDv+9hkcDJEnev1yh8S7pgHF0ik6zc8sQLuL8hjHjJULZp8bw==}
-    engines: {node: '>= 14'}
-    dev: true
 
   /yaml@2.2.1:
     resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}

@@ -71,7 +71,7 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "17.0.2",
-		"@exlint.io/inflint": "1.2.9",
+		"@exlint.io/inflint": "2.0.0",
 		"@types/micromatch": "4.0.2",
 		"@types/minimist": "1.2.2",
 		"@types/webpack-node-externals": "2.5.3",

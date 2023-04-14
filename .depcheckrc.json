@@ -7,6 +7,7 @@
 		"webpack-cli",
 		"ts-loader",
 		"ts-node",
-		"rimraf"
+		"rimraf",
+		"@exlint.io/inflint"
 	]
 }
