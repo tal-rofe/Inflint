@@ -7,7 +7,7 @@ const isChildOfDirectory = (parentPath: string, childPath: string) => {
 	return !path.relative(parentPath, childPath).startsWith('..');
 };
 
-export const getNpmPackageVersion = async (package_: string, global: boolean) => {
+export const getNpmPackageVersion = async (pkg: string, global: boolean) => {
 	const npmBinArguments = ['bin', '-g'];
 	const npmLsArguments = ['ls', '--depth=0', '--json', 'eslint'];
 
@@ -21,7 +21,7 @@ export const getNpmPackageVersion = async (package_: string, global: boolean) =>
 
 		if (
 			Object.keys(parsedStdout).length === 0 ||
-			!(parsedStdout.dependencies && parsedStdout.dependencies[package_])
+			!(parsedStdout.dependencies && parsedStdout.dependencies[pkg])
 		) {
 			return 'Not found';
 		}

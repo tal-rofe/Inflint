@@ -35,6 +35,9 @@ jobs:
                   package-manager: pnpm
                   package-manager-version: 8.1.1
 
+            - name: Pre-build Inflint
+              run: pnpm build
+
             - name: Test Inflint
               run: pnpm inflint
 
