@@ -74,7 +74,7 @@
 		"@exlint.io/inflint": "2.0.0",
 		"@types/micromatch": "4.0.2",
 		"@types/minimist": "1.2.2",
-		"@types/webpack-node-externals": "2.5.3",
+		"@types/webpack-node-externals": "3.0.0",
 		"@typescript-eslint/eslint-plugin": "5.58.0",
 		"@typescript-eslint/parser": "5.58.0",
 		"commitizen": "4.3.0",
