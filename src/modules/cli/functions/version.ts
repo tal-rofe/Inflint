@@ -5,5 +5,5 @@ import CLILoggerModule from '@/shared/modules/cli-logger';
  * @returns void
  */
 export const printVersion = () => {
-	CLILoggerModule.service.default(__PACKAGE_VERSION__);
+	CLILoggerModule.service.default(`v${__PACKAGE_VERSION__}`);
 };

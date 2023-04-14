@@ -1,4 +1,4 @@
-import { IRuleConsoleDetails } from '@/interfaces/rule';
+import type { IRuleConsoleDetails } from '@/interfaces/rule';
 
 import CLILoggerService from './cli-logger.service';
 

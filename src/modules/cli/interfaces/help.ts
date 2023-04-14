@@ -11,7 +11,6 @@ export type IOptionsKeys =
 	| 'bail'
 	| 'outputFile'
 	| 'color'
-	| 'init'
 	| 'help'
 	| 'version'
 	| 'envVersions';

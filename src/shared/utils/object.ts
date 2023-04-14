@@ -4,9 +4,11 @@
  * @returns void
  */
 export const withCleanObject = <T extends object>(input: T) => {
-	const obj = { ...input };
+	const object = { ...input };
 
-	Object.keys(obj).forEach((key) => obj[key as keyof T] === undefined && delete obj[key as keyof T]);
+	Object.keys(object).forEach(
+		(key) => object[key as keyof T] === undefined && delete object[key as keyof T],
+	);
 
-	return obj;
+	return object;
 };

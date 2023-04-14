@@ -1,4 +1,4 @@
-import { IRuleOptions, IRuleValue } from '../interfaces/rule';
+import type { IRuleOptions, IRuleValue } from '../interfaces/rule';
 import { withCleanObject } from './object';
 
 /**

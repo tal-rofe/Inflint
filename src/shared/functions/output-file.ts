@@ -1,8 +1,8 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
 import CLILoggerModule from '../modules/cli-logger';
-import { IRuleConsoleDetails } from '../interfaces/rule';
+import type { IRuleConsoleDetails } from '../interfaces/rule';
 
 const print = (details: IRuleConsoleDetails, isError: boolean) => {
 	const absolutePath = path.join(process.cwd(), details.filePath);
@@ -63,9 +63,9 @@ export const outputFile = async (
 
 		const errorsPrints = errors.map((error) => print(error, true)).join('\n');
 		const warningsPrints = warnings.map((warning) => print(warning, false)).join('\n');
-		const summaryPrintStr = summaryPrint(errors.length, warnings.length);
+		const summaryPrintString = summaryPrint(errors.length, warnings.length);
 
-		const finalOutput = `${errorsPrints}\n${warningsPrints}\n${summaryPrintStr}`;
+		const finalOutput = `${errorsPrints}\n${warningsPrints}\n${summaryPrintString}`;
 
 		await fs.writeFile(absoluteFilePath, finalOutput);
 	} catch {

@@ -1,4 +1,4 @@
-import { IAliasValue } from '@/interfaces/alias';
+import type { IAliasValue } from '@/interfaces/alias';
 import { isAliasValueValid } from '@/validators/alias';
 
 /**

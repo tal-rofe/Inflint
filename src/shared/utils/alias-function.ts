@@ -1,17 +1,17 @@
-import { IMappedFunction } from '../interfaces/alias-function';
+import type { IMappedFunction } from '../interfaces/alias-function';
 
 export const getAliasFunction = (ruleAlias: string, functions: Record<string, IMappedFunction>) => {
-	const func = functions[ruleAlias];
+	const function_ = functions[ruleAlias];
 
-	if (!func) {
-		const defaultFunc = (input: string) => {
+	if (!function_) {
+		const defaultFunction = (input: string) => {
 			const regex = new RegExp(ruleAlias);
 
 			return regex.test(input);
 		};
 
-		return defaultFunc;
+		return defaultFunction;
 	}
 
-	return func;
+	return function_;
 };

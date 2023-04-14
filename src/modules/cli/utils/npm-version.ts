@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import { asyncSpawn } from './os';
 import { normalizeVersion } from './normalize-version';
@@ -7,21 +7,21 @@ const isChildOfDirectory = (parentPath: string, childPath: string) => {
 	return !path.relative(parentPath, childPath).startsWith('..');
 };
 
-export const getNpmPackageVersion = async (pkg: string, global: boolean) => {
-	const npmBinArgs = ['bin', '-g'];
-	const npmLsArgs = ['ls', '--depth=0', '--json', 'eslint'];
+export const getNpmPackageVersion = async (package_: string, global: boolean) => {
+	const npmBinArguments = ['bin', '-g'];
+	const npmLsArguments = ['ls', '--depth=0', '--json', 'eslint'];
 
 	if (global) {
-		npmLsArgs.push('-g');
+		npmLsArguments.push('-g');
 	}
 
 	try {
-		const output = await asyncSpawn('npm', npmLsArgs);
+		const output = await asyncSpawn('npm', npmLsArguments);
 		const parsedStdout = JSON.parse(output);
 
 		if (
 			Object.keys(parsedStdout).length === 0 ||
-			!(parsedStdout.dependencies && parsedStdout.dependencies[pkg])
+			!(parsedStdout.dependencies && parsedStdout.dependencies[package_])
 		) {
 			return 'Not found';
 		}
@@ -30,20 +30,20 @@ export const getNpmPackageVersion = async (pkg: string, global: boolean) => {
 		let npmBinPath;
 
 		try {
-			npmBinPath = await asyncSpawn('npm', npmBinArgs);
-		} catch (e) {
+			npmBinPath = await asyncSpawn('npm', npmBinArguments);
+		} catch {
 			return 'Not found';
 		}
 
 		const isGlobal = isChildOfDirectory(npmBinPath, processBinPath ?? '');
-		let pkgVersion = parsedStdout.dependencies.eslint.version;
+		let packageVersion = parsedStdout.dependencies.eslint.version;
 
 		if ((global && isGlobal) || (!global && !isGlobal)) {
-			pkgVersion += ' (Currently used)';
+			packageVersion += ' (Currently used)';
 		}
 
-		return normalizeVersion(pkgVersion);
-	} catch (e) {
+		return normalizeVersion(packageVersion);
+	} catch {
 		return 'Not found';
 	}
 };

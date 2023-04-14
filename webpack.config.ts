@@ -1,11 +1,17 @@
-import path from 'path';
+import path from 'node:path';
+import fs from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 
 import webpack from 'webpack';
 import nodeExternals from 'webpack-node-externals';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import WebpackShellPluginNext from 'webpack-shell-plugin-next';
 
-import { version } from './package.json';
+const packageJsonData = await fs.readFile('package.json', 'utf8');
+const packageJsonObject = JSON.parse(packageJsonData);
+const version = packageJsonObject.version;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const configuration: webpack.Configuration = {
 	context: __dirname,
@@ -13,14 +19,14 @@ const configuration: webpack.Configuration = {
 	target: 'node',
 	entry: './src/index.ts',
 	// * https://stackoverflow.com/questions/48673408/should-javascript-npm-packages-be-minified
-	optimization: {
-		minimize: false,
-	},
+	optimization: { minimize: false },
 	externals: [
 		nodeExternals({
-			modulesDir: path.resolve(__dirname, 'node_modules'),
+			modulesDir: path.join(__dirname, 'node_modules'),
+			importType: (moduleName) => `import ${moduleName}`,
 		}),
 	],
+	experiments: { outputModule: true },
 	module: {
 		rules: [
 			{
@@ -28,9 +34,7 @@ const configuration: webpack.Configuration = {
 				use: [
 					{
 						loader: 'ts-loader',
-						options: {
-							configFile: 'tsconfig.build.json',
-						},
+						options: { configFile: 'tsconfig.build.json' },
 					},
 				],
 				exclude: /node_modules/,
@@ -46,14 +50,15 @@ const configuration: webpack.Configuration = {
 			safe: true,
 		}),
 		new webpack.DefinePlugin({
-			__PACKAGE_VERSION__: `'v${version}'`,
+			__PACKAGE_VERSION__: JSON.stringify(version),
 		}),
 	],
 	resolve: {
 		extensions: ['.ts'],
 		plugins: [
 			new TsconfigPathsPlugin({
-				configFile: 'tsconfig.build.json',
+				// * Need "base" file and not "paths" because the "base" contains the "baseUrl" key
+				configFile: './tsconfig.base.json',
 				extensions: ['.ts'],
 			}),
 		],
@@ -61,6 +66,8 @@ const configuration: webpack.Configuration = {
 	output: {
 		filename: 'index.js',
 		path: path.resolve(__dirname, 'dist'),
+		library: { type: 'module' },
+		chunkFormat: 'module',
 	},
 };
 

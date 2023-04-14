@@ -1,6 +1,6 @@
 import { getCLIArgv } from '@/utils/argv';
 
-import CLILoggerService from './cli-logger.service';
+import type CLILoggerService from './cli-logger.service';
 import CLILoggerColorfulController from './cli-logger-colorful.controller';
 import CLILoggerDryController from './cli-logger-dry.controller';
 

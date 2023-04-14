@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
 	branches: ['main'],
 	repositoryUrl: 'git+https://github.com/Exlint/Inflint',
 	plugins: [
@@ -10,3 +10,5 @@ module.exports = {
 		'@semantic-release/github',
 	],
 };
+
+export default config;

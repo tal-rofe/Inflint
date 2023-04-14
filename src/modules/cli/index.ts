@@ -1,10 +1,9 @@
-import { ParsedArgs } from 'minimist';
+import type { ParsedArgs } from 'minimist';
 
 import CLILoggerModule from '@/shared/modules/cli-logger';
 
 import { printHelp } from './functions/help';
 import { printVersion } from './functions/version';
-import { initConfiguration } from './functions/init';
 import { getConfiguration } from './utils/cli-configuration';
 import { printEnvironmentInfo } from './functions/env-info';
 
@@ -26,12 +25,6 @@ const StartCLI = (argv: ParsedArgs) => {
 		return null;
 	}
 
-	if (argv['init'] === true) {
-		initConfiguration();
-
-		return null;
-	}
-
 	if (argv['env-info'] === true) {
 		printEnvironmentInfo();
 
@@ -42,8 +35,8 @@ const StartCLI = (argv: ParsedArgs) => {
 		const configuration = getConfiguration(argv);
 
 		return configuration;
-	} catch (e) {
-		CLILoggerModule.service.error((e as Error).message);
+	} catch (error) {
+		CLILoggerModule.service.error((error as Error).message);
 
 		process.exit(1);
 	}

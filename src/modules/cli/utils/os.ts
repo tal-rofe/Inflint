@@ -1,4 +1,4 @@
-import { SpawnOptions } from 'child_process';
+import type { SpawnOptions } from 'node:child_process';
 
 import spawnAsync from '@expo/spawn-async';
 
@@ -15,7 +15,7 @@ const EXECUTION_TIMEOUT = 10 * 1000;
  */
 export const asyncSpawn = async (
 	command: string,
-	args?: ReadonlyArray<string>,
+	arguments_?: ReadonlyArray<string>,
 	options?: SpawnOptions | null,
 ) => {
 	const timeout = options?.timeout ?? EXECUTION_TIMEOUT;
@@ -32,7 +32,7 @@ export const asyncSpawn = async (
 	}, timeout);
 
 	try {
-		const { stdout } = await spawnAsync(command, args, extendedOptions);
+		const { stdout } = await spawnAsync(command, arguments_, extendedOptions);
 
 		return stdout;
 	} finally {

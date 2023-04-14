@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"paths": {
+			"@/utils/*": ["src/shared/utils/*"],
+			"@/models/*": ["src/shared/models/*"],
+			"@/services/*": ["src/shared/services/*"],
+			"@/modules/*": ["src/modules/*"],
+			"@/interfaces/*": ["src/shared/interfaces/*"],
+			"@/validators/*": ["src/shared/validators/*"],
+			"@/functions/*": ["src/shared/functions/*"],
+			"@/shared/*": ["src/shared/*"]
+		}
+	}
+}

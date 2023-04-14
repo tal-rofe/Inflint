@@ -47,6 +47,10 @@ npm install --save-dev @exlint.io/inflint
 $ inflint [options] [files]
 ```
 
+## ESM support
+
+Inflint now supports **only** ESM modules. For any issue regarding this, please visit this link https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
 ## Configuration
 
 You can specify the configuration of Inflint through various options.
@@ -55,23 +59,9 @@ Configuration can be set in the following files:
 -   a `package.json` property: `"inflint": {...}`
 -   a `.inflintrc` file in JSON or YAML format
 -   a `.inflintrc.json`, `.inflintrc.yaml`, `.inflintrc.yml`, `.inflintrc.js`, `.inflintrc.ts`, or `.inflintrc.cjs` file
--   a `inflint.config.js`, `inflint.config.ts` or `inflint.config.cjs` CommonJS module exporting an object
+-   a `inflint.config.js`, or `inflint.config.cjs` CommonJS module exporting an object
 
-If you set a TypeScript configuration file, you can use the configuration interface:
-```ts
-import type { Config } from '@exlint.io/inflint';
-
-const inflintConfig: Config = {
-	...
-}
-
-export default inflintConfig;
-```
-
-You can set a configuration file using our wizard:
-```bash
-npx @exlint.io/inflint --init
-```
+Currently, a TypeScript configuration file is not supported: https://github.com/Codex-/cosmiconfig-typescript-loader/issues/60
 
 ### Rules format
 When applying rules either via the CLI or other conifguration, you must follow the rules format.
@@ -171,8 +161,7 @@ The JSON should follow the aliases format described above.
 | `--max-warnings`        | `maxWarnings`         | Number            | `0`              | Number of warnings to trigger non-zero exit code                                                       |
 | `--bail`                | `bail`                | Boolean or Number | `0`              | Number of failures (errors) to make Inflint to exit. Setting "bail" to true is the same as setting "1" |
 | `-o`, `--output-file`   | `outputFile`          | String            | -                | Specify file to write report to                                                                        |
-| `--color`, `--no-color` | -                     | Boolean           | `true`           | Force enabling/disabling of color                                                                      |
-| `--init`                | -                     | Boolean           | `false`          | Run configuration initialization wizard                                                                |
+| `--color`, `--no-color` | -                     | Boolean           | `true`           | Force enabling/disabling of color                                                                      |                                                            |
 | `-h`, `--help`          | -                     | Boolean           | `false`          | Show help                                                                                              |
 | `-v`, `--version`       | -                     | Boolean           | `false`          | Output the version number                                                                              |
 | `--env-info`            | -                     | Boolean           | `false`          | Output the environment version                                                                         |

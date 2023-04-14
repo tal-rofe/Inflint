@@ -1,8 +1,8 @@
-import path from 'path';
+import path from 'node:path';
 
 import chalk from 'chalk';
 
-import { IRuleConsoleDetails } from '@/interfaces/rule';
+import type { IRuleConsoleDetails } from '@/interfaces/rule';
 
 export default abstract class CLILoggerService {
 	protected abstract infoImpl(input: string): void;

@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'node:fs/promises';
 
 import CLILoggerModule from '@/shared/modules/cli-logger';
 

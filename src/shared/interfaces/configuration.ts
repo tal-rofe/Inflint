@@ -1,5 +1,5 @@
-import { IAliasValue } from './alias';
-import { IRuleValue } from './rule';
+import type { IAliasValue } from './alias';
+import type { IRuleValue } from './rule';
 
 export interface IBaseConfiguration {
 	readonly rules?: Record<string, IRuleValue>;

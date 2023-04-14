@@ -1,6 +1,6 @@
 import type { ParsedArgs } from 'minimist';
 
-import { ICLIConfiguration } from '@/interfaces/configuration';
+import type { ICLIConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateString, validatePositiveInteger } from '@/validators/basic';
 import { validateSringsArrayOrString } from '@/validators/complex';

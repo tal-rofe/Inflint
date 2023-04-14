@@ -1,4 +1,4 @@
-import { IRuleValue } from '../interfaces/rule';
+import type { IRuleValue } from '../interfaces/rule';
 
 /**
  * The function returns the rule alias, empty string if there is no one

@@ -1,10 +1,10 @@
-import path from 'path';
+import path from 'node:path';
 
 import fg from 'fast-glob';
 
-import { IBaseConfiguration } from '@/interfaces/configuration';
+import type { IBaseConfiguration } from '@/interfaces/configuration';
 import CLILoggerModule from '@/shared/modules/cli-logger';
-import { IRuleConsoleDetails } from '@/interfaces/rule';
+import type { IRuleConsoleDetails } from '@/interfaces/rule';
 import { getRuleOptions } from '@/utils/rule-options';
 import {
 	checkAliasError,
@@ -13,7 +13,7 @@ import {
 	checkExistenceWarning,
 } from '@/utils/enforcement-type';
 import { getRuleAlias } from '@/utils/rule-alias';
-import { IMappedFunction } from '@/interfaces/alias-function';
+import type { IMappedFunction } from '@/interfaces/alias-function';
 import { getAliasFunction } from '@/utils/alias-function';
 import { outputFile } from '@/functions/output-file';
 

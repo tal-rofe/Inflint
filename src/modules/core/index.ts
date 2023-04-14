@@ -1,5 +1,5 @@
-import { IBaseConfiguration } from '@/interfaces/configuration';
-import { IMappedFunction } from '@/interfaces/alias-function';
+import type { IBaseConfiguration } from '@/interfaces/configuration';
+import type { IMappedFunction } from '@/interfaces/alias-function';
 
 import { lint } from './functions/lint';
 

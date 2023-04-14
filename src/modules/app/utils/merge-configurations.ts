@@ -1,8 +1,8 @@
-import path from 'path';
+import path from 'node:path';
 
 import { cosmiconfig } from 'cosmiconfig';
 
-import { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/configuration';
+import type { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
 import CLILoggerModule from '@/shared/modules/cli-logger';
 import { validateConfiguration } from '@/modules/configuration/validators/configuration';

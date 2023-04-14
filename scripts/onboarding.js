@@ -1,8 +1,8 @@
-const chalk = require('chalk');
-const figlet = require('figlet');
+import chalk from 'chalk';
+import figlet from 'figlet';
 
-figlet('Inflint', (err, figletText) => {
-	if (err) {
+figlet('Inflint', (error, figletText) => {
+	if (error) {
 		return;
 	}
 

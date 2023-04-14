@@ -44,7 +44,6 @@ export const printHelp = () => {
 	CLILoggerModule.service.emptyBlock();
 
 	CLILoggerModule.service.bold('Miscellaneous:');
-	CLILoggerModule.service.spaced(options.init, 2, spaceBias - options.init[0].length);
 	CLILoggerModule.service.spaced(options.help, 2, spaceBias - options.help[0].length);
 	CLILoggerModule.service.spaced(options.version, 2, spaceBias - options.version[0].length);
 	CLILoggerModule.service.spaced(options.envVersions, 2, spaceBias - options.envVersions[0].length);

@@ -8,6 +8,5 @@
 		"ts-loader",
 		"ts-node",
 		"rimraf"
-	],
-	"skipMissing": true
+	]
 }

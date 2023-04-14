@@ -1,4 +1,4 @@
-import { ISourceConfiguration } from '@/interfaces/configuration';
+import type { ISourceConfiguration } from '@/interfaces/configuration';
 import CLILoggerModule from '@/shared/modules/cli-logger';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validatePositiveInteger, validateString } from '@/validators/basic';
@@ -36,8 +36,8 @@ export const validateConfiguration = (configuration: Record<string, unknown>) =>
 		});
 
 		return finalConfiguration;
-	} catch (e) {
-		CLILoggerModule.service.error((e as Error).message);
+	} catch (error) {
+		CLILoggerModule.service.error((error as Error).message);
 
 		process.exit(1);
 	}

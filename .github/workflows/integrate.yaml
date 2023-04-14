@@ -9,91 +9,91 @@ permissions:
 
 jobs:
     depcheck:
-        name: Testing Depcheck
+        name: Depcheck
 
-        runs-on: [self-hosted, Linux, X64, integration]
+        runs-on: ubuntu-latest
         steps:
             - name: Setup Node environment
-              uses: Exlint/node-environment@v1.2.4
+              uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 18.13.0
+                  node-version: 18.15.0
                   package-manager: pnpm
-                  package-manager-version: 7.26.3
+                  package-manager-version: 8.1.0
 
             - name: Test Depcheck
               run: pnpm depcheck
 
     inflint:
-        name: Testing Inflint
+        name: Inflint
 
-        runs-on: [self-hosted, Linux, X64, integration]
+        runs-on: ubuntu-latest
         steps:
             - name: Setup Node environment
-              uses: Exlint/node-environment@v1.2.4
+              uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 18.13.0
+                  node-version: 18.15.0
                   package-manager: pnpm
-                  package-manager-version: 7.26.3
+                  package-manager-version: 8.1.0
 
             - name: Test Inflint
               run: pnpm inflint
 
     typescript:
-        name: Testing TypeScript
+        name: TypeScript
 
-        runs-on: [self-hosted, Linux, X64, integration]
+        runs-on: ubuntu-latest
         steps:
             - name: Setup Node environment
-              uses: Exlint/node-environment@v1.2.4
+              uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 18.13.0
+                  node-version: 18.15.0
                   package-manager: pnpm
-                  package-manager-version: 7.26.3
+                  package-manager-version: 8.1.0
 
             - name: Test TypeScript
               run: pnpm type-check
 
     prettier:
-        name: Testing Prettier
+        name: Prettier
 
-        runs-on: [self-hosted, Linux, X64, integration]
+        runs-on: ubuntu-latest
         steps:
             - name: Setup Node environment
-              uses: Exlint/node-environment@v1.2.4
+              uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 18.13.0
+                  node-version: 18.15.0
                   package-manager: pnpm
-                  package-manager-version: 7.26.3
+                  package-manager-version: 8.1.0
 
             - name: Test Prettier
               run: pnpm prettier
 
     eslint:
-        name: Testing ESLint
+        name: ESLint
 
-        runs-on: [self-hosted, Linux, X64, integration]
+        runs-on: ubuntu-latest
         steps:
             - name: Setup Node environment
-              uses: Exlint/node-environment@v1.2.4
+              uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 18.13.0
+                  node-version: 18.15.0
                   package-manager: pnpm
-                  package-manager-version: 7.26.3
+                  package-manager-version: 8.1.0
 
             - name: Test ESLint
               run: pnpm lint
 
-    dist:
-        name: Testing dist
+    build:
+        name: Build
 
-        runs-on: [self-hosted, Linux, X64, integration]
+        runs-on: ubuntu-latest
         steps:
             - name: Setup Node environment
-              uses: Exlint/node-environment@v1.2.4
+              uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 18.13.0
+                  node-version: 18.15.0
                   package-manager: pnpm
-                  package-manager-version: 7.26.3
+                  package-manager-version: 8.1.0
 
-            - name: Test dist
-              run: pnpm dist
+            - name: Test build
+              run: pnpm build

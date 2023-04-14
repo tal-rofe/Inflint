@@ -25,12 +25,18 @@
 		"type": "git",
 		"url": "git+https://github.com/Exlint/Inflint.git"
 	},
-	"main": "dist/index.js",
-	"types": "dist/config.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/config.d.ts"
+			}
+		}
+	},
 	"files": [
-		"dist/index.js",
-		"bin",
-		"dist/config.d.ts"
+		"./dist/index.js",
+		"./bin",
+		"./dist/config.d.ts"
 	],
 	"bin": {
 		"inflint": "./bin/inflint.js"
@@ -38,49 +44,48 @@
 	"publishConfig": {
 		"access": "public"
 	},
+	"engines": {
+		"node": ">=14.16"
+	},
 	"scripts": {
 		"husky:install": "husky install",
 		"git:config": "git config --local include.path ../.gitconfig",
 		"setdev": "run-p husky:install git:config",
 		"onboarding": "node ./scripts/onboarding.js",
 		"prepare": "is-ci || run-s setdev onboarding",
-		"dist:create": "webpack -c webpack.config.ts",
-		"dist": "webpack -c webpack.config.ts",
-		"lint": "eslint -c ./.eslintrc.js ./src/**/*",
-		"format": "prettier --write \"**/*.{ts,js,json}\"",
-		"type-check": "tsc --project ./tsconfig.json",
+		"build": "node --loader ts-node/esm node_modules/webpack-cli/bin/cli.js -c ./webpack.config.ts",
+		"lint": "eslint -c ./.eslintrc.cjs \"**/*.{ts,js,cjs}\"",
+		"prettier": "prettier --check **/*.{ts,js,cjs,json,yaml}",
+		"type-check": "tsc -p ./tsconfig.json",
 		"depcheck": "depcheck --config ./.depcheckrc.json",
-		"inflint": "inflint -c ./inflint.config.ts",
-		"prettier": "prettier --check **/*.{ts,js,cjs,json,yaml}"
+		"inflint": "inflint -c ./inflint.config.cjs"
 	},
 	"dependencies": {
 		"@expo/spawn-async": "1.6.0",
+		"chalk": "5.2.0",
 		"cosmiconfig": "7.0.1",
-		"cosmiconfig-typescript-loader": "2.0.1",
 		"fast-glob": "3.2.11",
-		"inquirer": "8.2.4",
 		"micromatch": "4.0.5",
 		"minimist": "1.2.6",
-		"v8-compile-cache": "2.3.0",
-		"yaml": "2.1.1"
+		"v8-compile-cache": "2.3.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "17.0.2",
 		"@exlint.io/inflint": "1.2.9",
-		"@types/inquirer": "8.2.1",
 		"@types/micromatch": "4.0.2",
 		"@types/minimist": "1.2.2",
 		"@types/webpack-node-externals": "2.5.3",
-		"@typescript-eslint/eslint-plugin": "5.27.1",
-		"@typescript-eslint/parser": "5.27.1",
-		"chalk": "4.1.2",
+		"@typescript-eslint/eslint-plugin": "5.58.0",
+		"@typescript-eslint/parser": "5.58.0",
 		"commitizen": "4.2.4",
-		"cz-vinyl": "1.3.2",
+		"cz-vinyl": "1.6.2",
 		"depcheck": "1.4.3",
-		"eslint": "8.17.0",
-		"eslint-config-prettier": "8.5.0",
-		"eslint-plugin-import": "2.26.0",
+		"eslint": "8.38.0",
+		"eslint-config-prettier": "8.8.0",
+		"eslint-plugin-deprecation": "1.4.1",
+		"eslint-plugin-import": "2.27.5",
 		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-unicorn": "46.0.0",
 		"eslint-plugin-unused-imports": "2.0.0",
 		"figlet": "1.5.2",
 		"husky": "8.0.1",
@@ -89,13 +94,13 @@
 		"npm-run-all": "4.1.5",
 		"prettier": "2.6.2",
 		"rimraf": "3.0.2",
-		"ts-loader": "9.3.0",
+		"ts-loader": "9.4.2",
 		"ts-node": "10.9.1",
-		"tsconfig-paths-webpack-plugin": "3.5.2",
-		"typescript": "4.7.3",
-		"webpack": "5.73.0",
-		"webpack-cli": "4.9.2",
+		"tsconfig-paths-webpack-plugin": "4.0.1",
+		"typescript": "5.0.4",
+		"webpack": "5.78.0",
+		"webpack-cli": "5.0.1",
 		"webpack-node-externals": "3.0.0",
-		"webpack-shell-plugin-next": "2.2.2"
+		"webpack-shell-plugin-next": "2.3.1"
 	}
 }

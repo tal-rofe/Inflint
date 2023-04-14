@@ -1,4 +1,4 @@
-import { IOptionsKeys } from '../interfaces/help';
+import type { IOptionsKeys } from '../interfaces/help';
 
 export const options: Record<IOptionsKeys, [string, string]> = {
 	inflintrc: [
@@ -22,7 +22,6 @@ export const options: Record<IOptionsKeys, [string, string]> = {
 	],
 	outputFile: ['-o, --output-file (path::String)', 'Specify file to write report to'],
 	color: ['--color, --no-color', 'Force enabling/disabling of color'],
-	init: ['--init', 'Run configuration initialization wizard. Default: false'],
 	help: ['-h, --help', 'Show help'],
 	version: ['-v, --version', 'Output the version number'],
 	envVersions: ['--env-info', 'Output the environment version'],

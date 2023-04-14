@@ -1,9 +1,9 @@
-import path from 'path';
+import path from 'node:path';
 
 import micromatch from 'micromatch';
 
-import { IBaseConfiguration } from '@/interfaces/configuration';
-import { IRuleConsoleDetails } from '@/interfaces/rule';
+import type { IBaseConfiguration } from '@/interfaces/configuration';
+import type { IRuleConsoleDetails } from '@/interfaces/rule';
 import { outputFile } from '@/functions/output-file';
 import CLILoggerModule from '@/shared/modules/cli-logger';
 import { validateSringsArray } from '@/validators/complex';
@@ -15,7 +15,7 @@ import {
 	checkExistenceWarning,
 } from '@/utils/enforcement-type';
 import { getRuleAlias } from '@/utils/rule-alias';
-import { IMappedFunction } from '@/interfaces/alias-function';
+import type { IMappedFunction } from '@/interfaces/alias-function';
 import { getAliasFunction } from '@/utils/alias-function';
 
 import { isDirectory } from '../utils/is-file';

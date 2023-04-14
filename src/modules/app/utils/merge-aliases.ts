@@ -1,5 +1,5 @@
-import { IAliasValue } from '@/interfaces/alias';
-import { IMappedFunction } from '@/interfaces/alias-function';
+import type { IAliasValue } from '@/interfaces/alias';
+import type { IMappedFunction } from '@/interfaces/alias-function';
 
 import { DEFAULT_ALIASES } from '../models/alias';
 import { transformAliases } from '../pipes/transform-aliases';
