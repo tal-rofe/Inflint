@@ -16,12 +16,17 @@ jobs:
               uses: Exlint/node-environment@v1.2.6
               with:
                   should-cache: false
-                  node-version: 14
+                  node-version: 18.15.0
                   package-manager: pnpm
                   package-manager-version: 8.1.0
 
             - name: Build dist folder
               run: pnpm build
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 14
 
             - name: Semantic Release
               uses: cycjimmy/semantic-release-action@v3.4.0
