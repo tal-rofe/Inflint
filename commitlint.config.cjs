@@ -1,4 +1,4 @@
-const commitTypeRegex = /chore|ci|docs|feat|fix|perf|refactor|release|style|test/;
+const commitTypeRegex = /breaking|chore|ci|docs|feat|fix|perf|refactor|release|style|test/;
 
 const commitEmojiRegex =
 	/(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/;
@@ -11,6 +11,11 @@ const commitRegex = new RegExp(
 );
 
 const defaultCommitTypes = [
+	{
+		description: 'Breaking change',
+		emoji: '💥',
+		value: 'breaking',
+	},
 	{
 		description: 'Build process or auxiliary tool changes',
 		emoji: '🤖',
