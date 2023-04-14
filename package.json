@@ -64,7 +64,7 @@
 		"@expo/spawn-async": "1.6.0",
 		"chalk": "5.2.0",
 		"cosmiconfig": "7.0.1",
-		"fast-glob": "3.2.11",
+		"fast-glob": "3.2.12",
 		"micromatch": "4.0.5",
 		"minimist": "1.2.8",
 		"v8-compile-cache": "2.3.0"
