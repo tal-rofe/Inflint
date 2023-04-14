@@ -22,6 +22,7 @@
 		"czvinyl.config.ts": "ocaml",
 		".depcheckrc.json": "parcel",
 		".cz.json": "jinja",
-		"tsconfig.paths.json": "tsconfig"
+		"tsconfig.paths.json": "tsconfig",
+		"release.config.cjs": "semantic-release"
 	}
 }

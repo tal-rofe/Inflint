@@ -183,7 +183,7 @@ module.exports = {
 			},
 		},
 		{
-			files: ['./**/*.cjs', './release.config.js'],
+			files: ['./**/*.cjs'],
 			rules: {
 				'@typescript-eslint/no-var-requires': 'off',
 				'@typescript-eslint/no-require-imports': 'off',
