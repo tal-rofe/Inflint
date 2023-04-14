@@ -28,8 +28,8 @@ devDependencies:
     specifier: 17.0.2
     version: 17.0.2
   '@exlint.io/inflint':
-    specifier: 1.2.9
-    version: 1.2.9(@types/node@17.0.33)(typescript@5.0.4)
+    specifier: 1.2.10
+    version: 1.2.10(@types/node@17.0.33)(typescript@5.0.4)
   '@types/micromatch':
     specifier: 4.0.2
     version: 4.0.2
@@ -453,8 +453,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@exlint.io/inflint@1.2.9(@types/node@17.0.33)(typescript@5.0.4):
-    resolution: {integrity: sha512-jvRQ/sJhNZHK+Ir+7zFWiQieWoSgS79zOmPZidCrS9o8NajjkTQ9+fAxIIQF5rUTNZOSzjTYr0Q12Q/qpzJTTQ==}
+  /@exlint.io/inflint@1.2.10(@types/node@17.0.33)(typescript@5.0.4):
+    resolution: {integrity: sha512-w/WF8km72qi6PqRCoyr4w7tFmE2RLSD1+0rq2joZKSubFAepcg52mqvQzdln/E4j4nADBNCKMlPxl8IRnV6asA==}
     hasBin: true
     dependencies:
       '@expo/spawn-async': 1.6.0
