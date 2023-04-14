@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@expo/spawn-async':
-    specifier: 1.6.0
-    version: 1.6.0
+    specifier: 1.7.2
+    version: 1.7.2
   chalk:
     specifier: 5.2.0
     version: 5.2.0
@@ -453,8 +453,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@expo/spawn-async@1.6.0:
-    resolution: {integrity: sha512-CynFS2y9S0OXgoBN3o6qvLSD5tBXCxEQnbByIleEocbKKYKb+/gjrjxYVvxPY8G+zqe82xG6IcmHbJoPl5g1WA==}
+  /@expo/spawn-async@1.7.2:
+    resolution: {integrity: sha512-QdWi16+CHB9JYP7gma19OVVg0BFkvU8zNj9GjWorYI8Iv8FUxjOCcYRuAmX4s/h91e4e7BPsskc8cSrZYho9Ew==}
     engines: {node: '>=12'}
     dependencies:
       cross-spawn: 7.0.3
