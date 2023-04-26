@@ -49,8 +49,8 @@ devDependencies:
     specifier: 4.3.0
     version: 4.3.0
   cz-vinyl:
-    specifier: 2.1.0
-    version: 2.1.0(@types/node@18.11.18)(typescript@5.0.4)
+    specifier: 2.2.0
+    version: 2.2.0(@types/node@18.11.18)(typescript@5.0.4)
   depcheck:
     specifier: 1.4.3
     version: 1.4.3
@@ -1564,7 +1564,7 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /cosmiconfig-typescript-loader@2.0.2(@types/node@18.11.18)(cosmiconfig@7.1.0)(typescript@5.0.4):
+  /cosmiconfig-typescript-loader@2.0.2(@types/node@18.11.18)(cosmiconfig@8.1.3)(typescript@5.0.4):
     resolution: {integrity: sha512-KmE+bMjWMXJbkWCeY4FJX/npHuZPNr9XF9q9CIQ/bpFwi1qHfCmSiKarrCcRa0LO4fWjk93pVoeRtJAkTGcYNw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -1573,7 +1573,7 @@ packages:
       typescript: '>=3'
     dependencies:
       '@types/node': 18.11.18
-      cosmiconfig: 7.1.0
+      cosmiconfig: 8.1.3
       ts-node: 10.9.1(@types/node@18.11.18)(typescript@5.0.4)
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -1656,18 +1656,19 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /cz-vinyl@2.1.0(@types/node@18.11.18)(typescript@5.0.4):
-    resolution: {integrity: sha512-UvTt9yoU6+uc14295acvxwKxPwTNtuxYtBQy29eucg+9P11KhKwSPZkyQvQ5wo0EaNJStyqEplLuvCdhREZObA==}
+  /cz-vinyl@2.2.0(@types/node@18.11.18)(typescript@5.0.4):
+    resolution: {integrity: sha512-mujcOEYMGFFKAJInSfkuPZkZlT3BQTvUQjNZN/IasBuMG0q7i6NCscCjx9VDStR1hqm5Nh3pMqW9e3W/1vUOGQ==}
     engines: {node: '>=14.16'}
     dependencies:
-      cosmiconfig: 7.1.0
-      cosmiconfig-typescript-loader: 2.0.2(@types/node@18.11.18)(cosmiconfig@7.1.0)(typescript@5.0.4)
+      cosmiconfig: 8.1.3
+      cosmiconfig-typescript-loader: 2.0.2(@types/node@18.11.18)(cosmiconfig@8.1.3)(typescript@5.0.4)
       fuse.js: 6.6.2
       inquirer: 8.2.4
       inquirer-autocomplete-prompt: 2.0.0(inquirer@8.2.4)
       inquirer-maxlength-input-prompt: 1.0.2
       string-template: 1.0.0
       word-wrap: 1.2.3
+      zod: 3.21.4
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -4964,4 +4965,8 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: true
