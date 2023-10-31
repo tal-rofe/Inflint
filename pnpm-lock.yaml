@@ -38,8 +38,8 @@ devDependencies:
     specifier: 4.0.4
     version: 4.0.4
   '@types/minimist':
-    specifier: 1.2.3
-    version: 1.2.3
+    specifier: 1.2.4
+    version: 1.2.4
   '@types/webpack-node-externals':
     specifier: 3.0.2
     version: 3.0.2(webpack-cli@5.1.4)
@@ -628,8 +628,8 @@ packages:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
     dev: true
 
-  /@types/minimist@1.2.3:
-    resolution: {integrity: sha512-ZYFzrvyWUNhaPomn80dsMNgMeXxNWZBdkuG/hWlUvXvbdUH8ZERNBGXnU87McuGcWDsyzX2aChCv/SVN348k3A==}
+  /@types/minimist@1.2.4:
+    resolution: {integrity: sha512-Kfe/D3hxHTusnPNRbycJE1N77WHDsdS4AjUYIzlDzhDrS47NrwuL3YW4VITxwR7KCVpzwgy4Rbj829KSSQmwXQ==}
     dev: true
 
   /@types/node@20.5.1:
@@ -3446,7 +3446,7 @@ packages:
     resolution: {integrity: sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==}
     engines: {node: '>=10'}
     dependencies:
-      '@types/minimist': 1.2.3
+      '@types/minimist': 1.2.4
       camelcase-keys: 6.2.2
       decamelize-keys: 1.1.1
       hard-rejection: 2.1.0
