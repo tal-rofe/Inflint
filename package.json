@@ -2,7 +2,7 @@
 	"name": "@exlint.io/inflint",
 	"version": "2.0.0",
 	"description": "Inflint is a tool which scans and verifies file name conventions.",
-	"author": "Exlint <dev@exlint.com> (https://www.exlint.io)",
+	"author": "Tal Rofe <talrofe111@gmail.com> (https://github.com/tal-rofe)",
 	"keywords": [
 		"linter",
 		"filesystem linter",
@@ -13,17 +13,17 @@
 	"contributors": [
 		{
 			"name": "tal-rofe",
-			"email": "tal@exlint.io"
+			"email": "talrofe111@gmail.com"
 		}
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/Exlint/Inflint#readme",
+	"homepage": "https://github.com/tal-rofe/Inflint#readme",
 	"bugs": {
-		"url": "https://github.com/Exlint/Inflint/issues"
+		"url": "https://github.com/tal-rofe/Inflint/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Exlint/Inflint.git"
+		"url": "git+https://github.com/tal-rofe/Inflint.git"
 	},
 	"type": "module",
 	"exports": {

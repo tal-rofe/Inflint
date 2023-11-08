@@ -1,14 +1,14 @@
 <p align="center">
-	<a href="https://github.com/Exlint/inflint">
-    	<img src="https://img.shields.io/github/actions/workflow/status/Exlint/inflint/integrate.yaml?label=CI&logo=GitHub" alt="CI status">
+	<a href="https://github.com/tal-rofe/inflint">
+    	<img src="https://img.shields.io/github/actions/workflow/status/tal-rofe/inflint/integrate.yaml?label=CI&logo=GitHub" alt="CI status">
   	</a>
 	<a href="https://www.npmjs.com/package/@exlint.io/inflint">
     	<img src="https://img.shields.io/npm/dm/@exlint.io/inflint?logo=NPM" alt="npm downloads">
   	</a>
-	<a href="https://github.com/Exlint/inflint">
+	<a href="https://github.com/tal-rofe/inflint">
     	<img src="https://img.shields.io/npm/l/@exlint.io/inflint" alt="npm license">
   	</a>
-	<a href="https://github.com/Exlint/inflint">
+	<a href="https://github.com/tal-rofe/inflint">
     	<img src="https://img.shields.io/npm/v/@exlint.io/inflint?label=version" alt="version">
   	</a>
 </p>
@@ -169,13 +169,13 @@ The JSON should follow the aliases format described above.
 ## Examples
 
 -   [@exlint.io/cli](https://github.com/Exlint/cli)
--   [@exlint.io/inflint](https://github.com/Exlint/inflint)
+-   [@exlint.io/inflint](https://github.com/tal-rofe/inflint)
 -   [@exlint.io/actions](https://github.com/Exlint/actions)
--   [cz-vinyl](https://github.com/Exlint/cz-vinyl)
+-   [cz-vinyl](https://github.com/tal-rofe/cz-vinyl)
 
 ## Support
 
-For support, email dev@exlint.io or open an issue at [inflint issues](https://github.com/Exlint/inflint/issues).
+For support, email talrofe111@gmail.com or open an issue at [inflint issues](https://github.com/tal-rofe/inflint/issues).
 
 ## Contributing
 
