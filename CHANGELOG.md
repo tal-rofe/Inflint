@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/tal-rofe/Inflint/compare/v2.0.0...v2.0.1) (2023-11-08)
+
+
+### Bug Fixes
+
+* 🐞 allow digits in patterns ([0297747](https://github.com/tal-rofe/Inflint/commit/02977475a25faba8dc7fd537ab6d0d25335611c3))
+
 # [2.0.0](https://github.com/Exlint/Inflint/compare/v1.2.11...v2.0.0) (2023-04-14)
 
 ## [1.2.11](https://github.com/Exlint/Inflint/compare/v1.2.10...v1.2.11) (2023-04-14)
