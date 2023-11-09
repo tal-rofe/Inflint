@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/tal-rofe/Inflint/compare/v2.0.1...v2.0.2) (2023-11-09)
+
+
+### Bug Fixes
+
+* 🐞 fix check for existence errors/warnings ([7c6dfd5](https://github.com/tal-rofe/Inflint/commit/7c6dfd52dac40cba77e4dad91776443b69e8f533))
+
 ## [2.0.1](https://github.com/tal-rofe/Inflint/compare/v2.0.0...v2.0.1) (2023-11-08)
 
 
