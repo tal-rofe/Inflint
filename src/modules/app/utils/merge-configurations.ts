@@ -22,7 +22,7 @@ export const mergeConfigurations = (
 		...(config1.rules ?? {}),
 	};
 
-	const mergredAliases = {
+	const mergedAliases = {
 		...(config2.aliases ?? {}),
 		...(config1.aliases ?? {}),
 	};
@@ -36,7 +36,7 @@ export const mergeConfigurations = (
 		...config2,
 		...config1,
 		rules: Object.keys(mergedRules).length > 0 ? mergedRules : undefined,
-		aliases: Object.keys(mergredAliases).length > 0 ? mergredAliases : undefined,
+		aliases: Object.keys(mergedAliases).length > 0 ? mergedAliases : undefined,
 		ignorePatterns: mergedIgnorePatterns.length > 0 ? mergedIgnorePatterns : undefined,
 	});
 };

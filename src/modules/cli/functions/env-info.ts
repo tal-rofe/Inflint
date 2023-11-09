@@ -6,7 +6,7 @@ import { asyncSpawn } from '../utils/os';
 import { getNpmPackageVersion } from '../utils/npm-version';
 
 /**
- * The function prints the enviornment info
+ * The function prints the environment info
  * @returns void
  */
 export const printEnvironmentInfo = async () => {

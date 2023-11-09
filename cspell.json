@@ -1,0 +1,24 @@
+{
+	"language": "en",
+	"ignorePaths": ["./pnpm-lock.yaml", "./renovate.json", "./CHANGELOG.md"],
+	"words": [
+		"inflintrc",
+		"ICLI",
+		"inflint",
+		"inflintignore",
+		"nocase",
+		"exlint",
+		"rofe",
+		"kebabcase",
+		"pointcase",
+		"screamingsnakecase",
+		"snakecase",
+		"pascalcase",
+		"camelcase",
+		"knip",
+		"czvinyl",
+		"setdev",
+		"esbenp",
+		"foxundermoon"
+	]
+}

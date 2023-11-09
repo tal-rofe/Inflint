@@ -57,8 +57,9 @@
 		"lint": "eslint -c ./.eslintrc.cjs \"**/*.{ts,js,cjs}\"",
 		"prettier": "prettier --check **/*.{ts,js,cjs,json,yaml}",
 		"type-check": "tsc -p ./tsconfig.json",
-		"depcheck": "depcheck --config ./.depcheckrc.json",
-		"inflint": "inflint -c ./inflint.config.cjs"
+		"inflint": "inflint -c ./inflint.config.cjs",
+		"knip": "knip -c ./knip.json -t ./tsconfig.json",
+		"cspell": "cspell lint -c ./cspell.json --gitignore --no-progress --no-summary **"
 	},
 	"dependencies": {
 		"@expo/spawn-async": "1.7.2",
@@ -77,9 +78,9 @@
 		"@types/webpack-node-externals": "3.0.3",
 		"@typescript-eslint/eslint-plugin": "5.62.0",
 		"@typescript-eslint/parser": "5.62.0",
-		"cz-vinyl": "2.3.0",
 		"commitizen": "4.3.0",
-		"depcheck": "1.4.7",
+		"cspell": "8.0.0",
+		"cz-vinyl": "2.3.0",
 		"eslint": "8.52.0",
 		"eslint-config-prettier": "8.10.0",
 		"eslint-plugin-deprecation": "1.5.0",
@@ -90,6 +91,7 @@
 		"figlet": "1.7.0",
 		"husky": "8.0.3",
 		"is-ci": "3.0.1",
+		"knip": "2.40.0",
 		"lint-staged": "13.3.0",
 		"npm-run-all": "4.1.5",
 		"prettier": "2.8.8",

@@ -64,43 +64,44 @@ Configuration can be set in the following files:
 Currently, a TypeScript configuration file is not supported: https://github.com/Codex-/cosmiconfig-typescript-loader/issues/60
 
 ### Rules format
-When applying rules either via the CLI or other conifguration, you must follow the rules format.
-`1` and `warn` are warnings rules, `2` and `error` are errors rules.
-Each rule has key and value. The key represents the glob pattern. When a file matches the pattern, it will be enfocred by the rule.
-They rule value represents the rule enforcement.
-Rules enforcement format:
+When applying rules either via the CLI or other configuration, you must follow the rules format.
+"`1`" and "`warn`" are warnings rules, "`2`" and "`error`" are errors rules.
+Each rule has key and value. The key represents the glob pattern. When a file matches the pattern, it will be enforced by the rule.
+The rule value represents the rule enforcement.
+
+**Rules enforcement format:**
 - Set rules of files-existence: `1 | 2 | 'warn' | 'error' | [1] | [2] | ['warn'] | ['error']`
 
-  **Example**: `{ 'src/**/*': 2 }` &rarr; Inflint will emit error if there are any files/folders inside `src` folder
+  **Example**: `{ './src/**/*': 2 }` &rarr; Inflint emits an error if there are any files/folders inside "src" folder
 - Set rules to match file names conventions: `[1, <convention>] | [2, <convention>] | ['warn', <convention>]| ['error', <convention>]`
 
-  **Example**: `{ 'src/**/*': [1, 'kebab-case'] }` &rarr; Inflint will emit error if there are any files/folder with "kebab-case" convention name inside `src` folder
+  **Example**: `{ './src/**/*': [1, 'kebab-case'] }` &rarr; Inflint emits an error if there are any files/folder which do not match the "kebab-case" convention name inside "src" folder.
 - Set rules options: `[1, <convention>(optional), <options>] | [2, <convention>(optional), <options>] | ['warn', <convention>(optional), <options>] | ['error', <convention>(optional), <options>]`
 
-  **Example1**: `{ 'src/**/*': [1, { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files inside `src` folder (and ignores folders if there are)
+  **Example1**: `{ './src/**/*': [1, { onlyFiles: true }] }` &rarr; Inflint emits an error if there are any files inside "src" folder (and allows folders to exist)
   
-  **Example2**: `{ 'src/**/*': [1, 'point.case', { onlyFiles: true }] }` &rarr; Inflint will emit error if there are any files with "point-case" convention name inside `src` folder (and ignores folders if there are)
+  **Example2**: `{ './src/**/*': [1, 'point.case', { onlyFiles: true }] }` &rarr; Inflint emits an error if there are any files which do not match the "point-case" convention name inside "src" folder (and allows folders inside "src" folder not to match the "point.case" pattern)
 
 
-> If you provide unknown convention which isn't a readymade one or a configured alias, Inflint will consider the "convention" as regex.
+> If you provide unknown convention which isn't known one or a configured alias, Inflint considers the "convention" as regex.
 
 ### Rule option
 You can set options for any rule, in order to get some customization.
 - `onlyDirectories`: Boolean (default: `false`)
   
-  Inflint will check the rule with directories only. Will skip files.
+  Inflint checks the rule with directories only, skips files.
 
 - `onlyFiles`: Boolean (default: `false`)
 
-  Inflint will check the rule with files only. Will skip directories.
+  Inflint checks the rule with files only, skips directories.
 
 - `dot`: Boolean (default: `true`)
 
-  Allow Inflint to match files and directories that begin with a period (.)
+  Allow Inflint to match files and directories starting with a period (`.`).
 
 - `caseSensitiveMatch`: Boolean (default: `true`)
 
-  Enables a case-sensitive mode for matching files.
+  Enables a case-sensitive mode for matching files and folders.
 
 ### File names conventions
 You can set file names conventions rules using known ones. Inflint allows you to set the following:
@@ -126,15 +127,15 @@ The JSON should follow the rules format described above.
 **Example**: `inflint --rule "{ \"src/**/*\": [1] }"`
 
 ### Aliases
-You can use the readymade conventions, or you can add your own by applying aliases, via the CLI or other configuration.
-To use the aliases, simply use the alias name as you would use readymade convention.
+You can use the known conventions, or you can add your own by applying aliases, via the CLI or other configuration.
+To use the aliases, simply use the alias name as you would use a known convention.
 Aliases should be applied with the following format:
 - `<alias_name>: <regex>` Inflint will apply the alias name to match the provided regex.
 
-  **Example**: Applying the alias `{ myAlias: '^.*$' }` and the rule `{ 'src/**/*': [2, 'myAlias'] }` &rarr; Inflint will match any file/folder in `src` directory and validates the provided regex matches it.
-- `<alias_name>: [<regex>, <regex_flags>]` Inflint will apply the alias name to match the provided regex with given flags.
+  **Example**: Applying the alias `{ myAlias: '^.*$' }` and the rule `{ 'src/**/*': [2, 'myAlias'] }` &rarr; Inflint checks any file/folder in "src" folder to match the alias regex.
+- `<alias_name>: [<regex>, <regex_flags>]` Inflint applies the alias name to match the provided regex with given regex flags.
 
-  **Example**: `{ myAlias: ['^.*$', 'i'] }` &rarr; Any rule applied with `myAlias` alias will try to match file names by the provided regex and the `i` regex flag.
+  **Example**: `{ myAlias: ['^.*$', 'i'] }` &rarr; Any rule applied with `myAlias` alias tries to match files/folders names by the provided regex and the `i` regex flag.
 
 ### CLI Aliases
 When adding aliases via the CLI, you need to provide a valid JSON for the `--alias` argument. You can provide multiple aliases.
