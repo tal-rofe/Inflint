@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/tal-rofe/Inflint/compare/v2.0.2...v2.1.0) (2023-11-09)
+
+
+### Features
+
+* 🔥 allow TypeScript configuration for Inflint ([f524668](https://github.com/tal-rofe/Inflint/commit/f524668b8238180f383fd6944b64609954a96674))
+
 ## [2.0.2](https://github.com/tal-rofe/Inflint/compare/v2.0.1...v2.0.2) (2023-11-09)
 
 
