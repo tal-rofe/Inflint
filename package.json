@@ -57,7 +57,7 @@
 		"lint": "eslint -c ./.eslintrc.cjs \"**/*.{ts,js,cjs}\"",
 		"prettier": "prettier --check **/*.{ts,js,cjs,json,yaml}",
 		"type-check": "tsc -p ./tsconfig.json",
-		"inflint": "inflint -c ./inflint.config.cjs",
+		"inflint": "inflint -c ./inflint.config.ts",
 		"knip": "knip -c ./knip.json -t ./tsconfig.json",
 		"cspell": "cspell lint -c ./cspell.json --gitignore --no-progress --no-summary **"
 	},
@@ -73,7 +73,7 @@
 	},
 	"devDependencies": {
 		"@commitlint/cli": "18.2.0",
-		"@exlint.io/inflint": "2.0.0",
+		"@exlint.io/inflint": "2.1.0",
 		"@types/micromatch": "4.0.4",
 		"@types/minimist": "1.2.4",
 		"@types/webpack-node-externals": "3.0.3",
