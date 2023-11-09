@@ -1,6 +1,7 @@
 import path from 'node:path';
 
 import { cosmiconfig } from 'cosmiconfig';
+import { TypeScriptLoader } from 'cosmiconfig-typescript-loader';
 
 import type { IBaseConfiguration, ISourceConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
@@ -56,7 +57,7 @@ export const recurseSourceConfiguration = async (
 	}
 
 	const extendsFilePath = path.join(configPath, '..', config.extends);
-	const explorer = cosmiconfig('');
+	const explorer = cosmiconfig('', { loaders: { '.ts': TypeScriptLoader() } });
 	const result = await explorer.load(extendsFilePath).catch(() => null);
 
 	if (!result) {

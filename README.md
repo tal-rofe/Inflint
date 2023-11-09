@@ -59,9 +59,7 @@ Configuration can be set in the following files:
 -   a `package.json` property: `"inflint": {...}`
 -   a `.inflintrc` file in JSON or YAML format
 -   a `.inflintrc.json`, `.inflintrc.yaml`, `.inflintrc.yml`, `.inflintrc.js`, `.inflintrc.ts`, or `.inflintrc.cjs` file
--   a `inflint.config.js`, or `inflint.config.cjs` CommonJS module exporting an object
-
-Currently, a TypeScript configuration file is not supported: https://github.com/Codex-/cosmiconfig-typescript-loader/issues/60
+-   a `inflint.config.ts`, `inflint.config.js`, or `inflint.config.cjs` CommonJS module exporting an object
 
 ### Rules format
 When applying rules either via the CLI or other configuration, you must follow the rules format.

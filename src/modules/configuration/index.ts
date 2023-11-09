@@ -2,6 +2,7 @@ import path from 'node:path';
 
 import { cosmiconfig } from 'cosmiconfig';
 import type { CosmiconfigResult } from 'cosmiconfig/dist/types';
+import { TypeScriptLoader } from 'cosmiconfig-typescript-loader';
 
 import type { ISourceConfiguration } from '@/interfaces/configuration';
 import CLILoggerModule from '@/shared/modules/cli-logger';
@@ -15,6 +16,7 @@ const StartConfiguration = async (
 ): Promise<[ISourceConfiguration, string | undefined] | null> => {
 	const explorer = cosmiconfig(CONFIGURATION_MODULE_NAME, {
 		searchPlaces: configFilePath ? [configFilePath] : DEFAULT_SEARCH_PLACES,
+		loaders: { '.ts': TypeScriptLoader() },
 	});
 
 	let result: CosmiconfigResult | null;
