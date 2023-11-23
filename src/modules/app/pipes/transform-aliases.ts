@@ -3,7 +3,7 @@ import type { IAliasValue } from '@/interfaces/alias';
 import type { ITransformedAliases } from '@/interfaces/alias-function';
 
 /**
- * The function recieves aliases and transforms each value to regex function
+ * The function receives aliases and transforms each value to regex function
  * @param input the aliases to transform
  * @returns the transformed aliases
  */

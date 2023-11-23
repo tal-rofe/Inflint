@@ -6,7 +6,7 @@ import type { IBaseConfiguration } from '@/interfaces/configuration';
 import type { IRuleConsoleDetails } from '@/interfaces/rule';
 import { outputFile } from '@/functions/output-file';
 import CLILoggerModule from '@/shared/modules/cli-logger';
-import { validateSringsArray } from '@/validators/complex';
+import { validateStringsArray } from '@/validators/complex';
 import { getRuleOptions } from '@/utils/rule-options';
 import {
 	checkAliasError,
@@ -26,7 +26,7 @@ export const lintFiles = async (
 	aliasesFunctions: Record<string, IMappedFunction>,
 ) => {
 	try {
-		validateSringsArray(files);
+		validateStringsArray(files);
 	} catch {
 		CLILoggerModule.service.error('Invalid files');
 
