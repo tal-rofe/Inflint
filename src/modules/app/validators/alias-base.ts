@@ -10,7 +10,7 @@ import {
  * @param input the input to validate
  * @returns a boolean flag indicates whether the input is valid
  */
-export const validateSnakeAndKebebAndPointCase = (
+export const validateSnakeAndKebabAndPointCase = (
 	input: string,
 	separator: string,
 	isScreaming: boolean,
@@ -46,6 +46,7 @@ export const validateSnakeAndKebebAndPointCase = (
 		const nextChar = inputArray[index + 1]!;
 
 		const isValidAlphabeticNextChar =
+			validateNumericChar(nextChar) ||
 			(!isScreaming && validateLowerCaseChar(nextChar)) ||
 			(isScreaming && validateUpperCaseChar(nextChar));
 

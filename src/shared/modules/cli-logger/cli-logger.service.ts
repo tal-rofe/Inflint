@@ -15,18 +15,6 @@ export default abstract class CLILoggerService {
 	protected abstract ruleAliasWarnImpl(details: IRuleConsoleDetails): void;
 	protected abstract lintSummaryImpl(errorsCount: number, warningsCount: number): void;
 
-	public info(input: string) {
-		this.infoImpl(input);
-	}
-
-	public success(input: string) {
-		this.successImpl(input);
-	}
-
-	public warn(input: string) {
-		this.warnImpl(input);
-	}
-
 	public error(input: string) {
 		this.errorImpl(input);
 	}

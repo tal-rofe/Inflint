@@ -50,5 +50,5 @@ export const printHelp = () => {
 	CLILoggerModule.service.emptyBlock();
 
 	CLILoggerModule.service.bold('Inflint documentation:');
-	CLILoggerModule.service.default('https://github.com/Exlint/Inflint#readme');
+	CLILoggerModule.service.default('https://github.com/tal-rofe/Inflint#readme');
 };
