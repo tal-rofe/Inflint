@@ -3,7 +3,6 @@ import type { IRuleValue } from '@/interfaces/rule';
 export const checkExistenceError = (ruleValue: IRuleValue) => {
 	return (
 		ruleValue === 'error' ||
-		(Array.isArray(ruleValue) && ruleValue[0] === 'error') ||
 		ruleValue === 2 ||
 		(Array.isArray(ruleValue) &&
 			(ruleValue[0] === 'error' || ruleValue[0] === 2) &&
@@ -14,7 +13,6 @@ export const checkExistenceError = (ruleValue: IRuleValue) => {
 export const checkExistenceWarning = (ruleValue: IRuleValue) => {
 	return (
 		ruleValue === 'warn' ||
-		(Array.isArray(ruleValue) && ruleValue[0] === 'warn') ||
 		ruleValue === 1 ||
 		(Array.isArray(ruleValue) &&
 			(ruleValue[0] === 'warn' || ruleValue[0] === 1) &&

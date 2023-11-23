@@ -7,7 +7,10 @@ import { DEFAULT_ERROR_MESSAGE } from '../models/error';
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateSringsArrayOrString = (input?: unknown, errorMessage?: string): string[] | undefined => {
+export const validateStringsArrayOrString = (
+	input?: unknown,
+	errorMessage?: string,
+): string[] | undefined => {
 	if (input === undefined) {
 		return;
 	}
@@ -30,7 +33,7 @@ export const validateSringsArrayOrString = (input?: unknown, errorMessage?: stri
  * @returns "undefined" if no input provided, the input itself if is valid
  * @throws error message in case of invalid input
  */
-export const validateSringsArray = (input?: unknown, errorMessage?: string) => {
+export const validateStringsArray = (input?: unknown, errorMessage?: string) => {
 	if (input === undefined) {
 		return;
 	}

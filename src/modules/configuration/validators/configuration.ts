@@ -2,7 +2,7 @@ import type { ISourceConfiguration } from '@/interfaces/configuration';
 import CLILoggerModule from '@/shared/modules/cli-logger';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validatePositiveInteger, validateString } from '@/validators/basic';
-import { validateSringsArray } from '@/validators/complex';
+import { validateStringsArray } from '@/validators/complex';
 import { validateBail } from '@/validators/bail';
 
 import { validateRules } from './rule';
@@ -19,7 +19,7 @@ export const validateConfiguration = (configuration: Record<string, unknown>) =>
 				'Must provide a string value to "ignorePath"',
 			),
 			ignore: validateBoolean(configuration['ignore'], 'Must provide a boolean value to "ignore"'),
-			ignorePatterns: validateSringsArray(configuration['ignorePatterns']),
+			ignorePatterns: validateStringsArray(configuration['ignorePatterns']),
 			quiet: validateBoolean(configuration['quiet'], 'Must provide a boolean value to "quiet"'),
 			maxWarnings: validatePositiveInteger(
 				configuration['maxWarnings'],
