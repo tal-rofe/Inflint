@@ -1,3 +1,24 @@
+# [2.1.0](https://github.com/tal-rofe/Inflint/compare/v2.0.2...v2.1.0) (2023-11-09)
+
+
+### Features
+
+* 🔥 allow TypeScript configuration for Inflint ([f524668](https://github.com/tal-rofe/Inflint/commit/f524668b8238180f383fd6944b64609954a96674))
+
+## [2.0.2](https://github.com/tal-rofe/Inflint/compare/v2.0.1...v2.0.2) (2023-11-09)
+
+
+### Bug Fixes
+
+* 🐞 fix check for existence errors/warnings ([7c6dfd5](https://github.com/tal-rofe/Inflint/commit/7c6dfd52dac40cba77e4dad91776443b69e8f533))
+
+## [2.0.1](https://github.com/tal-rofe/Inflint/compare/v2.0.0...v2.0.1) (2023-11-08)
+
+
+### Bug Fixes
+
+* 🐞 allow digits in patterns ([0297747](https://github.com/tal-rofe/Inflint/commit/02977475a25faba8dc7fd537ab6d0d25335611c3))
+
 # [2.0.0](https://github.com/Exlint/Inflint/compare/v1.2.11...v2.0.0) (2023-04-14)
 
 ## [1.2.11](https://github.com/Exlint/Inflint/compare/v1.2.10...v1.2.11) (2023-04-14)
