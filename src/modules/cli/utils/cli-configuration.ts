@@ -3,7 +3,7 @@ import type { ParsedArgs } from 'minimist';
 import type { ICLIConfiguration } from '@/interfaces/configuration';
 import { withCleanObject } from '@/utils/object';
 import { validateBoolean, validateString, validatePositiveInteger } from '@/validators/basic';
-import { validateSringsArrayOrString } from '@/validators/complex';
+import { validateStringsArrayOrString } from '@/validators/complex';
 import { validateBail } from '@/validators/bail';
 
 import { validateRules } from '../validators/rule';
@@ -20,7 +20,7 @@ export const getConfiguration = (argv: ParsedArgs) => {
 		aliases: validateAliases(argv['alias'], 'Must provide valid JSON syntax to "--alias"'),
 		ignorePath: validateString(argv['ignore-path'], 'Must provide string value to "--ignore-path"'),
 		ignore: validateBoolean(argv['ignore'], 'Must provide boolean value to "--no-ignore"'),
-		ignorePatterns: validateSringsArrayOrString(
+		ignorePatterns: validateStringsArrayOrString(
 			argv['ignore-pattern'],
 			'Must provide string value to "--ignore-pattern"',
 		),

@@ -1,3 +1,5 @@
+type IRuleEnforcement = 1 | 2 | 'warn' | 'error';
+
 export interface IRuleOptions {
 	readonly onlyDirectories?: boolean;
 	readonly onlyFiles?: boolean;
@@ -5,8 +7,6 @@ export interface IRuleOptions {
 	readonly caseSensitiveMatch?: boolean;
 	readonly [key: string]: unknown;
 }
-
-export type IRuleEnforcement = 1 | 2 | 'warn' | 'error';
 
 export type IRuleValue =
 	| IRuleEnforcement

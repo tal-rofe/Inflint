@@ -1,7 +1,7 @@
 import {
 	validateCamelCaseBase,
 	validatePascalCaseBase,
-	validateSnakeAndKebebAndPointCase,
+	validateSnakeAndKebabAndPointCase,
 } from './alias-base';
 
 /**
@@ -53,7 +53,7 @@ export const validatePascalCasePoint = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateSnakeCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '_', false, false);
+	return validateSnakeAndKebabAndPointCase(input, '_', false, false);
 };
 
 /**
@@ -62,7 +62,7 @@ export const validateSnakeCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateSnakeCasePoint = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '_', false, true);
+	return validateSnakeAndKebabAndPointCase(input, '_', false, true);
 };
 
 /**
@@ -71,7 +71,7 @@ export const validateSnakeCasePoint = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateScreamingSnakeCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '_', true, false);
+	return validateSnakeAndKebabAndPointCase(input, '_', true, false);
 };
 
 /**
@@ -80,7 +80,7 @@ export const validateScreamingSnakeCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateScreamingSnakeCasePoint = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '_', true, true);
+	return validateSnakeAndKebabAndPointCase(input, '_', true, true);
 };
 
 /**
@@ -89,7 +89,7 @@ export const validateScreamingSnakeCasePoint = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateKebabCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '-', false, false);
+	return validateSnakeAndKebabAndPointCase(input, '-', false, false);
 };
 
 /**
@@ -98,7 +98,7 @@ export const validateKebabCase = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validateKebabCasePoint = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '-', false, true);
+	return validateSnakeAndKebabAndPointCase(input, '-', false, true);
 };
 
 /**
@@ -107,5 +107,5 @@ export const validateKebabCasePoint = (input: string) => {
  * @returns a boolean flag indicates whether the input is valid
  */
 export const validatePointCase = (input: string) => {
-	return validateSnakeAndKebebAndPointCase(input, '.', false, false);
+	return validateSnakeAndKebabAndPointCase(input, '.', false, false);
 };
