@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/tal-rofe/Inflint/compare/v2.1.0...v2.1.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* 🐞 add "import" to "exports" in package.json file ([28a72bb](https://github.com/tal-rofe/Inflint/commit/28a72bb70e1465f44f69a065958df4045dcf03cb))
+
 # [2.1.0](https://github.com/tal-rofe/Inflint/compare/v2.0.2...v2.1.0) (2023-11-09)
 
 
