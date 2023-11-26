@@ -35,8 +35,8 @@ devDependencies:
     specifier: 18.2.0
     version: 18.2.0(typescript@5.2.2)
   '@exlint.io/inflint':
-    specifier: 2.1.0
-    version: 2.1.0(@types/node@20.5.1)(typescript@5.2.2)
+    specifier: 2.1.1
+    version: 2.1.1(@types/node@20.5.1)(typescript@5.2.2)
   '@types/micromatch':
     specifier: 4.0.4
     version: 4.0.4
@@ -690,8 +690,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@exlint.io/inflint@2.1.0(@types/node@20.5.1)(typescript@5.2.2):
-    resolution: {integrity: sha512-scQDhaiM/AJg/tV51U7bCyRJZKQLY0/6lqFhl4OtD9tj+APurl927D+YnkFdntNLfng8iwm3Udt2mlUT2+NMHw==}
+  /@exlint.io/inflint@2.1.1(@types/node@20.5.1)(typescript@5.2.2):
+    resolution: {integrity: sha512-sWgdh7iv2CR8EuqirZbtndooLPjIysOyZ0ojpK3F9o3hnceCVi8JDxYBHveZPXiBol5ivccH8KyoXO6empktmw==}
     engines: {node: '>=14.16'}
     hasBin: true
     dependencies:
