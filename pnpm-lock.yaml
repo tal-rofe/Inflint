@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 18.6.0
-    version: 18.6.0(@types/node@20.5.1)(typescript@5.3.3)
+    specifier: 18.6.1
+    version: 18.6.1(@types/node@20.5.1)(typescript@5.3.3)
   '@exlint.io/inflint':
     specifier: 2.1.1
     version: 2.1.1(@types/node@20.5.1)(typescript@5.3.3)
@@ -161,8 +161,8 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
 
-  /@commitlint/cli@18.6.0(@types/node@20.5.1)(typescript@5.3.3):
-    resolution: {integrity: sha512-FiH23cr9QG8VdfbmvJJZmdfHGVMCouOOAzoXZ3Cd7czGC52RbycwNt8YCI7SA69pAl+t30vh8LMaO/N+kcel6w==}
+  /@commitlint/cli@18.6.1(@types/node@20.5.1)(typescript@5.3.3):
+    resolution: {integrity: sha512-5IDE0a+lWGdkOvKH892HHAZgbAjcj1mT5QrfA/SVbLJV/BbBMGyKN0W5mhgjekPJJwEQdVNvhl9PwUacY58Usw==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
@@ -1277,7 +1277,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.3.3)
       eslint: 8.56.0
       eslint-scope: 5.1.1
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
