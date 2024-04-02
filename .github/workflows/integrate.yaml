@@ -16,7 +16,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
@@ -34,7 +34,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
@@ -49,7 +49,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
@@ -64,7 +64,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
@@ -79,7 +79,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
@@ -94,7 +94,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
@@ -109,7 +109,7 @@ jobs:
             - name: Setup Node environment
               uses: Exlint/node-environment@v1.2.6
               with:
-                  node-version: 20.11.1
+                  node-version: 20.12.0
                   package-manager: pnpm
                   package-manager-version: 8.15.5
 
