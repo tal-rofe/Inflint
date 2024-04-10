@@ -92,8 +92,8 @@ devDependencies:
     specifier: 3.0.1
     version: 3.0.1
   knip:
-    specifier: 5.7.0
-    version: 5.7.0(@types/node@20.5.1)(typescript@5.4.3)
+    specifier: 5.7.1
+    version: 5.7.1(@types/node@20.5.1)(typescript@5.4.3)
   lint-staged:
     specifier: 15.2.2
     version: 15.2.2
@@ -4019,8 +4019,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /knip@5.7.0(@types/node@20.5.1)(typescript@5.4.3):
-    resolution: {integrity: sha512-wTw7Mt7nGa8dBelC3UrAzBtRqHwER7o6m+GzNYGMlt6HnJ/5IoKoxC/1KvPfyXanEJfsSq0ciSchdtnN0RA9RA==}
+  /knip@5.7.1(@types/node@20.5.1)(typescript@5.4.3):
+    resolution: {integrity: sha512-qO17flswODdIfu9q5UA20nsAhai90TtRBz9q0a4y4NtsWN2BRRzKYPOPn6K3lUpKQVyjOoA9S3a/xHYIEXKKYg==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
@@ -4939,7 +4939,7 @@ packages:
     resolution: {integrity: sha512-/vxpCXddiX8NGfGO/mTafwjq4aFa/71pvamip0++IQk3zG8cbCj0fifNPrjjF1XMXUne91jL9OoxmdykoEtifQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      resolve: 1.22.3
+      resolve: 1.22.8
     dev: true
 
   /regexp-tree@0.1.27:
@@ -5018,15 +5018,6 @@ packages:
 
   /resolve@1.22.1:
     resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
-    hasBin: true
-    dependencies:
-      is-core-module: 2.13.1
-      path-parse: 1.0.7
-      supports-preserve-symlinks-flag: 1.0.0
-    dev: true
-
-  /resolve@1.22.3:
-    resolution: {integrity: sha512-P8ur/gp/AmbEzjr729bZnLjXK5Z+4P0zhIJgBgzqRih7hL7BOukHGtSTA3ACMY467GRFz3duQsi0bDZdR7DKdw==}
     hasBin: true
     dependencies:
       is-core-module: 2.13.1
