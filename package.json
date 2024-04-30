@@ -71,7 +71,7 @@
 		"v8-compile-cache": "2.4.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "19.2.2",
+		"@commitlint/cli": "19.3.0",
 		"@exlint.io/inflint": "2.1.1",
 		"@types/micromatch": "4.0.7",
 		"@types/minimist": "1.2.5",
