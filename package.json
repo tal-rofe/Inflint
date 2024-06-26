@@ -100,7 +100,7 @@
 		"ts-node": "10.9.2",
 		"tsconfig-paths-webpack-plugin": "4.1.0",
 		"typescript": "5.4.5",
-		"webpack": "5.92.0",
+		"webpack": "5.92.1",
 		"webpack-cli": "5.1.4",
 		"webpack-node-externals": "3.0.0",
 		"webpack-shell-plugin-next": "2.3.1"
