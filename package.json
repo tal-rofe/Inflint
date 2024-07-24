@@ -89,7 +89,7 @@
 		"eslint-plugin-unicorn": "51.0.1",
 		"eslint-plugin-unused-imports": "3.2.0",
 		"figlet": "1.7.0",
-		"husky": "9.0.11",
+		"husky": "9.1.0",
 		"is-ci": "3.0.1",
 		"knip": "5.26.0",
 		"lint-staged": "15.2.7",
