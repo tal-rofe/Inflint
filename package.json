@@ -66,7 +66,7 @@
 		"cosmiconfig": "9.0.0",
 		"cosmiconfig-typescript-loader": "5.0.0",
 		"fast-glob": "3.3.2",
-		"micromatch": "4.0.7",
+		"micromatch": "4.0.8",
 		"minimist": "1.2.8",
 		"v8-compile-cache": "2.4.0"
 	},
