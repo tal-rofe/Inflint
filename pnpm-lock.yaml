@@ -15,8 +15,8 @@ dependencies:
     specifier: 9.0.0
     version: 9.0.0(typescript@5.7.2)
   cosmiconfig-typescript-loader:
-    specifier: 5.1.0
-    version: 5.1.0(@types/node@20.5.1)(cosmiconfig@9.0.0)(typescript@5.7.2)
+    specifier: 6.0.0
+    version: 6.0.0(@types/node@20.5.1)(cosmiconfig@9.0.0)(typescript@5.7.2)
   fast-glob:
     specifier: 3.3.2
     version: 3.3.2
@@ -1929,6 +1929,21 @@ packages:
       cosmiconfig: 9.0.0(typescript@5.7.2)
       jiti: 1.21.6
       typescript: 5.7.2
+    dev: true
+
+  /cosmiconfig-typescript-loader@6.0.0(@types/node@20.5.1)(cosmiconfig@9.0.0)(typescript@5.7.2):
+    resolution: {integrity: sha512-Pi86SNGpc99r5jRNv94gbFO0rE/eSWwcpMGeLDbhNaPqZBCHtoouNVPqOE4p0/mFeNE9Us/S6qQknntn26uX9Q==}
+    engines: {node: '>=v18'}
+    peerDependencies:
+      '@types/node': '*'
+      cosmiconfig: '>=9'
+      typescript: '>=5'
+    dependencies:
+      '@types/node': 20.5.1
+      cosmiconfig: 9.0.0(typescript@5.7.2)
+      jiti: 2.4.0
+      typescript: 5.7.2
+    dev: false
 
   /cosmiconfig@8.3.6(typescript@5.7.2):
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
@@ -3683,11 +3698,11 @@ packages:
   /jiti@1.21.6:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
+    dev: true
 
   /jiti@2.4.0:
     resolution: {integrity: sha512-H5UpaUI+aHOqZXlYOaFP/8AzKsg+guWu+Pr3Y8i7+Y3zr1aXAvCvTAQ1RxSc6oVD8R8c7brgNtTVP91E7upH/g==}
     hasBin: true
-    dev: true
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
