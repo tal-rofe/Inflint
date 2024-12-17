@@ -92,7 +92,7 @@
 		"husky": "9.1.7",
 		"is-ci": "3.0.1",
 		"knip": "5.39.2",
-		"lint-staged": "15.2.10",
+		"lint-staged": "15.2.11",
 		"npm-run-all2": "6.2.6",
 		"prettier": "3.4.2",
 		"rimraf": "6.0.1",
