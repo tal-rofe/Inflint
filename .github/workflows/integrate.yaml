@@ -18,7 +18,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: Pre-build Inflint
               run: pnpm build
@@ -36,7 +36,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: Test TypeScript
               run: pnpm type-check
@@ -51,7 +51,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: Test Prettier
               run: pnpm prettier
@@ -66,7 +66,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: Test ESLint
               run: pnpm lint
@@ -81,7 +81,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: Knip
               run: pnpm knip
@@ -96,7 +96,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: CSpell
               run: pnpm cspell
@@ -111,7 +111,7 @@ jobs:
               with:
                   node-version: 20.18.1
                   package-manager: pnpm
-                  package-manager-version: 9.15.1
+                  package-manager-version: 9.15.2
 
             - name: Test build
               run: pnpm build
