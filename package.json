@@ -79,7 +79,7 @@
 		"@typescript-eslint/eslint-plugin": "8.20.0",
 		"@typescript-eslint/parser": "8.20.0",
 		"commitizen": "4.3.1",
-		"cspell": "8.17.1",
+		"cspell": "8.17.2",
 		"cz-vinyl": "2.5.4",
 		"eslint": "8.57.1",
 		"eslint-config-prettier": "9.1.0",
