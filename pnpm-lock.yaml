@@ -101,8 +101,8 @@ devDependencies:
     specifier: 6.2.6
     version: 6.2.6
   prettier:
-    specifier: 3.4.2
-    version: 3.4.2
+    specifier: 3.5.1
+    version: 3.5.1
   rimraf:
     specifier: 6.0.1
     version: 6.0.1
@@ -4508,8 +4508,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+  /prettier@3.5.1:
+    resolution: {integrity: sha512-hPpFQvHwL3Qv5AdRvBFMhnKo4tYxp0ReXiPn2bxkiohEX6mBeBwEpBSQTkD458RaaDKQMYSp4hX4UtfUTA5wDw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
