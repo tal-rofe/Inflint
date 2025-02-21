@@ -93,7 +93,7 @@
 		"is-ci": "3.0.1",
 		"knip": "5.44.1",
 		"lint-staged": "15.4.3",
-		"npm-run-all2": "6.2.6",
+		"npm-run-all2": "7.0.2",
 		"prettier": "3.5.1",
 		"rimraf": "6.0.1",
 		"ts-loader": "9.5.2",
