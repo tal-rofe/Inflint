@@ -83,8 +83,8 @@ devDependencies:
     specifier: 3.2.0
     version: 3.2.0(@typescript-eslint/eslint-plugin@8.24.0)(eslint@8.57.1)
   figlet:
-    specifier: 1.8.0
-    version: 1.8.0
+    specifier: 1.8.1
+    version: 1.8.1
   husky:
     specifier: 9.1.7
     version: 9.1.7
@@ -2931,8 +2931,8 @@ packages:
       picomatch: 4.0.2
     dev: true
 
-  /figlet@1.8.0:
-    resolution: {integrity: sha512-chzvGjd+Sp7KUvPHZv6EXV5Ir3Q7kYNpCr4aHrRW79qFtTefmQZNny+W1pW9kf5zeE6dikku2W50W/wAH2xWgw==}
+  /figlet@1.8.1:
+    resolution: {integrity: sha512-kEC3Sme+YvA8Hkibv0NR1oClGcWia0VB2fC1SlMy027cwe795Xx40Xiv/nw/iFAwQLupymWh+uhAAErn/7hwPg==}
     engines: {node: '>= 0.4.0'}
     hasBin: true
     dev: true
