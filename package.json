@@ -91,7 +91,7 @@
 		"figlet": "1.8.1",
 		"husky": "9.1.7",
 		"is-ci": "3.0.1",
-		"knip": "5.44.1",
+		"knip": "5.53.0",
 		"lint-staged": "15.4.3",
 		"npm-run-all2": "6.2.6",
 		"prettier": "3.5.3",
