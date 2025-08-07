@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: 19.8.0
-    version: 19.8.0(@types/node@20.5.1)(typescript@5.8.3)
+    specifier: 19.8.1
+    version: 19.8.1(@types/node@20.5.1)(typescript@5.8.3)
   '@exlint.io/inflint':
     specifier: 2.1.1
     version: 2.1.1(@types/node@20.5.1)(typescript@5.8.3)
@@ -156,8 +156,8 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
 
-  /@commitlint/cli@19.8.0(@types/node@20.5.1)(typescript@5.8.3):
-    resolution: {integrity: sha512-t/fCrLVu+Ru01h0DtlgHZXbHV2Y8gKocTR5elDOqIRUzQd0/6hpt2VIWOj9b3NDo7y4/gfxeR2zRtXq/qO6iUg==}
+  /@commitlint/cli@19.8.1(@types/node@20.5.1)(typescript@5.8.3):
+    resolution: {integrity: sha512-LXUdNIkspyxrlV6VDHWBmCZRtkEVRpBKxi2Gtw3J54cGWhLCTouVD/Q6ZSaSvd2YaDObWK8mDjrz3TIKtaQMAA==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
@@ -166,7 +166,7 @@ packages:
       '@commitlint/load': 19.8.1(@types/node@20.5.1)(typescript@5.8.3)
       '@commitlint/read': 19.8.1
       '@commitlint/types': 19.8.1
-      tinyexec: 0.3.0
+      tinyexec: 1.0.1
       yargs: 17.6.2
     transitivePeerDependencies:
       - '@types/node'
@@ -211,7 +211,7 @@ packages:
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/types': 19.8.1
-      semver: 7.6.3
+      semver: 7.7.1
     dev: true
 
   /@commitlint/lint@19.8.1:
@@ -5074,10 +5074,6 @@ packages:
 
   /through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
-    dev: true
-
-  /tinyexec@0.3.0:
-    resolution: {integrity: sha512-tVGE0mVJPGb0chKhqmsoosjsS+qUnJVGJpZgsHYQcGoPlG3B51R3PouqTgEGH2Dc9jjFyOqOpix6ZHNMXp1FZg==}
     dev: true
 
   /tinyexec@1.0.1:
